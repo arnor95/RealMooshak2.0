@@ -22,23 +22,24 @@
     </div>
 </div>
 
-<div>
-    <ul id="assignment-vertical-nav">
+<div class="row">
+    <div class="col-sm-3">
+        <ul id="assignment-vertical-nav">
+            @foreach (var assignment in Model.Assignments)
+            {
+                <li><a class="assignment-li-a" id="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title</a></li>
+            }
+        </ul>
+    </div>
+    <div class="col-sm-9">
         @foreach (var assignment in Model.Assignments)
         {
-            <li><a class="assignment-li-a" id ="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title</a></li>
+            <div class="hidden" id="@assignment.Title">
+                <h2>@assignment.Title</h2>
+                <p>@assignment.Description</p>
+            </div>
         }
-    </ul>
-</div>
-
-<div class="row">
-    @foreach (var assignment in Model.Assignments)
-    {
-        <div class="col-md-3 hidden" id="@assignment.Title">
-            <h2>@assignment.Title</h2>
-            <p>@assignment.Description</p>
-        </div>
-    }
+    </div>
 </div>
 
 
