@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using projectMoo.Services;
 using System;
@@ -12,7 +13,7 @@ namespace projectMoo.Controllers
     public class CoursesController : Controller
     {
 
-        private CoursesService _service = new CoursesService();
+        private CoursesService _courseService = new CoursesService();
 
         [Authorize]
         // GET: Courses
@@ -20,8 +21,30 @@ namespace projectMoo.Controllers
         {
             string currentUserId = User.Identity.GetUserId();
             System.Diagnostics.Debug.WriteLine("user id " + currentUserId);
-            List<CourseViewModel> ViewModel = _service.getCoursesForUser(currentUserId);
+            List<CourseViewModel> ViewModel = _courseService.getCoursesForUser(currentUserId);
             return View(ViewModel);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult CreateCourse()
+        {
+            return View(new Course());
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public ActionResult CreateCourse(Course data)
+        {
+            if (ModelState.IsValid)
+            {
+                Course c = new Course();
+                UpdateModel(c);
+                _courseService.addNewCourse(c);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(data);
         }
     }
 }

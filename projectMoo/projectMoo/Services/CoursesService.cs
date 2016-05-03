@@ -71,5 +71,11 @@ namespace projectMoo.Services
 
             return returnCourse;
         }
+
+        public void addNewCourse(Course c)
+        {
+            _db.Courses.Add(c);
+            _db.SaveChanges();
+        }
     }
 }
