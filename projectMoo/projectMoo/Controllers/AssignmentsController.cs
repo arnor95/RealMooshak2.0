@@ -1,4 +1,6 @@
-﻿using projectMoo.Services;
+﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models.ViewModels;
+using projectMoo.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +11,18 @@ namespace projectMoo.Controllers
 {
     public class AssignmentsController : Controller
     {
-        private AssignmentsService _service = new AssignmentsService();
+        private AssignmentsService _assignmentService = new AssignmentsService();
+        private CoursesService _courseService = new CoursesService();
 
         [Authorize]
         // GET: Assignments
         public ActionResult Index()
         {
             System.Diagnostics.Debug.WriteLine("Index Assign");
-            var ViewModel = _service.GetAssignmentsInCourse(1);
-            return View(ViewModel);
+            UserViewModel model = new UserViewModel();
+            model.Assignments = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
+            model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
+            return View(model);
         }
     }
 }

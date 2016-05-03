@@ -1,12 +1,23 @@
-﻿@model IEnumerable<projectMoo.Models.ViewModels.AssignmentViewModel>
+﻿@model projectMoo.Models.ViewModels.UserViewModel
 @{ 
     ViewBag.Title = "Assignments";
 }
 
 <h1>Assignments</h1>
-
+<div id="topright" class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Courses
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (var course in Model.Courses)
+        {
+            <li><a href="#">@course.Title</a></li>
+        }
+    </ul>
+</div>
 <div class="row">
-    @foreach (var assignment in Model)
+    @foreach (var assignment in Model.Assignments)
     {
         <div class="col-md-3">
             <h2>@assignment.Title</h2>
