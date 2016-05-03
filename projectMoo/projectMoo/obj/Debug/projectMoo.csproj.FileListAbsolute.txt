@@ -1,0 +1,328 @@
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\ApplicationInsights.config
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\csc.exe
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\System.Collections.Immutable.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\vbc.exe
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\VBCSCompiler.exe
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\VBCSCompiler.exe.config
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\projectMoo.dll.config
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\projectMoo.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\projectMoo.pdb
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Antlr3.Runtime.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\EntityFramework.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\EntityFramework.SqlServer.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.Web.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.WindowsServer.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.ApplicationInsights.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Google.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Web.Infrastructure.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Newtonsoft.Json.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Owin.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Helpers.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Mvc.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Optimization.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Razor.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.WebPages.Deployment.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.WebPages.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.WebPages.Razor.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\WebGrease.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.Web.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AI.WindowsServer.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.ApplicationInsights.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Helpers.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Mvc.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Optimization.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.Razor.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.WebPages.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.WebPages.Deployment.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\System.Web.WebPages.Razor.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Antlr3.Runtime.pdb
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Newtonsoft.Json.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\EntityFramework.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\EntityFramework.SqlServer.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Google.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\obj\Debug\projectMoo.dll
+c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\obj\Debug\projectMoo.pdb
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\ApplicationInsights.config
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\csc.exe
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\vbc.exe
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\VBCSCompiler.exe
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.dll.config
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.pdb
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Antlr3.Runtime.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.SqlServer.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Web.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Newtonsoft.Json.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Owin.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Helpers.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Mvc.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Optimization.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Razor.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\WebGrease.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Web.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Helpers.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Mvc.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Optimization.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Razor.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Antlr3.Runtime.pdb
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Newtonsoft.Json.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.SqlServer.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.dll
+C:\Users\Gunnar Bjornsson\Desktop\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.pdb
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\ApplicationInsights.config
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\csc.exe
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\vbc.exe
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\VBCSCompiler.exe
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.dll.config
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.pdb
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Antlr3.Runtime.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.SqlServer.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Web.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Newtonsoft.Json.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Owin.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Helpers.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Mvc.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Optimization.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Razor.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\WebGrease.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Web.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Helpers.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Mvc.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Optimization.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Razor.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Antlr3.Runtime.pdb
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Newtonsoft.Json.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.SqlServer.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.dll
+C:\Users\Hjalti Steinar\Documents\Git\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.pdb
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\ApplicationInsights.config
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\csc.exe
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\vbc.exe
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\VBCSCompiler.exe
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.dll.config
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\projectMoo.pdb
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Antlr3.Runtime.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.SqlServer.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Web.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Newtonsoft.Json.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Owin.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Helpers.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Mvc.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Optimization.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Razor.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\WebGrease.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.Web.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Helpers.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Mvc.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Optimization.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.Razor.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Antlr3.Runtime.pdb
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Newtonsoft.Json.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\EntityFramework.SqlServer.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.dll
+C:\Users\Arnór Gíslason\Documents\Mooshak-2.0\projectMoo\projectMoo\obj\Debug\projectMoo.pdb

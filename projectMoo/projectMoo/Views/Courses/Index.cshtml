@@ -1,0 +1,31 @@
+﻿@model IEnumerable<projectMoo.Models.ViewModels.CourseViewModel>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h2>Courses</h2>
+
+
+<div id="topright" class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Courses
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (var course in Model)
+        {
+            <li><a href="#">@course.Title</a></li>
+        }
+    </ul>
+</div>
+
+<div class="row">
+    @foreach (var course in Model)
+    {
+        <div class="col-md-3">
+            <h3>@course.Title</h3>
+            <p>@course.Description</p>
+        </div>
+    }
+</div>

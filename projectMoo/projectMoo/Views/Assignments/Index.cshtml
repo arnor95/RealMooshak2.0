@@ -1,0 +1,16 @@
+﻿@model IEnumerable<projectMoo.Models.ViewModels.AssignmentViewModel>
+@{ 
+    ViewBag.Title = "Assignments";
+}
+
+<h1>Assignments</h1>
+
+<div class="row">
+    @foreach (var assignment in Model)
+    {
+        <div class="col-md-3">
+            <h2>@assignment.Title</h2>
+            <p>@assignment.Description</p>
+        </div>
+    }
+</div>
