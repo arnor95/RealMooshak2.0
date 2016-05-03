@@ -196,3 +196,7 @@ img#profile-picture {
     color: white;
     text-decoration:none;
 }
+
+#dropdown {
+    color: pink;
+}
