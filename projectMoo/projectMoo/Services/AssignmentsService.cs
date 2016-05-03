@@ -108,5 +108,11 @@ namespace projectMoo.Services
             
             return viewModel;
         }
+
+        public void addNewAssignment(Assignment a)
+        {
+            _db.Assignments.Add(a);
+            _db.SaveChanges();
+        }
     }
 }

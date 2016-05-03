@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models;
+using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using projectMoo.Services;
 using System;
@@ -11,6 +13,7 @@ namespace projectMoo.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         private UserService _userService = new UserService();
         private AssignmentsService _assignmentService = new AssignmentsService();
         private CoursesService _courseService = new CoursesService();
