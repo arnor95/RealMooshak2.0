@@ -487,6 +487,5 @@ C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\bin\M
 C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
 C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.dll
 C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.pdb

@@ -204,9 +204,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Entities\ActiveCourse.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
+    <Compile Include="Models\Entities\SessionCourse.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />
     <Compile Include="Models\Entities\UserInfo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
