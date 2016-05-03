@@ -3,36 +3,44 @@
     ViewBag.Title = "Assignments";
 }
 
-<h1>Assignments</h1>
-<div id="topright" class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-        Courses
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-        @foreach (var course in Model.Courses)
-        {
-            <li><a href="#">@course.Title</a></li>
-        }
-    </ul>
+<div class="row">
+    <div class="col-md-8">
+        <h1>Assignments</h1>
+    </div>
+    <div class="col-md-4">
+        <div id="topright" class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                Courses
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                @foreach (var course in Model.Courses)
+                {
+                    <li><a href="#">@course.Title</a></li>}
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div>
     <ul id="assignment-vertical-nav">
         @foreach (var assignment in Model.Assignments)
         {
-            <li><a class="assignment-li-a" id ="assignment-li-a"href="#">@assignment.Title</a></li>
+            <li><a class="assignment-li-a" id ="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title</a></li>
         }
     </ul>
 </div>
 
-<!--<div class="row">
+<div class="row">
     @foreach (var assignment in Model.Assignments)
     {
-        <div class="col-md-3">
+        <div class="col-md-3 hidden" id="@assignment.Title">
             <h2>@assignment.Title</h2>
             <p>@assignment.Description</p>
         </div>
     }
 </div>
--->
+
+
+
+
