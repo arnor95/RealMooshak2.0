@@ -19,9 +19,12 @@ namespace projectMoo.Controllers
         public ActionResult Index()
         {
             UserViewModel model = new UserViewModel();
-            model.Name = _userService.getUserName(User.Identity.GetUserId());
-            model.Assignments = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
-            model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
+            string userID = User.Identity.GetUserId();
+
+            model.Name = _userService.getUserName(userID);
+            model.Assignments = _assignmentService.GetAssignmentForUser(userID);
+            model.Courses = _courseService.getCoursesForUser(userID);
+            model.Phone = _userService.getUserPhone(userID);
 
             /*
             var model = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());

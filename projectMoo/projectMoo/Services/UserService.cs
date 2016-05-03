@@ -23,5 +23,14 @@ namespace projectMoo.Services
 
             return userInfo.Name;
         }
+
+        public int getUserPhone(string userID)
+        {
+            var userInfo = (from user in _db.UserInfoes
+                            where user.UserID == userID
+                            select user).SingleOrDefault();
+
+            return userInfo.Phone;
+        }
     }
 }
