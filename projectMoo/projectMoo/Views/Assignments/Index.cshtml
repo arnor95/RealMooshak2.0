@@ -16,7 +16,17 @@
         }
     </ul>
 </div>
-<div class="row">
+
+<div>
+    <ul id="assignment-vertical-nav">
+        @foreach (var assignment in Model.Assignments)
+        {
+            <li><a class="assignment-li-a" id ="assignment-li-a"href="#">@assignment.Title</a></li>
+        }
+    </ul>
+</div>
+
+<!--<div class="row">
     @foreach (var assignment in Model.Assignments)
     {
         <div class="col-md-3">
@@ -25,3 +35,4 @@
         </div>
     }
 </div>
+-->
