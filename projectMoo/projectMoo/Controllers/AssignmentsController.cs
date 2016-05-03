@@ -23,6 +23,7 @@ namespace projectMoo.Controllers
             UserViewModel model = new UserViewModel();
             model.Assignments = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
             model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
+            model.Name = ActiveCourse.Instance.GetActiveCourse().Title;
             return View(model);
         }
 

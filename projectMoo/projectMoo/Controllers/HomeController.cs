@@ -29,6 +29,7 @@ namespace projectMoo.Controllers
             model.Courses = _courseService.getCoursesForUser(userID);
             model.Phone = _userService.getUserPhone(userID);
 
+            ActiveCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
             /*
             var model = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
             if(model == null)
