@@ -17,6 +17,16 @@ namespace projectMoo.Services
             _db = new ApplicationDbContext();
         }
 
+        public List<Course> getAllCourses()
+        {
+            List<Course> courses = new List<Course>();
+
+            courses = (from course in _db.Courses
+                       select course).ToList();
+
+            return courses;
+        }
+
         public List<CourseViewModel> getCoursesForUser(string userId)
         {
             var links = (from courseRelation in _db.UserCourses

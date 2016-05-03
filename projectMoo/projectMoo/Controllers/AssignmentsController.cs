@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using projectMoo.Services;
 using System;
@@ -23,6 +24,44 @@ namespace projectMoo.Controllers
             model.Assignments = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
             model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
             return View(model);
+        }
+
+        [Authorize(Roles = "Admin, Teacher")]
+        public ActionResult CreateAssignment()
+        {
+            List<Course> courses = new List<Course>();
+            courses = _courseService.getAllCourses();
+
+            List<SelectListItem> listItems = new List<SelectListItem>();
+
+            foreach (Course c in courses)
+            {
+                listItems.Add(new SelectListItem
+                {
+                    Text = c.Title,
+                    Value = c.ID.ToString()
+                });
+            }
+
+            ViewData["Courses"] = listItems;
+
+            return View(new Assignment());
+        }
+
+        [Authorize(Roles = "Admin, Teacher")]
+        [HttpPost]
+        public ActionResult CreateAssignment(Assignment a)
+        {
+            if (ModelState.IsValid)
+            {
+                Assignment assignment = new Assignment();
+                UpdateModel(assignment);
+                _assignmentService.addNewAssignment(assignment);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(a);
         }
     }
 }
