@@ -34,24 +34,14 @@ namespace projectMoo.Controllers
             if (picID != null)
             {
                 model.PicID = picID;
-
-                SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
-
-                return View(model);
             }
-            
-            model.PicID = "profile.png";
+            else
+            {
+                model.PicID = "profile.png";
+            }
 
             SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
             
-
-            /*
-            var model = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
-            if(model == null)
-            {
-                System.Diagnostics.Debug.WriteLine("Index model is null");
-            }
-            */
             return View(model);
         }
 
@@ -65,10 +55,17 @@ namespace projectMoo.Controllers
         {
             if (file != null && file.ContentLength > 0)
             {
-                // extract only the filename
-                var fileExtension = Path.GetExtension(file.FileName);
+                string userID = User.Identity.GetUserId();
+
+                var fileName = userID + Path.GetExtension(file.FileName);
+                var updateUser = (from user in _db.UserInfoes
+                                  where user.UserID == userID
+                                  select user).SingleOrDefault();
+
+                updateUser.PicID = fileName;
+                _db.SaveChanges();
                 // store the file inside ~/App_Data/uploads folder
-                var path = Path.Combine(Server.MapPath("~/Images/Profile/"), User.Identity.GetUserId() + fileExtension);
+                var path = Path.Combine(Server.MapPath("~/Images/Profile/"), fileName);
                 file.SaveAs(path);
             }
             // redirect back to the index action to show the form once again
