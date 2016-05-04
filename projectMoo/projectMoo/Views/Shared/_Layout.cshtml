@@ -48,13 +48,5 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <script>
-        $('.assignment-li-a').click(function (event) {
-            event.preventDefault();
-
-            var type = $(this).attr('data-type');
-            $("#" + type).removeClass("hidden").siblings("div").addClass("hidden");
-        });
-    </script>
 </body>
 </html>

@@ -169,7 +169,7 @@ img#logo-nav {
 }
 
 img#profile-picture {
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 #topright {
@@ -204,4 +204,28 @@ img#profile-picture {
 
 .hidden1{
     display: none;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.button-top{
+    margin-top: 20px;
+}
+
+input, select, textarea {
+    max-width: 500px;
+}
+
+textarea#Description {
+    width: 500px;
+    height: 500px;
+    max-height: 500px;
+}
+
+.settings-buttons{
+    margin-top: 10px;
 }

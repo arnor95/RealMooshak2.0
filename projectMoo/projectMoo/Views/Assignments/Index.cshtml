@@ -31,16 +31,19 @@
             }
         </ul>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-7">
         @foreach (var assignment in Model.Assignments)
         {
             <div class="hidden" id="@assignment.Title">
                 <h2>@assignment.Title</h2>
                 <p>@assignment.Description</p>
+                <p class="pull-right"><strong>Grade:</strong> 8</p>
             </div>
         }
     </div>
 </div>
+
+@Scripts.Render("~/Scripts/AssignmentsScript.js")
 
 
 
