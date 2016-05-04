@@ -229,3 +229,9 @@ textarea#Description {
 .settings-buttons{
     margin-top: 10px;
 }
+
+#footer{
+    width: 92%;
+    position:fixed;
+    bottom:0;
+}
