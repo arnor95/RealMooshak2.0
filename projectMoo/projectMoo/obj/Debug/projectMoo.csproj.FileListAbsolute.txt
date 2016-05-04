@@ -571,3 +571,4 @@ C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Micro
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.dll
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.pdb
+C:\Users\Hjalti Steinar\Documents\Git\RealMooshak2.0\projectMoo\projectMoo\obj\Debug\projectMoo.csprojResolveAssemblyReference.cache
