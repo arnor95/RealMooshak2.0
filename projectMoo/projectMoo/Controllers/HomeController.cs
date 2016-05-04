@@ -5,6 +5,7 @@ using projectMoo.Models.ViewModels;
 using projectMoo.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,6 +29,16 @@ namespace projectMoo.Controllers
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
             model.Courses = _courseService.getCoursesForUser(userID);
             model.Phone = _userService.getUserPhone(userID);
+            var picID = _userService.getUserPic(userID);
+
+            if (picID != null)
+            {
+                model.PicID = picID;
+            }
+            else
+            {
+                model.PicID = "profile.png";
+            }
 
             SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
 
@@ -39,6 +50,26 @@ namespace projectMoo.Controllers
             }
             */
             return View(model);
+        }
+
+        public ActionResult UploadPic()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadPic(HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                // extract only the filename
+                var fileExtension = Path.GetExtension(file.FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/Images/Profile/"), User.Identity.GetUserId() + fileExtension);
+                file.SaveAs(path);
+            }
+            // redirect back to the index action to show the form once again
+            return RedirectToAction("Index");
         }
     }
 }

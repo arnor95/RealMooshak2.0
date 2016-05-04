@@ -32,5 +32,14 @@ namespace projectMoo.Services
 
             return userInfo.Phone;
         }
+
+        public string getUserPic(string userID)
+        {
+            var picID = (from info in _db.UserInfoes
+                         where info.UserID == userID
+                         select info).SingleOrDefault();
+
+            return picID.PicID;
+        }
     }
 }

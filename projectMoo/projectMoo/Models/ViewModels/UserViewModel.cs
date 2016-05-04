@@ -9,6 +9,7 @@ namespace projectMoo.Models.ViewModels
     {
         public string Name { get; set; }
         public int Phone { get; set; }
+        public string PicID { get; set; }
         public List<CourseViewModel> Courses { get; set; }
         public List<AssignmentViewModel> Assignments { get; set; }
     }

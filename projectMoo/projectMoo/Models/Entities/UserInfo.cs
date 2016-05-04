@@ -11,5 +11,6 @@ namespace projectMoo.Models.Entities
         public string UserID { get; set; }
         public string Name { get; set; }
         public int Phone { get; set; }
+        public string PicID { get; set; }
     }
 }
