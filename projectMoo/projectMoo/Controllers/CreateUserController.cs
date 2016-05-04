@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using projectMoo.Models;
+using projectMoo.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +16,43 @@ namespace projectMoo.Controllers
         // GET: CreateUser
         public ActionResult Index()
         {
-            /*
-            var user = new ApplicationUser { UserName = "hjalti15@ru.is", Email = "hjalti15@ru.is" };
-            Microsoft.AspNet.Identity.UserManage;
-           */
+           
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult NewUser()
+        {
+            return View(new NewUserViewModel());
+        }
+
+        [HttpPost]
+        public async System.Threading.Tasks.Task<ActionResult> NewUser(NewUserViewModel data)
+        {
+            if (ModelState.IsValid)
+            {
+                ApplicationUserManager manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+                var user = new ApplicationUser { UserName = data.Email, Email = data.Email };
+                var result = await manager.CreateAsync(user, data.Password);
+                if (result.Succeeded)
+                {
+                    if(data.Role == "Admin" || data.Role == "Teacher"|| data.Role == "Student")
+                    {
+                        var roleresult = manager.AddToRole(user.Id, data.Role);
+                    }
+
+                    return RedirectToAction("Index");
+
+                }
+                else
+                {
+                    //whoops error;
+                }
+
+            }
+
+            return View(data);
         }
     }
 }
