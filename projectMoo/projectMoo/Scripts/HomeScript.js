@@ -108,4 +108,4 @@
     }
 };
 
-$('#items').pageMe({ pagerSelector: '#myPager', childSelector: 'tr', showPrevNext: true, hidePageNumbers: false, perPage: 5 });
+$('#items').pageMe({ pagerSelector: '#myPager', childSelector: 'tr', showPrevNext: true, hidePageNumbers: false, perPage: 10 });
