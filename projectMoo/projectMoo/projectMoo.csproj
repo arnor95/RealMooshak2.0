@@ -209,6 +209,7 @@
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
     <Compile Include="Models\Entities\SessionCourse.cs" />
+    <Compile Include="Models\ViewModels\Success.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />
     <Compile Include="Models\Entities\UserInfo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -295,6 +296,7 @@
     <Content Include="Views\CreateUser\Index.cshtml" />
     <Content Include="Views\CreateUser\NewUser.cshtml" />
     <Content Include="Views\Home\UploadPic.cshtml" />
+    <Content Include="Views\Success\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

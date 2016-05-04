@@ -1,0 +1,12 @@
+﻿@model projectMoo.Models.Entities.Success
+
+@{
+    ViewBag.Title = "Success";
+}
+
+
+    <div class="form-horizontal center">
+    <h2>@Model.Title</h2>
+    <h4>@Model.Description </h4>
+    @Html.ActionLink(Model.ActionTitle, Model.ActionPath, null, new { @class = "btn btn-primary" })
+    </div>

@@ -86,6 +86,11 @@ namespace projectMoo
             }
             return manager;
         }
+
+        internal string[] GetRoles()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     // Configure the application sign-in manager which is used in this application.

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using projectMoo.Models;
+using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace projectMoo.Controllers
 {
     public class CreateUserController : Controller
     {
+        private ApplicationUserManager manager;
+
         // GET: CreateUser
         public ActionResult Index()
         {
@@ -20,10 +23,39 @@ namespace projectMoo.Controllers
             return View();
         }
 
+        public ActionResult UserCreated()
+        {
+            Success success = new Success();
+            success.Title = "Success";
+            success.Description = @"A news user was creted.";
+            success.ActionTitle = "Create another user";
+            success.ActionPath = @"NewUser";
+
+            return View("~/Views/Success/Success.cshtml",success);
+        }
+
         [HttpGet]
         public ActionResult NewUser()
         {
-            return View(new NewUserViewModel());
+            NewUserViewModel model = new NewUserViewModel();
+
+            List<SelectListItem> roles = new List<SelectListItem>();
+
+            string[] systemRoles = new[] { "Admin", @"Teacher", @"Student" };
+
+            foreach (string s in systemRoles)
+            {
+                roles.Add(new SelectListItem
+                {
+                    Text = s,
+                    Value = s
+                
+                });
+            }
+
+            ViewData["Roles"] = roles;
+
+            return View(model);
         }
 
         [HttpPost]
@@ -31,18 +63,16 @@ namespace projectMoo.Controllers
         {
             if (ModelState.IsValid)
             {
-                ApplicationUserManager manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-
+                manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                
                 var user = new ApplicationUser { UserName = data.Email, Email = data.Email };
                 var result = await manager.CreateAsync(user, data.Password);
-                if (result.Succeeded)
-                {
-                    if(data.Role == "Admin" || data.Role == "Teacher"|| data.Role == "Student")
-                    {
-                        var roleresult = manager.AddToRole(user.Id, data.Role);
-                    }
 
-                    return RedirectToAction("Index");
+                if (result.Succeeded)
+                { 
+                    var roleresult = manager.AddToRole(user.Id, data.Role);
+                  
+                    return RedirectToAction("UserCreated");
 
                 }
                 else
@@ -54,5 +84,9 @@ namespace projectMoo.Controllers
 
             return View(data);
         }
+
+      
     }
+
+   
 }
