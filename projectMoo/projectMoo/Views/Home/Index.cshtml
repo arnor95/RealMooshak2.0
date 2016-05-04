@@ -24,7 +24,7 @@
                 <li class="list-group-item text-muted">Courses<i class="fa fa-dashboard fa-1x"></i></li>
                 @foreach (var item in Model.Courses)
                 {
-                    <li class="list-group-item text-center">@Html.ActionLink(@item.Title, "Index", "Assignments")</li>
+                    <li class="list-group-item text-left">@Html.ActionLink(@item.Title, "Index", "Assignments")</li>
                 }
             </ul>
 
