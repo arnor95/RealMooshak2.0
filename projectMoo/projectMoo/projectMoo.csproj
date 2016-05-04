@@ -294,9 +294,11 @@
     <Content Include="Views\Assignments\CreateAssignment.cshtml" />
     <Content Include="Views\CreateUser\Index.cshtml" />
     <Content Include="Views\CreateUser\NewUser.cshtml" />
+    <Content Include="Views\Home\UploadPic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
