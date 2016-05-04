@@ -31,13 +31,13 @@ namespace projectMoo.Controllers
             model.Phone = _userService.getUserPhone(userID);
             var picID = _userService.getUserPic(userID);
 
-            if (picID != null)
+            if (picID != null || picID != "")
             {
-                model.PicID = picID;
+                model.PicID = /*"~/Images/Profile/" + */picID;
             }
             else
             {
-                model.PicID = "profile.png";
+                model.PicID = /*"~/Images/Profile/*/"profile.png";
             }
 
             SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
