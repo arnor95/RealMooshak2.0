@@ -26,6 +26,8 @@ namespace projectMoo.Models
         public DbSet<Course>                Courses                 { get; set; }
         public DbSet<UserCourse>            UserCourses             { get; set; }
         public DbSet<UserInfo>              UserInfoes              { get; set; }
+        public DbSet<UserGroup>             UserGroups              { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

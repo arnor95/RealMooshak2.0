@@ -1,4 +1,5 @@
 ﻿using projectMoo.Models;
+using projectMoo.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,18 @@ namespace projectMoo.Services
                          select info).SingleOrDefault();
 
             return picID.PicID;
+        }
+
+        public void AddUserToGroup(string userId, string Group)
+        {
+            //Saves userId to a specific group
+
+            UserGroup g = new UserGroup();
+            g.GroupName = Group;
+            g.UserID = userId;
+
+            _db.UserGroups.Add(g);
+            _db.SaveChanges();
         }
     }
 }

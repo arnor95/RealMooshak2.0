@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.Owin;
 using projectMoo.Models;
 using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
+using projectMoo.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace projectMoo.Controllers
     public class CreateUserController : Controller
     {
         private ApplicationUserManager manager;
+        private UserService userService = new UserService();
 
         // GET: CreateUser
         public ActionResult Index()
@@ -40,8 +42,10 @@ namespace projectMoo.Controllers
             NewUserViewModel model = new NewUserViewModel();
 
             List<SelectListItem> roles = new List<SelectListItem>();
+            List<SelectListItem> groups = new List<SelectListItem>();
 
             string[] systemRoles = new[] { "Admin", @"Teacher", @"Student" };
+            string[] systemGroups = new[] { "1st year students", @"2nd year students", @"3rd year students" };
 
             foreach (string s in systemRoles)
             {
@@ -54,6 +58,19 @@ namespace projectMoo.Controllers
             }
 
             ViewData["Roles"] = roles;
+
+
+            foreach (string s in systemGroups)
+            {
+                groups.Add(new SelectListItem
+                {
+                    Text = s,
+                    Value = s
+
+                });
+            }
+
+            ViewData["Groups"] = groups;
 
             return View(model);
         }
@@ -71,7 +88,7 @@ namespace projectMoo.Controllers
                 if (result.Succeeded)
                 { 
                     var roleresult = manager.AddToRole(user.Id, data.Role);
-                  
+                    userService.AddUserToGroup(user.Id, data.Group);
                     return RedirectToAction("UserCreated");
 
                 }
