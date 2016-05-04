@@ -225,3 +225,7 @@ textarea#Description {
     height: 500px;
     max-height: 500px;
 }
+
+.settings-buttons{
+    margin-top: 10px;
+}
