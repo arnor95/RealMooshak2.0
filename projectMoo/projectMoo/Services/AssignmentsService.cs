@@ -21,6 +21,15 @@ namespace projectMoo.Services
             _milestoneService = new MilestoneService();
         }
 
+        public DateTime getDateForAssignment(int assignmentID)
+        {
+            var dueDate = (from date in _db.Assignments
+                           where date.ID == assignmentID
+                           select date).SingleOrDefault();
+
+            return dueDate.DueDate;
+        }
+
         public List<AssignmentViewModel> GetAssignmentForUser(string userID)
         {
             List<AssignmentViewModel> returnList = new List<AssignmentViewModel>();
@@ -73,7 +82,8 @@ namespace projectMoo.Services
                     Title = assign.Title,
                     CourseTitle = _courseService.getCourseByID(assign.CourseID).Title.ToString(),
                     Description = assign.Description,
-                    Milestones = _milestoneService.getMilestonesForAssignment(assign.ID)
+                    Milestones = _milestoneService.getMilestonesForAssignment(assign.ID),
+                    DueDate = getDateForAssignment(assign.ID)
                 });
             }
 

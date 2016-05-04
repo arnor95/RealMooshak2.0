@@ -27,7 +27,7 @@
         <ul id="assignment-vertical-nav">
             @foreach (var assignment in Model.Assignments)
             {
-                <li><a class="assignment-li-a" id="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title</a></li>
+                <li><a class="assignment-li-a" id="assignment-li-a" data-type="@assignment.Title" href="#"> @assignment.Title @assignment.DueDate.ToShortDateString()</a></li>
             }
         </ul>
     </div>
@@ -37,6 +37,7 @@
             <div class="hidden" id="@assignment.Title">
                 <h2>@assignment.Title</h2>
                 <p>@assignment.Description</p>
+                <p>@assignment.DueDate</p>
                 <p class="pull-right"><strong>Grade:</strong> 8</p>
             </div>
         }
