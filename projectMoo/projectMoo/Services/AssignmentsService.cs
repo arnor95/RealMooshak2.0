@@ -81,6 +81,7 @@ namespace projectMoo.Services
                 {
                     Title = assign.Title,
                     CourseTitle = _courseService.getCourseByID(assign.CourseID).Title.ToString(),
+                    CourseID = CourseID,
                     Description = assign.Description,
                     Milestones = _milestoneService.getMilestonesForAssignment(assign.ID),
                     DueDate = getDateForAssignment(assign.ID)

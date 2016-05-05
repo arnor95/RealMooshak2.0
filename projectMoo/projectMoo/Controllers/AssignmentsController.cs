@@ -17,13 +17,13 @@ namespace projectMoo.Controllers
 
         [Authorize]
         // GET: Assignments
-        public ActionResult Index()
+        public ActionResult CourseAssignments(int ID)
         {
             System.Diagnostics.Debug.WriteLine("Index Assign");
             UserViewModel model = new UserViewModel();
-            model.Assignments = _assignmentService.GetAssignmentForUser(User.Identity.GetUserId());
+            model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
             model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
-            model.Name = SessionCourse.Instance.GetActiveCourse().Title;
+            model.Name = "Gagnaskipan";
             return View(model);
         }
 

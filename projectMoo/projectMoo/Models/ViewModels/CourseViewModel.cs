@@ -8,6 +8,7 @@ namespace projectMoo.Models.ViewModels
 {
     public class CourseViewModel
     {
+        public int CourseID { get; set; }
         public string Title { get; set; }
         public List<Assignment> Assignments { get; set; }
         public string Description { get; set; }

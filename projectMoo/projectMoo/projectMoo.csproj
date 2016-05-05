@@ -290,7 +290,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Assignments\Index.cshtml" />
+    <Content Include="Views\Assignments\CourseAssignments.cshtml" />
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\CreateCourse.cshtml" />
     <Content Include="Views\Assignments\CreateAssignment.cshtml" />
