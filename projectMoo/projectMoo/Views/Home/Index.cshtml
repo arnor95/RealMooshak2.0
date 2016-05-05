@@ -59,9 +59,9 @@
                             <tbody id="items">
                                 @foreach(var item in Model.Assignments)
                                 {
-                                    <tr>
+                                    <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'">
                                         <td>@item.Title</td>
-                                        <td>@Html.ActionLink(@item.CourseTitle, "CourseAssignments", "Assignments", new { ID = item.CourseID }, new { id = "nav-li" })</td>
+                                        <td>@item.CourseTitle</td>
                                         <td>8</td>
                                         <td>Accepted</td>
                                     </tr>
