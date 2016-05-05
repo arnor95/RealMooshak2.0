@@ -261,6 +261,7 @@
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
     <Compile Include="Models\Entities\SessionCourse.cs" />
+    <Compile Include="Models\Entities\Submissions.cs" />
     <Compile Include="Models\Entities\UserGroup.cs" />
     <Compile Include="Models\ViewModels\Success.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />

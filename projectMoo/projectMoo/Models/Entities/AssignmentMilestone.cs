@@ -9,7 +9,6 @@ namespace projectMoo.Models.Entities
     {
         public int ID { get; set; }
         public int AssignmentID { get; set; }
-        public string UserID { get; set; }
         public string Title { get; set; }
         public decimal Grade { get; set; }
         public string Description { get; set; }
