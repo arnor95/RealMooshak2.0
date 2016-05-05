@@ -250,3 +250,7 @@ textarea#Description {
     cursor: inherit;
     display: block;
 }
+
+li#profile-list:hover {
+    background-color: white;
+}

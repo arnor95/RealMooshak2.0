@@ -14,17 +14,17 @@
             <!--left col-->
 
             <ul class="list-group">
-                <li class="list-group-item text-muted">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span>@Model.Name</li> 
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span>@User.Identity.Name</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Phone</strong></span>@Model.Phone</li>
+                <li class="list-group-item text-muted" id="profile-list">Profile</li>
+                <li class="list-group-item text-right" id="profile-list"><span class="pull-left"><strong>Name</strong></span>@Model.Name</li> 
+                <li class="list-group-item text-right" id="profile-list"><span class="pull-left"><strong>Email</strong></span>@User.Identity.Name</li>
+                <li class="list-group-item text-right" id="profile-list"><span class="pull-left"><strong>Phone</strong></span>@Model.Phone</li>
             </ul>
 
             <ul class="list-group">
-                <li class="list-group-item text-muted">Courses<i class="fa fa-dashboard fa-1x"></i></li>
+                <li class="list-group-item text-muted" id="profile-list">Courses<i class="fa fa-dashboard fa-1x"></i></li>
                 @foreach (var item in Model.Courses)
                 {
-                    <li class="list-group-item text-left">@Html.ActionLink(@item.Title, "CourseAssignments", "Assignments", new { ID = item.CourseID }, new { id = "nav-li" })</li>
+                    <li onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="list-group-item text-left">@item.Title</li>
                 }
             </ul>
 
