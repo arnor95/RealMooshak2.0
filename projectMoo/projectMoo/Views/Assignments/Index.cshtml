@@ -24,10 +24,15 @@
 
 <div class="row">
     <div class="col-sm-3">
-        <ul id="assignment-vertical-nav">
+        <ul class="list-group">
             @foreach (var assignment in Model.Assignments)
             {
-                <li><a class="assignment-li-a" id="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title @assignment.DueDate.ToShortDateString()</a></li>
+                <li class="list-group-item">
+                <span class="badge">
+                @assignment.DueDate.ToShortDateString()
+                </span>
+                <a class="assignment-li-a" id="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title</a>
+                </li>
             }
         </ul>
     </div>

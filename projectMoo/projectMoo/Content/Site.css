@@ -185,18 +185,11 @@ img#profile-picture {
     background-color: #f1f1f1;
 }
 
-.assignment-li-a{
-    display: block;
-    color: #000;
-    padding: 8px 0 8px 16px;
-    text-decoration: none;
+.list-group-item:hover {
+    background-color: #f1f1f1;
 }
 
-#assignment-li-a:hover{
-    background-color: #555;
-    color: white;
-    text-decoration:none;
-}
+
 
 #dropdown {
     color: pink;
