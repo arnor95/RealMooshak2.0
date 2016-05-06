@@ -24,12 +24,13 @@ namespace projectMoo.Controllers
         {
             UserViewModel model = new UserViewModel();
             string userID = User.Identity.GetUserId();
+            UserInfo info = _userService.getInfoForUser(userID);
 
-            model.Name = _userService.getUserName(userID);
+            model.Name = info.Name;
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
             model.Courses = _courseService.getCoursesForUser(userID);
-            model.Phone = _userService.getUserPhone(userID);
-            var picID = _userService.getUserPic(userID);
+            model.Phone =info.Phone;
+            var picID = info.PicID;
 
             if (picID != null)
             {

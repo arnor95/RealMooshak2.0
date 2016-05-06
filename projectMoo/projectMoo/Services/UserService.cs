@@ -16,6 +16,15 @@ namespace projectMoo.Services
             _db = new ApplicationDbContext();
         }
 
+        public UserInfo getInfoForUser(string userID)
+        {
+            UserInfo info = (from user in _db.UserInfoes
+                             where user.UserID == userID
+                             select user).SingleOrDefault();
+            return info;
+
+        }
+
         public string getUserName(string userID)
         {
             var userInfo = (from user in _db.UserInfoes
