@@ -679,3 +679,28 @@ C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Math.xml
 C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Video.xml
 C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Vision.xml
 C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\ImageResizer.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Imaging.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.MachineLearning.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Math.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Statistics.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Vision.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Imaging.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Math.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Video.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Vision.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Eksponent.CropUp.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\ImageResizer.dll
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Imaging.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.MachineLearning.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Math.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Statistics.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Vision.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Imaging.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Math.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Video.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Vision.xml
+C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\ImageResizer.xml
