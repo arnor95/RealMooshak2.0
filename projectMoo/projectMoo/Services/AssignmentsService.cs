@@ -21,7 +21,7 @@ namespace projectMoo.Services
             _milestoneService = new MilestoneService();
         }
 
-        public DateTime getDateForAssignment(int assignmentID)
+       /* public DateTime getDateForAssignment(int assignmentID)
         {
             var dueDate = (from date in _db.Assignments
                            where date.ID == assignmentID
@@ -29,6 +29,7 @@ namespace projectMoo.Services
 
             return dueDate.DueDate;
         }
+        */
 
         public List<AssignmentViewModel> GetAssignmentForUser(string userID)
         {
@@ -84,7 +85,7 @@ namespace projectMoo.Services
                     CourseID = CourseID,
                     Description = assign.Description,
                     Milestones = _milestoneService.getMilestonesForAssignment(assign.ID),
-                    DueDate = getDateForAssignment(assign.ID)
+                    DueDate = assign.DueDate
                 });
             }
 
