@@ -254,6 +254,9 @@ li#profile-list:hover {
     background-color: white;
 }
 
+.coursetable {
+    margin-top: 10px;
+}
 .center-text{
     text-align:center;
     color: cornflowerblue;
