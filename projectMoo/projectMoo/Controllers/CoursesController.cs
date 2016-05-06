@@ -44,16 +44,16 @@ namespace projectMoo.Controllers
             {
                 if (manager.IsInRole(user.Id, "Student"))
                 {
-                    students.Add(new UserRole { Username = user.UserName, Roles = "Student" });
+                    students.Add(new UserRole() { Username = user.UserName, Roles = "Student", UserId = user.Id, Selected = false });
 
                 }
                 else if (manager.IsInRole(user.Id, "Teacher"))
                 {
-                    teachers.Add(new UserRole { Username = user.UserName, Roles = "Teacher" });
+                    teachers.Add(new UserRole() { Username = user.UserName, Roles = "Teacher" , UserId = user.Id, Selected = false});
 
                 }
             }
-            AddCourseViewModel model = new AddCourseViewModel { Students = students, Teachers = teachers, course = new Course()};
+            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course()};
 
             return View(model);
         }
@@ -67,6 +67,31 @@ namespace projectMoo.Controllers
                 Course c = new Course();
                 c = data.course;
                 _courseService.addNewCourse(c);
+
+                foreach(UserRole user in data.Students)
+                {
+                    if (user.Selected)
+                    {
+                        _courseService.AddUserToCourse(user.UserId, c.ID);
+                    }
+                }
+
+                foreach (UserRole user in data.Teachers)
+                {
+                    if (user.Selected)
+                    {
+                        _courseService.AddUserToCourse(user.UserId, c.ID);
+                    }
+                }
+
+                _courseService.SaveToDataBase();
+
+                foreach (UserRole user in data.Teachers)
+                {
+                    //TODO add the teacher to this course
+                }
+
+                //TODO: connect the selected teachers/students to the course
 
                 return RedirectToAction("Index");
             }

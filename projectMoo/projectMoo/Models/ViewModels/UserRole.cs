@@ -9,6 +9,7 @@ namespace projectMoo.Models.ViewModels
     {
         public string Username { get; set; }
         public string Roles { get; set; }
+        public string UserId { get; set; }
         public bool Selected { get; set; }
 
     }
