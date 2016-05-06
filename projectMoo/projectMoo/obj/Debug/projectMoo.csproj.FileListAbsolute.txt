@@ -1,4 +1,4 @@
-c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\ApplicationInsights.config
+﻿c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\ApplicationInsights.config
 c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\csc.exe
 c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 c:\users\gunnar bjornsson\documents\visual studio 2015\Projects\projectMooSolution\projectMoo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -679,7 +679,6 @@ C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Math.xml
 C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Video.xml
 C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Vision.xml
 C:\Users\sverr_000\RealMooshak2.0\projectMoo\projectMoo\bin\ImageResizer.xml
-<<<<<<< HEAD
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.dll
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Imaging.dll
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.MachineLearning.dll
@@ -705,7 +704,6 @@ C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForg
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Video.xml
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Vision.xml
 C:\Users\Gunnar Bjornsson\Desktop\RealMooshak2.0\projectMoo\projectMoo\bin\ImageResizer.xml
-=======
 C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.dll
 C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.Imaging.dll
 C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\Accord.MachineLearning.dll
@@ -731,4 +729,4 @@ C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\AFo
 C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Video.xml
 C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\AForge.Vision.xml
 C:\Users\Arnór Gíslason\Documents\RealMooshak2.0\projectMoo\projectMoo\bin\ImageResizer.xml
->>>>>>> a194eb82e0c76805309fe2c70d2c14264a73f8ea
+
