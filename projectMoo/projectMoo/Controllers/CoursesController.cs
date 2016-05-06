@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using projectMoo.Models;
 using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using projectMoo.Services;
@@ -14,6 +16,7 @@ namespace projectMoo.Controllers
     {
 
         private CoursesService _courseService = new CoursesService();
+        private ApplicationUserManager manager;
 
         [Authorize]
         // GET: Courses
@@ -28,18 +31,67 @@ namespace projectMoo.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult CreateCourse()
         {
-            return View(new Course());
+
+        ApplicationDbContext context = new ApplicationDbContext();
+
+            var allusers = context.Users.ToList();
+            manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            List<UserRole> students = new List<UserRole>();
+            List<UserRole> teachers = new List<UserRole>();
+
+            foreach (var user in allusers)
+            {
+                if (manager.IsInRole(user.Id, "Student"))
+                {
+                    students.Add(new UserRole() { Username = user.UserName, Roles = "Student", UserId = user.Id, Selected = false });
+
+                }
+                else if (manager.IsInRole(user.Id, "Teacher"))
+                {
+                    teachers.Add(new UserRole() { Username = user.UserName, Roles = "Teacher" , UserId = user.Id, Selected = false});
+
+                }
+            }
+            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course()};
+
+            return View(model);
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public ActionResult CreateCourse(Course data)
+        public ActionResult CreateCourse(AddCourseViewModel data)
         {
             if (ModelState.IsValid)
             {
                 Course c = new Course();
-                UpdateModel(c);
+                c = data.course;
                 _courseService.addNewCourse(c);
+
+                foreach(UserRole user in data.Students)
+                {
+                    if (user.Selected)
+                    {
+                        _courseService.AddUserToCourse(user.UserId, c.ID);
+                    }
+                }
+
+                foreach (UserRole user in data.Teachers)
+                {
+                    if (user.Selected)
+                    {
+                        _courseService.AddUserToCourse(user.UserId, c.ID);
+                    }
+                }
+
+                _courseService.SaveToDataBase();
+
+                foreach (UserRole user in data.Teachers)
+                {
+                    //TODO add the teacher to this course
+                }
+
+                //TODO: connect the selected teachers/students to the course
 
                 return RedirectToAction("Index");
             }

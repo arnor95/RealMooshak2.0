@@ -1,39 +1,96 @@
-﻿@model projectMoo.Models.Entities.Course
+﻿@model projectMoo.Models.ViewModels.AddCourseViewModel
 
 <div class="button-top">
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal center">
-        <h4>Course</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-5">
+            <div class="form-horizontal">
+                <h4 class="center-text">New Course</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.course.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => Model.course.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.course.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.course.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.course.Description, new { @class = "form-control", @rows = 7, @cols = 10 })
+                        @Html.ValidationMessageFor(model => model.course.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.course.BeginDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.course.BeginDate, new { id = "due_date", htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.course.BeginDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.course.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.course.EndDate, new { id = "due_date", htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.course.EndDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 ">
+                        <input type="submit" value="Create" class="btn btn-pri" />
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", id = "description-area" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <div class="col-md-4">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                <div class="form-horizontal">
+                    <h4 class="center-text">Add Teachers</h4>
+                    <table class="table">
+
+                        @foreach (var teacher in Model.Teachers)
+                        {
+                            <tr>
+                                <td>@teacher.Username</td>
+                                <td>@Html.CheckBoxFor(mo => teacher.Selected, new { @checked = "checked" })</td>
+                            </tr>
+                        }
+                    </table>
+
+                </div>
+
+
+                <div class="form-horizontal">
+                    <h4 class="center-text">Add Students</h4>
+                    <hr />
+                    <table class="table">
+
+                        @foreach (var student in Model.Students)
+                        {
+                            <tr>
+                                <td>@student.Username</td>
+                                <td>@Html.CheckBoxFor(Model => student.Selected, new { @checked = "checked" })</td>
+
+                            </tr>
+
+                        }
+                    </table>
+                </div>
+
         </div>
-    </div>
-}
+    }
 
 

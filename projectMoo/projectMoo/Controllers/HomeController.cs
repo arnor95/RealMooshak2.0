@@ -24,12 +24,13 @@ namespace projectMoo.Controllers
         {
             UserViewModel model = new UserViewModel();
             string userID = User.Identity.GetUserId();
+            UserInfo info = _userService.getInfoForUser(userID);
 
-            model.Name = _userService.getUserName(userID);
+            model.Name = info.Name;
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
             model.Courses = _courseService.getCoursesForUser(userID);
-            model.Phone = _userService.getUserPhone(userID);
-            var picID = _userService.getUserPic(userID);
+            model.Phone =info.Phone;
+            var picID = info.PicID;
 
             if (picID != null)
             {
@@ -70,11 +71,7 @@ namespace projectMoo.Controllers
                 var path = Path.Combine(Server.MapPath("~/Images/Profile/"), fileName);
                 file.SaveAs(path);
 
-                ImageResizer.ImageJob i = new ImageResizer.ImageJob(file, "~/Images/Profile/<guid>.<ext>", new ImageResizer.ResizeSettings(
-                 "width=2000;height=2000;format=jpg;mode=max"));
-                i.CreateParentDirectory = true; //Auto-create the uploads directory.
-                i.Build();
-
+               
             }
             // redirect back to the index action to show the form once again
             return RedirectToAction("Index");

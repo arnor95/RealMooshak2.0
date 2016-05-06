@@ -27,6 +27,16 @@ namespace projectMoo.Services
             return courses;
         }
 
+        public void AddUserToCourse(string userID , int courseID)
+        {
+            _db.UserCourses.Add(new UserCourse() { UserID = userID, CourseID = courseID });
+        }
+
+        public void SaveToDataBase()
+        {
+            _db.SaveChanges();
+        }
+
         public List<CourseViewModel> getCoursesForUser(string userId)
         {
             var links = (from courseRelation in _db.UserCourses
@@ -55,7 +65,9 @@ namespace projectMoo.Services
                     CourseID = c.ID,
                     Title = c.Title,
                     Description = c.Description,
-                    Assignments = null
+                    Assignments = null,
+                    BeginDate = c.BeginDate,
+                    EndDate = c.EndDate
                 });
             }
 
