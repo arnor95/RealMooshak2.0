@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models;
 using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using projectMoo.Services;
@@ -28,7 +29,21 @@ namespace projectMoo.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult CreateCourse()
         {
-            return View(new Course());
+
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            var allusers = context.Users.ToList();
+            var students = allusers.Where(x => x.Roles.Select(role => role.RoleId).Equals("2")).ToList();
+            System.Diagnostics.Debug.WriteLine("students " + students);
+
+            var userVM = students.Select(user => new UserRole { Username = user.Email, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+
+            var teachers = allusers.Where(x => x.Roles.Select(role => role.RoleId).Equals("3")).ToList();
+            var adminsVM = teachers.Select(user => new UserRole { Username = user.Email, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+
+            AddCourseViewModel model = new AddCourseViewModel { Students = userVM, Teachers = adminsVM, course = new Course()};
+
+            return View(model);
         }
 
         [Authorize(Roles = "Admin")]
