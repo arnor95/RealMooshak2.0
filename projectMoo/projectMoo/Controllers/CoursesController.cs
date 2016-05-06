@@ -60,12 +60,12 @@ namespace projectMoo.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public ActionResult CreateCourse(Course data)
+        public ActionResult CreateCourse(AddCourseViewModel data)
         {
             if (ModelState.IsValid)
             {
                 Course c = new Course();
-                UpdateModel(c);
+                c = data.course;
                 _courseService.addNewCourse(c);
 
                 return RedirectToAction("Index");

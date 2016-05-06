@@ -46,13 +46,12 @@ textarea {
 .form-horizontal{
 
     background-color:white;
-   
     margin-top: 75px;
-    padding: 20px;
+    padding: 10px;
     border:0.25px solid;
     border-color: cornflowerblue;
     border-radius: 4px;
-    width:700px;
+    width: 100%;
    
 }
 
@@ -253,4 +252,9 @@ textarea#Description {
 
 li#profile-list:hover {
     background-color: white;
+}
+
+.center-text{
+    text-align:center;
+    color: cornflowerblue;
 }
