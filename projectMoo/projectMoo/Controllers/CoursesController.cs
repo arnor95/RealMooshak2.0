@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using projectMoo.Models;
 using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
@@ -15,6 +16,7 @@ namespace projectMoo.Controllers
     {
 
         private CoursesService _courseService = new CoursesService();
+        private ApplicationUserManager manager;
 
         [Authorize]
         // GET: Courses
@@ -30,18 +32,28 @@ namespace projectMoo.Controllers
         public ActionResult CreateCourse()
         {
 
-            ApplicationDbContext context = new ApplicationDbContext();
+        ApplicationDbContext context = new ApplicationDbContext();
 
             var allusers = context.Users.ToList();
-            var students = allusers.Where(x => x.Roles.Select(role => role.RoleId).Equals("2")).ToList();
-            System.Diagnostics.Debug.WriteLine("students " + students);
+            manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
-            var userVM = students.Select(user => new UserRole { Username = user.Email, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+            List<UserRole> students = new List<UserRole>();
+            List<UserRole> teachers = new List<UserRole>();
 
-            var teachers = allusers.Where(x => x.Roles.Select(role => role.RoleId).Equals("3")).ToList();
-            var adminsVM = teachers.Select(user => new UserRole { Username = user.Email, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+            foreach (var user in allusers)
+            {
+                if (manager.IsInRole(user.Id, "Student"))
+                {
+                    students.Add(new UserRole { Username = user.UserName, Roles = "Student" });
 
-            AddCourseViewModel model = new AddCourseViewModel { Students = userVM, Teachers = adminsVM, course = new Course()};
+                }
+                else if (manager.IsInRole(user.Id, "Teacher"))
+                {
+                    teachers.Add(new UserRole { Username = user.UserName, Roles = "Teacher" });
+
+                }
+            }
+            AddCourseViewModel model = new AddCourseViewModel { Students = students, Teachers = teachers, course = new Course()};
 
             return View(model);
         }

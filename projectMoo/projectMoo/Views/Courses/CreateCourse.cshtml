@@ -45,15 +45,15 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
         <div class="form-horizontal center">
-            <h4> Teachers</h4>
-            <hr />
-            <table class="table table-hover">
+            <h4>Add Teachers</h4>
+            <table class="table">
+               
                 @foreach (var teacher in Model.Teachers)
                 {
                     <tr>
                         <td>@teacher.Username</td>
+                        <td>@Html.CheckBoxFor(Model => teacher.Selected, new { @checked = "checked" })</td>   
                     </tr>
                 }
             </table>
@@ -65,16 +65,19 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
         <div class="form-horizontal center">
-            <h4>Students</h4>
+            <h4>Add Students</h4>
             <hr />
-            <table class="table table-hover">
+            <table class="table">
+              
                 @foreach (var student in Model.Students)
                 {
                     <tr>
                         <td>@student.Username</td>
+                        <td>@Html.CheckBoxFor(Model => student.Selected, new { @checked = "checked" })</td>
+
                     </tr>
+                   
                 }
             </table>
         </div>
