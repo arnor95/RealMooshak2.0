@@ -5,7 +5,7 @@ using System.Web;
 
 namespace projectMoo.Models.Entities
 {
-    public class Submissions
+    public class Submission
     {
         public int ID { get; set; }
         public int UserID { get; set; }
