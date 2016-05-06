@@ -104,11 +104,11 @@ a#nav-li:visited {
 }
 
 a#nav-li:hover {
-    color: cornflowerblue;
+    color: #f5f5f5;
 }
 
 a#nav-li:active {
-    color: cornflowerblue;
+    color: #f5f5f5;
 }
 
 /* Logo */

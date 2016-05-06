@@ -55,7 +55,9 @@ namespace projectMoo.Services
                     CourseID = c.ID,
                     Title = c.Title,
                     Description = c.Description,
-                    Assignments = null
+                    Assignments = null,
+                    BeginDate = c.BeginDate,
+                    EndDate = c.EndDate
                 });
             }
 

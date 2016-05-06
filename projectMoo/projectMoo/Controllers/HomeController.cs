@@ -70,11 +70,7 @@ namespace projectMoo.Controllers
                 var path = Path.Combine(Server.MapPath("~/Images/Profile/"), fileName);
                 file.SaveAs(path);
 
-                ImageResizer.ImageJob i = new ImageResizer.ImageJob(file, "~/Images/Profile/<guid>.<ext>", new ImageResizer.ResizeSettings(
-                 "width=2000;height=2000;format=jpg;mode=max"));
-                i.CreateParentDirectory = true; //Auto-create the uploads directory.
-                i.Build();
-
+               
             }
             // redirect back to the index action to show the form once again
             return RedirectToAction("Index");
