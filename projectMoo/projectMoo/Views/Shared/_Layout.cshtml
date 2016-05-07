@@ -29,9 +29,34 @@
                     <li>@Html.ActionLink("Courses", "Index", "Courses", null, new { id = "nav-li" })</li>
                 </ul>
 
-                @Html.ActionLink("Create Assignment", "CreateAssignment", "Assignments", null, new { @class = "btn btn-primary create-object" })
-                @Html.ActionLink("Create Course", "CreateCourse", "Courses", null, new { @class = "btn btn-primary create-object" })
-                @Html.ActionLink("Create User", "NewUser", "CreateUser", null, new { @class = "btn btn-primary create-object" })
+                <div class="btn-group create-object">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Create Actions
+                    </button>
+                    <div class="dropdown-menu">
+                        @Html.ActionLink("Create Assignment", "CreateAssignment", "Assignments", null, new { @class = "create" })
+                        <div class="dropdown-divider"></div>
+                        @Html.ActionLink("Create Course", "CreateCourse", "Courses", null, new { @class = "create" })
+                        <div class="dropdown-divider"></div>
+                        @Html.ActionLink("Create User", "NewUser", "CreateUser", null, new { @class = "create" })
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </div>
+
+                <div class="btn-group create-object">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Delete Actions
+                    </button>
+                    <div class="dropdown-menu">
+                        @Html.ActionLink("Delete Assignment", "DeleteAssignment", "Assignments", null, new { @class = "create" })
+                        <div class="dropdown-divider"></div>
+                        @Html.ActionLink("Delete Course", "DeleteCourse", "Courses", null, new { @class = "create" })
+                        <div class="dropdown-divider"></div>
+                        @Html.ActionLink("Delete User", "DeleteUser", "CreateUser", null, new { @class = "create" })
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </div>
+
 
                 @Html.Partial("_LoginPartial")
             </div>

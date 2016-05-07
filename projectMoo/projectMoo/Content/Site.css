@@ -282,6 +282,11 @@ li#profile-list:hover {
     text-align:center;
     color: cornflowerblue;
 }
+
+center-text-delete{
+    text-align:center;
+    color: indianred;
+}
 .pull-element-right{
     float:right;
     position:relative;
@@ -297,6 +302,18 @@ li#profile-list:hover {
     color: cornflowerblue;
     text-align:center;
 }
+
+.delete{
+   background-color:white;
+    margin-top: 40px;
+    padding: 10px;
+    border:0.25px solid;
+    border-color: indianred;
+    border-radius: 4px;
+    height: 270px;
+    width: 600px;
+} 
+
 
 .SmallText{
     color: lightgray;

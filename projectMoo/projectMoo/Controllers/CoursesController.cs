@@ -112,5 +112,16 @@ namespace projectMoo.Controllers
 
             return View(data);
         }
+
+        public ActionResult DeleteCourse()
+        {
+            return View(new DeleteCourseViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteCourse(DeleteCourseViewModel model)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

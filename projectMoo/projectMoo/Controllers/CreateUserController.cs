@@ -104,7 +104,17 @@ namespace projectMoo.Controllers
             return View(data);
         }
 
-      
+        public ActionResult DeleteUser()
+        {
+            return View(new DeleteUserViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteUser(DeleteUserViewModel model)
+        {
+            return RedirectToAction("Index");
+        }
+
     }
 
    
