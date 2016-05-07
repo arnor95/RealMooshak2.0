@@ -38,6 +38,10 @@
         </ul>
     </div>
     <div class="col-sm-7">
+        <div class="Empty">
+            <h3>No Assigment Selected :(</h3>
+            <p class="SmallText">Select an assignment from the list on the left.</p>
+        </div>
         @foreach (var assignment in Model.Assignments)
         {
             <div class="hidden" id="@assignment.Title">
