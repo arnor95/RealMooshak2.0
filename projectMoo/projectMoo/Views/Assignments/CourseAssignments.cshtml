@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <p>@milestone.Description</p>
-                            <p>Percentge:@milestone.Percentage%</p>
+                            <p>Percentage: @milestone.Percentage%</p>
                             <p>Status: Incomplete</p>
                             @using (Html.BeginForm("UploadMilestone", "Assignments", new { ID = milestone.MilestoneID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
                             {
