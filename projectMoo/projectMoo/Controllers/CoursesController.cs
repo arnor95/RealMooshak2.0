@@ -36,6 +36,7 @@ namespace projectMoo.Controllers
 
             var allusers = context.Users.ToList();
             manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            string[] systemGroups = new[] {"None" ,"1st year students","2nd year students", "3rd year students" };
 
             List<UserRole> students = new List<UserRole>();
             List<UserRole> teachers = new List<UserRole>();
@@ -53,7 +54,19 @@ namespace projectMoo.Controllers
 
                 }
             }
-            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course()};
+            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course(), Group = "None"};
+            List<SelectListItem> groups = new List<SelectListItem>();
+            foreach (string s in systemGroups)
+            {
+                groups.Add(new SelectListItem
+                {
+                    Text = s,
+                    Value = s
+
+                });
+            }
+
+            ViewData["Groups"] = groups;
 
             return View(model);
         }

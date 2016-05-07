@@ -47,7 +47,7 @@ namespace projectMoo.Controllers
             List<SelectListItem> groups = new List<SelectListItem>();
 
             string[] systemRoles = new[] { "Admin", @"Teacher", @"Student" };
-            string[] systemGroups = new[] { "1st year students", @"2nd year students", @"3rd year students" };
+            string[] systemGroups = new[] {"None", "1st year students", @"2nd year students", @"3rd year students" };
 
             foreach (string s in systemRoles)
             {
