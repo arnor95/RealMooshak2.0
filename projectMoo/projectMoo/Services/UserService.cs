@@ -4,13 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
 
 namespace projectMoo.Services
 {
     public class UserService
     {
         private ApplicationDbContext _db;
-
+        
         public UserService()
         {
             _db = new ApplicationDbContext();
@@ -62,6 +64,26 @@ namespace projectMoo.Services
 
             _db.UserGroups.Add(g);
             _db.SaveChanges();
+        }
+
+
+        public async void DeleteUserByEmail(string Email, UserManager<ApplicationUser> manager)
+        {
+           
+            var user = await manager.FindByEmailAsync(Email);
+            var rolesForUser = await manager.GetRolesAsync(user.Id);
+
+            if (rolesForUser.Count() > 0)
+            {
+                foreach (var item in rolesForUser.ToList())
+                {
+                    // item should be the name of the role
+                    var result = await manager.RemoveFromRoleAsync(user.Id, item);
+                }
+            }
+
+            await manager.DeleteAsync(user);
+
         }
     }
 }

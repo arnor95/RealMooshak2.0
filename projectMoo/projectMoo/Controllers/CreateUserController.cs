@@ -38,6 +38,18 @@ namespace projectMoo.Controllers
             return View("~/Views/Success/Success.cshtml",success);
         }
 
+        public ActionResult UserDeleted()
+        {
+            Success success = new Success();
+            success.Title = "Success";
+            success.Description = @"The user has been deleted.";
+            success.ActionTitle = "Delete another user";
+            success.ActionPath = @"DeleteUser";
+
+            return View("~/Views/Success/Success.cshtml", success);
+        }
+
+
         [HttpGet]
         public ActionResult NewUser()
         {
@@ -110,9 +122,28 @@ namespace projectMoo.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteUser(DeleteUserViewModel model)
+        public async System.Threading.Tasks.Task<ActionResult> DeleteUser(DeleteUserViewModel model)
         {
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (model.userEmail != null)
+                {
+                    manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                    var user = await manager.FindByEmailAsync(model.userEmail);
+                    var rolesForUser = await manager.GetRolesAsync(user.Id);
+
+                    if (rolesForUser.Count() > 0)
+                    {
+                        foreach (var roleName in rolesForUser.ToList())
+                        {
+                            var result = await manager.RemoveFromRoleAsync(user.Id, roleName);
+                        }
+                    }
+
+                    await manager.DeleteAsync(user);
+                }
+            }
+            return RedirectToAction("UserDeleted");
         }
 
     }
