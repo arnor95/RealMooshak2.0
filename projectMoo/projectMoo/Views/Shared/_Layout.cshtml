@@ -27,10 +27,12 @@
                 <ul class="nav navbar-nav li-nav">
                     <li>@Html.ActionLink("My page", "Index", "Home", null, new { id = "nav-li" })</li>
                     <li>@Html.ActionLink("Courses", "Index", "Courses", null, new { id = "nav-li" })</li>
-                    <li>@Html.ActionLink("Create Course", "CreateCourse", "Courses", null, new { id = "nav-li" })</li>
-                    <li>@Html.ActionLink("Create Assignment", "CreateAssignment", "Assignments", null, new { id = "nav-li" })</li>
-                    <li>@Html.ActionLink("Create User", "NewUser", "CreateUser", null, new { id = "nav-li" })</li>
                 </ul>
+
+                @Html.ActionLink("Create Assignment", "CreateAssignment", "Assignments", null, new { @class = "btn btn-primary create-object" })
+                @Html.ActionLink("Create Course", "CreateCourse", "Courses", null, new { @class = "btn btn-primary create-object" })
+                @Html.ActionLink("Create User", "NewUser", "CreateUser", null, new { @class = "btn btn-primary create-object" })
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
