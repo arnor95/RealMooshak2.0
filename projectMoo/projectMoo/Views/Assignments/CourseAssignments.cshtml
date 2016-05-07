@@ -41,13 +41,31 @@
         @foreach (var assignment in Model.Assignments)
         {
             <div class="hidden" id="@assignment.Title">
-                <h2>@assignment.Title</h2>
-                <p>@assignment.Description</p>
-                <p>@assignment.DueDate</p>
-                <span class="btn btn-default btn-file">
-                    Browse file<input type="file" />
-                </span>
-                <p class="pull-right"><strong>Grade:</strong> 8</p>
+                <div class="Assinment">
+                    <h2>@assignment.Title</h2>
+                    <p>@assignment.Description</p>
+                    <p class="badge">@assignment.DueDate.ToShortDateString()e</p>
+                    <p class="pull-element-right"><strong>Grade:</strong> 8</p>
+                </div>
+
+
+                    @foreach (var milestone in assignment.Milestones)
+                    {
+                        <div class="Milestone">
+                            <h2>@milestone.Title</h2>
+                            <p>@milestone.Description</p>
+                            <p>Percentge:@milestone.Percentage%</p>
+                            <p>Status: Incomplete</p>
+                            <span class="btn btn-default btn-file">
+                                Add file<input type="file" />
+                            </span>
+                            <span>
+                               <button class="btn btn-success">Submit</button>
+                            </span>
+                            <p class="pull-right"><strong>Grade:</strong> @milestone.Grade</p>
+                        </div>
+
+                    }
             </div>
         }
     </div>

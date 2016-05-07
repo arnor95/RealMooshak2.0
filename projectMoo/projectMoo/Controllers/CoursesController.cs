@@ -81,6 +81,11 @@ namespace projectMoo.Controllers
                 c = data.course;
                 _courseService.addNewCourse(c);
 
+                if(data.Group == "None" && data.Group != null)
+                {
+                    //TODO save this course for all people in the selected group
+                }
+
                 foreach(UserRole user in data.Students)
                 {
                     if (user.Selected)
@@ -99,10 +104,6 @@ namespace projectMoo.Controllers
 
                 _courseService.SaveToDataBase();
 
-                foreach (UserRole user in data.Teachers)
-                {
-                    //TODO add the teacher to this course
-                }
 
                 //TODO: connect the selected teachers/students to the course
 

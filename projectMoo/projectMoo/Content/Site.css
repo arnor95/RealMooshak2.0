@@ -46,12 +46,32 @@ textarea {
 .form-horizontal{
 
     background-color:white;
-    margin-top: 75px;
+    margin-top: 40px;
     padding: 10px;
     border:0.25px solid;
     border-color: cornflowerblue;
     border-radius: 4px;
-    width: 100%;
+   
+}
+
+.Assinment{
+
+    background-color:white;
+    margin: 10px;
+    padding: 10px;
+    border:0.5px solid;
+    border-color: cornflowerblue;
+    border-radius: 4px;
+}
+
+.Milestone{
+
+    background-color:white;
+    margin: 10px;
+    padding: 10px;
+    border:0.15px solid;
+    border-color: lightgray;
+    border-radius: 4px;
    
 }
 
@@ -260,4 +280,8 @@ li#profile-list:hover {
 .center-text{
     text-align:center;
     color: cornflowerblue;
+}
+.pull-element-right{
+    float:right;
+    position:relative;
 }
