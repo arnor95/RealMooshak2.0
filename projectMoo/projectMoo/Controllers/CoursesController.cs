@@ -54,7 +54,7 @@ namespace projectMoo.Controllers
 
                 }
             }
-            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course(), Group = "None"};
+            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course()};
             List<SelectListItem> groups = new List<SelectListItem>();
             foreach (string s in systemGroups)
             {
@@ -73,32 +73,31 @@ namespace projectMoo.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public ActionResult CreateCourse(AddCourseViewModel data)
+        public ActionResult CreateCourse(AddCourseViewModel addCourseViewModel)
         {
             if (ModelState.IsValid)
             {
-                Course c = new Course();
-                c = data.course;
-                _courseService.addNewCourse(c);
+               
+                _courseService.addNewCourse(addCourseViewModel.course);
 
-                if(data.Group == "None" && data.Group != null)
+                if(!(addCourseViewModel.course.Group == "None") && addCourseViewModel.course.Group != null)
                 {
                     //TODO save this course for all people in the selected group
                 }
 
-                foreach(UserRole user in data.Students)
+                foreach(UserRole user in addCourseViewModel.Students)
                 {
                     if (user.Selected)
                     {
-                        _courseService.AddUserToCourse(user.UserId, c.ID);
+                        _courseService.AddUserToCourse(user.UserId, addCourseViewModel.course.ID);
                     }
                 }
 
-                foreach (UserRole user in data.Teachers)
+                foreach (UserRole user in addCourseViewModel.Teachers)
                 {
                     if (user.Selected)
                     {
-                        _courseService.AddUserToCourse(user.UserId, c.ID);
+                        _courseService.AddUserToCourse(user.UserId, addCourseViewModel.course.ID);
                     }
                 }
 
@@ -110,7 +109,7 @@ namespace projectMoo.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(data);
+            return View(addCourseViewModel);
         }
 
         public ActionResult DeleteCourse()

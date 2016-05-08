@@ -15,6 +15,8 @@ namespace projectMoo.Models.Entities
         public string Description { get; set; }
         public DateTime BeginDate { get; set; }
         public DateTime EndDate { get; set; }
+        public string Group { get; set; }
+
 
         // TODO: Begin and end date
     }
