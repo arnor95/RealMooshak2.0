@@ -60,12 +60,13 @@
                             <p>@milestone.Description</p>
                             <p>Percentge:@milestone.Percentage%</p>
                             <p>Status: Incomplete</p>
-                            <span class="btn btn-default btn-file">
-                                Add file<input type="file" />
-                            </span>
-                            <span>
-                               <button class="btn btn-success">Submit</button>
-                            </span>
+                            @using (Html.BeginForm("UploadMilestone", "Assignments", new { ID = milestone.MilestoneID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <span class="btn btn-default btn-file">
+                                    Add File<input type="file" name="file" />
+                                </span>
+                                <input type="submit" value="OK" class="btn btn-primary" />
+                            }
                             <p class="pull-right"><strong>Grade:</strong> @milestone.Grade</p>
                         </div>
 

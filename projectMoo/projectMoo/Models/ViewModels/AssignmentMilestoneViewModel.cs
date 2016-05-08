@@ -7,6 +7,7 @@ namespace projectMoo.Models.ViewModels
 {
     public class AssignmentMilestoneViewModel
     {
+        public int MilestoneID { get; set; }
         public string Title { get; set; }
         public decimal Grade { get; set; }
         public string Description { get; set; }
