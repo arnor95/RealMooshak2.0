@@ -28,12 +28,14 @@
         <ul class="list-group">
             @foreach (var assignment in Model.Assignments)
             {
-                <li class="list-group-item">
-                <span class="badge">
-                @assignment.DueDate.ToShortDateString()
-                </span>
-                <a class="assignment-li-a" id="assignment-li-a" data-type="@assignment.Title" href="#">@assignment.Title</a>
+                <li id="assignment-li-a" data-type="@assignment.Title" href="#" class="list-group-item text-left cursor-change assignment-li-a">
+                    @assignment.Title
+                    <span class="badge">
+                        @assignment.DueDate.ToShortDateString()
+                    </span>
                 </li>
+
+ 
             }
         </ul>
     </div>
