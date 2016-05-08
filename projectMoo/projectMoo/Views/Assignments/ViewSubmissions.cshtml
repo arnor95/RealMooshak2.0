@@ -1,0 +1,23 @@
+﻿@model projectMoo.Models.ViewModels.SubmissionViewModel
+
+<div class="coursetable">
+    <table class="table table-hover courses">
+        <thead>
+            <tr>
+                <th>Milestone Title</th>
+                <th>State</th>
+                <th>File</th>
+            </tr>
+        </thead>
+        @foreach (var submission in Model.Submissions)
+        {
+            <tr class="cursor-change">
+                <td class="lead">@Model.Milestone.Title</td>
+                <td>@submission.State</td>
+                <td>@submission.FileID</td>
+            </tr>
+
+
+        }
+    </table>
+</div>
