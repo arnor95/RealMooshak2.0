@@ -124,6 +124,7 @@ namespace projectMoo.Controllers
         [HttpPost]
         public ActionResult DeleteCourse(DeleteCourseViewModel model)
         {
+
             return RedirectToAction("Index");
         }
     }

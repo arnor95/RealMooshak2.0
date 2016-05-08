@@ -36,6 +36,39 @@ namespace projectMoo.Services
             return userInfo.Name;
         }
 
+        public void DeleteConnectionsToUser(string userID)
+        {
+            var userGroups = _db.UserGroups.Where(a => a.UserID == userID).ToList();
+            foreach (var connection in userGroups)
+            {
+                _db.UserGroups.Remove(connection);
+
+            }
+
+            var userCourses = _db.UserCourses.Where(a => a.UserID == userID).ToList();
+            foreach (var connection in userCourses)
+            {
+                _db.UserCourses.Remove(connection);
+
+            }
+
+            var userInfo = _db.UserInfoes.Where(a => a.UserID == userID).ToList();
+            foreach (var connection in userInfo)
+            {
+                _db.UserInfoes.Remove(connection);
+
+            }
+
+            var userSubmissions = _db.Submissions.Where(a => a.UserID == userID).ToList();
+            foreach (var connection in userSubmissions)
+            {
+                _db.Submissions.Remove(connection);
+
+            }
+
+            _db.SaveChanges();
+        }
+
         public int getUserPhone(string userID)
         {
             var userInfo = (from user in _db.UserInfoes

@@ -130,6 +130,9 @@ namespace projectMoo.Controllers
                 {
                     manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
                     var user = await manager.FindByEmailAsync(model.userEmail);
+
+                    userService.DeleteConnectionsToUser(user.Id);
+
                     var rolesForUser = await manager.GetRolesAsync(user.Id);
 
                     if (rolesForUser.Count() > 0)
@@ -141,9 +144,13 @@ namespace projectMoo.Controllers
                     }
 
                     await manager.DeleteAsync(user);
+                    return RedirectToAction("UserDeleted");
+
                 }
             }
-            return RedirectToAction("UserDeleted");
+
+            return View("Error");
+
         }
 
     }
