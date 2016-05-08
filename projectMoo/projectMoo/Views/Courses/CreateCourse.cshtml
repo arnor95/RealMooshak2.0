@@ -73,7 +73,7 @@
                         {
                             <tr>
                                 <td>@Model.Teachers[i].Username</td>
-                                <td>@Html.CheckBoxFor(mo => @Model.Teachers[i].Selected, new { @checked = "checked" })</td>
+                                <td>@Html.CheckBoxFor(mo => @Model.Teachers[i].Selected, new { @checked = "checked" ,@class = "checkbox-custom" })</td>
                                 @Html.HiddenFor(x => x.Teachers[i].UserId)
 
 
@@ -95,7 +95,7 @@
                         {
                             <tr>
                                 <td>@Model.Students[i].Username</td>
-                                <td>@Html.CheckBoxFor(mo => @Model.Students[i].Selected, new { @checked = "checked" })</td>
+                                <td>@Html.CheckBoxFor(mo => @Model.Students[i].Selected, new { @checked = "checked", @class = "checkbox-custom" })</td>
                                 @Html.HiddenFor(x => x.Students[i].UserId)
 
 
