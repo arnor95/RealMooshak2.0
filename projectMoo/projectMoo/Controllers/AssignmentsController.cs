@@ -64,5 +64,15 @@ namespace projectMoo.Controllers
 
             return View(a);
         }
+
+        public ActionResult DeleteAssignment()
+        {
+            return View(new DeleteAssignment());
+        }
+
+        public ActionResult DeleteCourse(DeleteCourseViewModel model)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

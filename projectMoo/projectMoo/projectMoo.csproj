@@ -264,6 +264,9 @@
     <Compile Include="Models\Entities\Submission.cs" />
     <Compile Include="Models\Entities\UserGroup.cs" />
     <Compile Include="Models\ViewModels\AddCourseViewModel.cs" />
+    <Compile Include="Models\ViewModels\DeleteAssignment.cs" />
+    <Compile Include="Models\ViewModels\DeleteCourseViewModel.cs" />
+    <Compile Include="Models\ViewModels\DeleteUserViewModel.cs" />
     <Compile Include="Models\ViewModels\Success.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />
     <Compile Include="Models\Entities\UserInfo.cs" />
@@ -353,6 +356,9 @@
     <Content Include="Views\CreateUser\NewUser.cshtml" />
     <Content Include="Views\Home\UploadPic.cshtml" />
     <Content Include="Views\Success\Success.cshtml" />
+    <Content Include="Views\Courses\DeleteCourse.cshtml" />
+    <Content Include="Views\Assignments\DeleteAssignment.cshtml" />
+    <Content Include="Views\CreateUser\DeleteUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

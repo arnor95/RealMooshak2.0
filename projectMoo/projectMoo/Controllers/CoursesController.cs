@@ -36,6 +36,7 @@ namespace projectMoo.Controllers
 
             var allusers = context.Users.ToList();
             manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            string[] systemGroups = new[] {"None" ,"1st year students","2nd year students", "3rd year students" };
 
             List<UserRole> students = new List<UserRole>();
             List<UserRole> teachers = new List<UserRole>();
@@ -53,7 +54,19 @@ namespace projectMoo.Controllers
 
                 }
             }
-            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course()};
+            AddCourseViewModel model = new AddCourseViewModel() { Students = students, Teachers = teachers, course = new Course(), Group = "None"};
+            List<SelectListItem> groups = new List<SelectListItem>();
+            foreach (string s in systemGroups)
+            {
+                groups.Add(new SelectListItem
+                {
+                    Text = s,
+                    Value = s
+
+                });
+            }
+
+            ViewData["Groups"] = groups;
 
             return View(model);
         }
@@ -67,6 +80,11 @@ namespace projectMoo.Controllers
                 Course c = new Course();
                 c = data.course;
                 _courseService.addNewCourse(c);
+
+                if(data.Group == "None" && data.Group != null)
+                {
+                    //TODO save this course for all people in the selected group
+                }
 
                 foreach(UserRole user in data.Students)
                 {
@@ -86,10 +104,6 @@ namespace projectMoo.Controllers
 
                 _courseService.SaveToDataBase();
 
-                foreach (UserRole user in data.Teachers)
-                {
-                    //TODO add the teacher to this course
-                }
 
                 //TODO: connect the selected teachers/students to the course
 
@@ -97,6 +111,17 @@ namespace projectMoo.Controllers
             }
 
             return View(data);
+        }
+
+        public ActionResult DeleteCourse()
+        {
+            return View(new DeleteCourseViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteCourse(DeleteCourseViewModel model)
+        {
+            return RedirectToAction("Index");
         }
     }
 }

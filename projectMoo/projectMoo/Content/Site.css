@@ -46,12 +46,32 @@ textarea {
 .form-horizontal{
 
     background-color:white;
-    margin-top: 75px;
+    margin-top: 40px;
     padding: 10px;
     border:0.25px solid;
     border-color: cornflowerblue;
     border-radius: 4px;
-    width: 100%;
+   
+}
+
+.Assinment{
+
+    background-color:white;
+    margin: 10px;
+    padding: 10px;
+    border:0.5px solid;
+    border-color: cornflowerblue;
+    border-radius: 4px;
+}
+
+.Milestone{
+
+    background-color:white;
+    margin: 10px;
+    padding: 10px;
+    border:0.15px solid;
+    border-color: lightgray;
+    border-radius: 4px;
    
 }
 
@@ -185,7 +205,8 @@ img#profile-picture {
 }
 
 .list-group-item:hover {
-    background-color: #f1f1f1;
+   background-color: #f1f1f1;
+   cursor:pointer;
 }
 
 
@@ -260,4 +281,54 @@ li#profile-list:hover {
 .center-text{
     text-align:center;
     color: cornflowerblue;
+}
+
+center-text-delete{
+    text-align:center;
+    color: indianred;
+}
+.pull-element-right{
+    float:right;
+    position:relative;
+}
+
+.Empty{
+    margin-left: 30px;
+    padding:15px;
+    align-content:center;
+    border:0.25px solid;
+    border-color: lightgray;
+    border-radius: 4px;
+    color: cornflowerblue;
+    text-align:center;
+}
+
+.delete{
+   background-color:white;
+    margin-top: 40px;
+    padding: 10px;
+    border:0.25px solid;
+    border-color: indianred;
+    border-radius: 4px;
+    height: 270px;
+    width: 600px;
+} 
+
+
+.SmallText{
+    color: lightgray;
+}
+
+.create-object{
+    margin-top:12px;
+    margin-left: 3px;
+}
+
+.courses{
+    margin-top: 25px;
+    margin-right:40px;
+    margin-bottom:25px;
+    border:0.25px solid;
+    border-color: lightgray;
+    border-radius: 4px;
 }

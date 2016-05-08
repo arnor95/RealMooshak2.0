@@ -3,4 +3,5 @@
 
     var type = $(this).attr('data-type');
     $("#" + type).removeClass("hidden").siblings("div").addClass("hidden");
+    $(".Empty").addClass("hidden");
 });

@@ -38,6 +38,18 @@ namespace projectMoo.Controllers
             return View("~/Views/Success/Success.cshtml",success);
         }
 
+        public ActionResult UserDeleted()
+        {
+            Success success = new Success();
+            success.Title = "Success";
+            success.Description = @"The user has been deleted.";
+            success.ActionTitle = "Delete another user";
+            success.ActionPath = @"DeleteUser";
+
+            return View("~/Views/Success/Success.cshtml", success);
+        }
+
+
         [HttpGet]
         public ActionResult NewUser()
         {
@@ -47,7 +59,7 @@ namespace projectMoo.Controllers
             List<SelectListItem> groups = new List<SelectListItem>();
 
             string[] systemRoles = new[] { "Admin", @"Teacher", @"Student" };
-            string[] systemGroups = new[] { "1st year students", @"2nd year students", @"3rd year students" };
+            string[] systemGroups = new[] {"None", "1st year students", @"2nd year students", @"3rd year students" };
 
             foreach (string s in systemRoles)
             {
@@ -104,7 +116,36 @@ namespace projectMoo.Controllers
             return View(data);
         }
 
-      
+        public ActionResult DeleteUser()
+        {
+            return View(new DeleteUserViewModel());
+        }
+
+        [HttpPost]
+        public async System.Threading.Tasks.Task<ActionResult> DeleteUser(DeleteUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.userEmail != null)
+                {
+                    manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                    var user = await manager.FindByEmailAsync(model.userEmail);
+                    var rolesForUser = await manager.GetRolesAsync(user.Id);
+
+                    if (rolesForUser.Count() > 0)
+                    {
+                        foreach (var roleName in rolesForUser.ToList())
+                        {
+                            var result = await manager.RemoveFromRoleAsync(user.Id, roleName);
+                        }
+                    }
+
+                    await manager.DeleteAsync(user);
+                }
+            }
+            return RedirectToAction("UserDeleted");
+        }
+
     }
 
    
