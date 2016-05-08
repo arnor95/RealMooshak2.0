@@ -261,12 +261,13 @@
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
     <Compile Include="Models\Entities\SessionCourse.cs" />
-    <Compile Include="Models\Entities\Submissions.cs" />
+    <Compile Include="Models\Entities\Submission.cs" />
     <Compile Include="Models\Entities\UserGroup.cs" />
     <Compile Include="Models\ViewModels\AddCourseViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteAssignment.cs" />
     <Compile Include="Models\ViewModels\DeleteCourseViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteUserViewModel.cs" />
+    <Compile Include="Models\ViewModels\SubmissionViewModel.cs" />
     <Compile Include="Models\ViewModels\Success.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />
     <Compile Include="Models\Entities\UserInfo.cs" />
@@ -282,6 +283,7 @@
     <Compile Include="Services\AssignmentsService.cs" />
     <Compile Include="Services\CoursesService.cs" />
     <Compile Include="Services\MilestoneService.cs" />
+    <Compile Include="Services\SubmissionService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -358,9 +360,11 @@
     <Content Include="Views\Courses\DeleteCourse.cshtml" />
     <Content Include="Views\Assignments\DeleteAssignment.cshtml" />
     <Content Include="Views\CreateUser\DeleteUser.cshtml" />
+    <Content Include="Views\Assignments\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Code\" />
     <Folder Include="Images\Profile\" />
   </ItemGroup>
   <ItemGroup>

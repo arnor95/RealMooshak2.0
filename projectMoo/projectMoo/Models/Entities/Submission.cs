@@ -5,10 +5,10 @@ using System.Web;
 
 namespace projectMoo.Models.Entities
 {
-    public class Submissions
+    public class Submission
     {
         public int ID { get; set; }
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public int MilestoneID { get; set; }
         public bool State { get; set; }
         public string FileID { get; set; }

@@ -31,6 +31,7 @@ namespace projectMoo.Services
             {
                 returnMilestones.Add(new AssignmentMilestoneViewModel
                 {
+                    MilestoneID = m.ID,
                     Title = m.Title,
                     Description = m.Description,
                     Grade = m.Grade,

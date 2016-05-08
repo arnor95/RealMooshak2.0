@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models;
 using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using projectMoo.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +14,7 @@ namespace projectMoo.Controllers
 {
     public class AssignmentsController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         private AssignmentsService _assignmentService = new AssignmentsService();
         private CoursesService _courseService = new CoursesService();
 
@@ -73,6 +76,44 @@ namespace projectMoo.Controllers
         public ActionResult DeleteCourse(DeleteCourseViewModel model)
         {
             return RedirectToAction("Index");
+        }
+
+        public ActionResult UploadMilestone()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadMilestone(HttpPostedFileBase file, int ID)
+        {
+            string extension = Path.GetExtension(file.FileName);
+
+            if (extension != ".cpp")
+            {
+                return View("Error");
+            }
+
+            if (file != null && file.ContentLength > 0)
+            {
+                string userID = User.Identity.GetUserId();
+                Guid fileID = Guid.NewGuid();
+                var fileName = fileID + extension;
+
+                Submission newSubmission = new Submission();
+                newSubmission.MilestoneID = ID;
+                newSubmission.UserID = userID;
+                newSubmission.FileID = fileName;
+
+                _db.Submissions.Add(newSubmission);
+                _db.SaveChanges();
+                    
+               
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/Code/"), fileName);
+                file.SaveAs(path);
+            }
+
+            return View("Result");
         }
     }
 }
