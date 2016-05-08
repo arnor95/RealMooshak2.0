@@ -37,6 +37,19 @@ namespace projectMoo.Services
             _db.SaveChanges();
         }
 
+        public void AddUsersBasedOnGroup(string groupName, int courseID)
+        {
+            List<UserGroup> usersInGroup = (from userGroup in _db.UserGroups
+                                           where  userGroup.GroupName == groupName
+                                           select userGroup).ToList();
+
+            foreach (UserGroup g in usersInGroup)
+            {
+                AddUserToCourse(g.UserID, courseID);
+            }
+
+        }
+
         public List<CourseViewModel> getCoursesForUser(string userId)
         {
             var links = (from courseRelation in _db.UserCourses

@@ -83,9 +83,14 @@ namespace projectMoo.Controllers
                 if(!(addCourseViewModel.course.Group == "None") && addCourseViewModel.course.Group != null)
                 {
                     //TODO save this course for all people in the selected group
+                    _courseService.AddUsersBasedOnGroup(addCourseViewModel.course.Group, addCourseViewModel.course.ID);
+                    _courseService.SaveToDataBase();
+
+                    return RedirectToAction("Index");
+
                 }
 
-                foreach(UserRole user in addCourseViewModel.Students)
+                foreach (UserRole user in addCourseViewModel.Students)
                 {
                     if (user.Selected)
                     {
@@ -104,7 +109,6 @@ namespace projectMoo.Controllers
                 _courseService.SaveToDataBase();
 
 
-                //TODO: connect the selected teachers/students to the course
 
                 return RedirectToAction("Index");
             }
