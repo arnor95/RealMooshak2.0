@@ -41,7 +41,7 @@ namespace projectMoo.Controllers
                 model.PicID = "profile.png";
             }
 
-            SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
+            //SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
             
             return View(model);
         }
