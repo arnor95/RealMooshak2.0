@@ -86,11 +86,18 @@ namespace projectMoo.Controllers
         [HttpPost]
         public ActionResult UploadMilestone(HttpPostedFileBase file, int ID)
         {
+            string extension = Path.GetExtension(file.FileName);
+
+            if (extension != ".cpp")
+            {
+                return View("Error");
+            }
+
             if (file != null && file.ContentLength > 0)
             {
                 string userID = User.Identity.GetUserId();
                 Guid fileID = Guid.NewGuid();
-                var fileName = fileID + Path.GetExtension(file.FileName);
+                var fileName = fileID + extension;
 
                 Submission newSubmission = new Submission();
                 newSubmission.MilestoneID = ID;
