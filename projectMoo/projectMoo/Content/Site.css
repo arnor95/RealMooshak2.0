@@ -206,7 +206,7 @@ img#profile-picture {
 
 .list-group-item:hover {
    background-color: #f1f1f1;
-   cursor:pointer;
+   
 }
 
 
@@ -331,4 +331,8 @@ center-text-delete{
     border:0.25px solid;
     border-color: lightgray;
     border-radius: 4px;
+}
+
+.cursor-change:hover{
+    cursor:pointer;
 }

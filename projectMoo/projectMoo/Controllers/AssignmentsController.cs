@@ -26,7 +26,7 @@ namespace projectMoo.Controllers
             UserViewModel model = new UserViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
             model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
-            model.Name = "Gagnaskipan";
+            model.Name = model.Courses.FirstOrDefault().Title;
             return View(model);
         }
 

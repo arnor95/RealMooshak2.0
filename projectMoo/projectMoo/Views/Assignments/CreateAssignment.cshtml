@@ -1,6 +1,6 @@
 ﻿@model projectMoo.Models.Entities.Assignment
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
@@ -15,7 +15,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CourseID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CourseID, ViewData["Courses"] as List<SelectListItem>, new { @class = "form-control"  })
+                @Html.DropDownListFor(model => model.CourseID, ViewData["Courses"] as List<SelectListItem>, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -47,7 +47,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DueDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DueDate, new { id = "due_date", @class = "form-control "  })
+                @Html.EditorFor(model => model.DueDate, new { htmlAttributes = new { @class = "form-control", id = "due_date" } })
                 @Html.ValidationMessageFor(model => model.DueDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -61,3 +61,4 @@
 }
 
 @Scripts.Render("~/Scripts/CreateAssignmentScript.js")
+@Scripts.Render("~/bundles/jqueryval")

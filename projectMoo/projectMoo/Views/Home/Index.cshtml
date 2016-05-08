@@ -24,7 +24,7 @@
                 <li class="list-group-item text-muted" id="profile-list">Courses<i class="fa fa-dashboard fa-1x"></i></li>
                 @foreach (var item in Model.Courses)
                 {
-                    <li onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="list-group-item text-left">@item.Title</li>
+                    <li onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="list-group-item text-left cursor-change">@item.Title</li>
                 }
             </ul>
 
@@ -59,7 +59,7 @@
                             <tbody id="items">
                                 @foreach(var item in Model.Assignments)
                                 {
-                                    <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'">
+                                    <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="cursor-change">
                                         <td>@item.Title</td>
                                         <td>@item.CourseTitle</td>
                                         <td>8</td>
