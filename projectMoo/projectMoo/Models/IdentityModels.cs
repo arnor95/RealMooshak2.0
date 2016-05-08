@@ -27,6 +27,7 @@ namespace projectMoo.Models
         public DbSet<UserCourse>            UserCourses             { get; set; }
         public DbSet<UserInfo>              UserInfoes              { get; set; }
         public DbSet<UserGroup>             UserGroups              { get; set; }
+        public DbSet<Submission>           Submissions             { get; set; }
 
 
         public ApplicationDbContext()

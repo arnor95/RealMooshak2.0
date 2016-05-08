@@ -70,8 +70,6 @@ namespace projectMoo.Controllers
                 // store the file inside ~/App_Data/uploads folder
                 var path = Path.Combine(Server.MapPath("~/Images/Profile/"), fileName);
                 file.SaveAs(path);
-
-               
             }
             // redirect back to the index action to show the form once again
             return RedirectToAction("Index");

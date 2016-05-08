@@ -47,10 +47,10 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Group, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.course.Group, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Group, ViewData["Groups"] as List<SelectListItem>, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Group, "", new { @class = "text-danger" })
+                        @Html.DropDownListFor(model => model.course.Group, ViewData["Groups"] as List<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.course.Group, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -69,13 +69,18 @@
                     <h4 class="center-text">Add Teachers</h4>
                     <table class="table">
 
-                        @foreach (var teacher in Model.Teachers)
+                        @for (var i = 0; i < Model.Teachers.Count; i++)
                         {
                             <tr>
-                                <td>@teacher.Username</td>
-                                <td>@Html.CheckBoxFor(mo => teacher.Selected, new { @checked = "checked" })</td>
+                                <td>@Model.Teachers[i].Username</td>
+                                <td>@Html.CheckBoxFor(mo => @Model.Teachers[i].Selected, new { @checked = "checked" })</td>
+                                @Html.HiddenFor(x => x.Teachers[i].UserId)
+
+
                             </tr>
                         }
+
+                      
                     </table>
 
                 </div>
@@ -86,14 +91,15 @@
                     <hr />
                     <table class="table">
 
-                        @foreach (var student in Model.Students)
+                        @for (var i = 0; i < Model.Students.Count; i++)
                         {
                             <tr>
-                                <td>@student.Username</td>
-                                <td>@Html.CheckBoxFor(Model => student.Selected, new { @checked = "checked" })</td>
+                                <td>@Model.Students[i].Username</td>
+                                <td>@Html.CheckBoxFor(mo => @Model.Students[i].Selected, new { @checked = "checked" })</td>
+                                @Html.HiddenFor(x => x.Students[i].UserId)
+
 
                             </tr>
-
                         }
                     </table>
                 </div>
