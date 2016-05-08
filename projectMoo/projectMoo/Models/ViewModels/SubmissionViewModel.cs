@@ -1,4 +1,5 @@
-﻿using projectMoo.Models.ViewModels;
+﻿using projectMoo.Models.Entities;
+using projectMoo.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,6 @@ namespace projectMoo.Models.ViewModels
     public class SubmissionViewModel
     {
         public AssignmentMilestoneViewModel Milestone { get; set; }
-        public int Percentage { get; set; }
-        public bool Status { get; set; }
-        public string Output { get; set; }
+        public List<Submission> Submissions { get; set; }
     }
 }

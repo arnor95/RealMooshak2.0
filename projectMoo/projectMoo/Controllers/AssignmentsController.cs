@@ -17,6 +17,8 @@ namespace projectMoo.Controllers
         private ApplicationDbContext _db = new ApplicationDbContext();
         private AssignmentsService _assignmentService = new AssignmentsService();
         private CoursesService _courseService = new CoursesService();
+        private MilestoneService _milestoneService = new MilestoneService();
+        private SubmissionService _submissionService = new SubmissionService();
 
         [Authorize]
         // GET: Assignments
@@ -114,6 +116,16 @@ namespace projectMoo.Controllers
             }
 
             return View("Result");
+        }
+
+        public ActionResult ViewSubmissions(int ID)
+        {
+            SubmissionViewModel model = new SubmissionViewModel();
+
+            model.Milestone = _milestoneService.getMilestoneByID(ID);
+            model.Submissions = _submissionService.getAllSubmissionsByMilestoneID(ID);
+
+            return View(model);
         }
     }
 }

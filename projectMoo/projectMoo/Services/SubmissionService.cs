@@ -21,5 +21,14 @@ namespace projectMoo.Services
             _db.Submissions.Add(data);
             _db.SaveChanges();
         }
+
+        public List<Submission> getAllSubmissionsByMilestoneID(int ID)
+        {
+            List<Submission> submissions = (from s in _db.Submissions
+                                            where s.MilestoneID == ID
+                                            select s).ToList();
+
+            return submissions;
+        }
     }
 }

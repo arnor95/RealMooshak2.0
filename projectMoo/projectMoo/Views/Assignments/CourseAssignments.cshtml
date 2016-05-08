@@ -50,7 +50,7 @@
                 <div class="Assinment">
                     <h2>@assignment.Title</h2>
                     <p>@assignment.Description</p>
-                    <p class="badge">@assignment.DueDate.ToShortDateString()e</p>
+                    <p class="badge">@assignment.DueDate.ToShortDateString()</p>
                     <p class="pull-element-right"><strong>Grade:</strong> 8</p>
                 </div>
 
@@ -58,7 +58,14 @@
                     @foreach (var milestone in assignment.Milestones)
                     {
                         <div class="Milestone">
-                            <h2>@milestone.Title</h2>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <h2>@milestone.Title</h2>
+                                </div>
+                                <div class="col-sm-2">
+                                    @Html.ActionLink("Submissions", "ViewSubmissions", "Assignments", new { ID = milestone.MilestoneID }, new { id = "nav-li" })
+                                </div>
+                            </div>
                             <p>@milestone.Description</p>
                             <p>Percentge:@milestone.Percentage%</p>
                             <p>Status: Incomplete</p>

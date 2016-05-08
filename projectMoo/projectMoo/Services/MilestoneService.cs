@@ -41,5 +41,21 @@ namespace projectMoo.Services
 
             return returnMilestones;
         }
+
+        public AssignmentMilestoneViewModel getMilestoneByID(int ID)
+        {
+            AssignmentMilestone milestone = (from m in _db.AssignmentMilestones
+                                             where m.ID == ID
+                                             select m).SingleOrDefault();
+
+            AssignmentMilestoneViewModel returnModel = new AssignmentMilestoneViewModel();
+            returnModel.Title = milestone.Title;
+            returnModel.Percentage = milestone.Percentage;
+            returnModel.Grade = milestone.Grade;
+            returnModel.Description = milestone.Description;
+            returnModel.MilestoneID = milestone.ID;
+
+            return returnModel;
+        }
     }
 }
