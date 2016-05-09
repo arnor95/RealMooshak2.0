@@ -50,10 +50,11 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th class="col-md-7">Assignments</th>
-                                    <th class="col-md-4">Course</th>
-                                    <th class="col-md-5">Grade</th>
-                                    <th class="col-md-3">Status</th>
+                                    <th class="col-md-4">Assignments</th>
+                                    <th class="col-md-3">Course</th>
+                                    <th class="col-md-2">Grade</th>
+                                    <th class="col-md-2">Status</th>
+                                    <th class="col-md-2">Due date</th>
                                 </tr>
                             </thead>
                             <tbody id="items">
@@ -66,6 +67,7 @@
                                         <td>@item.CourseTitle</td>
                                         <td>Not completed</td>
                                         <td>Not completed</td>
+                                        <td><strong>@item.DueDate.ToShortDateString()</strong></td>
                                     </tr>
                                     }
                                 }
@@ -85,10 +87,11 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th class="col-md-7">Assignments</th>
-                                    <th class="col-md-4">Course</th>
-                                    <th class="col-md-5">Grade</th>
-                                    <th class="col-md-3">Status</th>
+                                    <th class="col-md-4">Assignments</th>
+                                    <th class="col-md-3">Course</th>
+                                    <th class="col-md-2">Grade</th>
+                                    <th class="col-md-2">Status</th>
+                                    <th class="col-md-2">End date</th>
                                 </tr>
                             </thead>
                             <tbody id="items">
@@ -101,6 +104,7 @@
                                             <td>@item.CourseTitle</td>
                                             <td>9</td>
                                             <td>Accepted</td>
+                                            <td><strong>@item.DueDate.ToShortDateString()</strong></td>
                                         </tr>
                                     }
                                 }
