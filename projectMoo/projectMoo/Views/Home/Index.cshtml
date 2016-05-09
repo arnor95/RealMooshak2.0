@@ -4,9 +4,8 @@
     ViewBag.Title = "Home";
 }
 
-<hr>
-<div class="container">
-    <div class="row">
+<div class="container mypagediv">
+    <div class="row mypagediv2">
         <div class="col-sm-2"><a href="/Home/UploadPic" class="pull-left"><img id="profile-picture" title="profile image" class="img-circle img-responsive" src="~/Images/Profile/@Model.PicID"></a></div>
     </div>
     <div class="row">
@@ -95,43 +94,35 @@
                     </ul>
 
                 </div><!--/tab-pane-->
-                <div class="tab-pane" id="settings">
+                <div class="tab-pane settingsdiv" id="settings">
 
-
-                    <hr>
                     <form class="form" action="##" method="post" id="registrationForm">
 
                         <div class="form-group">
 
-                            <div class="col-xs-6">
-                                <label for="phone"><h4>Phone</h4></label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="mobile"><h4>Mobile</h4></label>
-                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
+                            <div>
                                 <label for="password"><h4>Password</h4></label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" title="enter your password.">
                             </div>
                         </div>
                         <div class="form-group">
 
-                            <div class="col-xs-6">
+                            <div>
                                 <label for="password2"><h4>Verify</h4></label>
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                                <input type="password" class="form-control" name="password2" id="password2" placeholder="Password again" title="enter your password2.">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
+
+                        <div>
+
+                            <div>
+                                <label for="phone"><h4>Phone</h4></label>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" title="enter your phone number if any.">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
                                 <br>
                                 <button class="btn btn-lg btn-success settings-buttons" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
                                 <button class="btn btn-lg settings-buttons" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>

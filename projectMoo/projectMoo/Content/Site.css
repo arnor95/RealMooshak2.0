@@ -357,3 +357,15 @@ center-text-delete{
     vertical-align: middle;
     cursor: pointer;
 }
+
+.mypagediv{
+    padding-top: 25px;
+}
+
+.mypagediv2{
+    margin-bottom: 20px;
+}
+
+.settingsdiv{
+    padding-top: 15px;
+}
