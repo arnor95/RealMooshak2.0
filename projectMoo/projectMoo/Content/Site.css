@@ -283,10 +283,10 @@ li#profile-list:hover {
     color: cornflowerblue;
 }
 
-center-text-delete{
-    text-align:center;
+.center-text-delete{
     color: indianred;
 }
+
 .pull-element-right{
     float:right;
     position:relative;
@@ -304,7 +304,7 @@ center-text-delete{
 }
 
 .delete{
-   background-color:white;
+    background-color:white;
     margin-top: 40px;
     padding: 10px;
     border:0.25px solid;
@@ -317,6 +317,7 @@ center-text-delete{
 
 .SmallText{
     color: lightgray;
+    padding-left: 15px;
 }
 
 .create-object{
