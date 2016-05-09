@@ -21,23 +21,30 @@ namespace projectMoo.Services
             _milestoneService = new MilestoneService();
         }
 
-       /* public DateTime getDateForAssignment(int assignmentID)
-        {
-            var dueDate = (from date in _db.Assignments
-                           where date.ID == assignmentID
-                           select date).SingleOrDefault();
+        /* public DateTime getDateForAssignment(int assignmentID)
+         {
+             var dueDate = (from date in _db.Assignments
+                            where date.ID == assignmentID
+                            select date).SingleOrDefault();
 
-            return dueDate.DueDate;
+             return dueDate.DueDate;
+         }
+         */
+
+        public List<Assignment>  GetAllAssignments()
+        {
+            var assignments = (from assignment in _db.Assignments
+                               select assignment).ToList();
+            return assignments;
         }
-        */
 
         public List<AssignmentViewModel> GetAssignmentForUser(string userID)
         {
             List<AssignmentViewModel> returnList = new List<AssignmentViewModel>();
 
             var links = (from courseRelation in _db.UserCourses
-                          where courseRelation.UserID == userID
-                          select courseRelation).ToList();
+                         where courseRelation.UserID == userID
+                         select courseRelation).ToList();
 
             List<Course> courses = new List<Course>();
 
@@ -62,8 +69,8 @@ namespace projectMoo.Services
         public List<AssignmentViewModel> GetAssignmentsInCourse(int CourseID)
         {
             var Assignments = (from assignment in _db.Assignments
-                              where assignment.CourseID == CourseID
-                              select assignment).ToList();
+                               where assignment.CourseID == CourseID
+                               select assignment).ToList();
 
 
 
@@ -73,7 +80,7 @@ namespace projectMoo.Services
             }
 
             List<AssignmentViewModel> listAssignments = new List<AssignmentViewModel>();
-            
+
             foreach (var assign in Assignments)
             {
                 System.Diagnostics.Debug.WriteLine(assign.CourseID);
@@ -117,7 +124,7 @@ namespace projectMoo.Services
                 Title = Assignment.Title,
                 //Milestones = milestones
             };
-            
+
             return viewModel;
         }
 
@@ -125,6 +132,43 @@ namespace projectMoo.Services
         {
             _db.Assignments.Add(a);
             _db.SaveChanges();
+        }
+
+        public void DeleteAssignmentWithName(string assignmentName)
+        {
+
+            var assignments = (from assignemt in _db.Assignments
+                               where assignemt.Title == assignmentName
+                               select assignemt).ToList();
+
+            if (assignments.Count == 0)
+                return;
+
+            foreach (var connection in assignments)
+            {
+                var milestones = (from milestone in _db.AssignmentMilestones
+                                  where milestone.AssignmentID == connection.ID
+                                  select milestone).ToList();
+
+
+
+                foreach (var milestoneConnection in milestones)
+                {
+                    var submissions = (from submission in _db.Submissions
+                                       where submission.MilestoneID == milestoneConnection.ID
+                                       select submission).ToList();
+
+                    foreach (var submissionConnection in submissions)
+                    {
+                        _db.Submissions.Remove(submissionConnection);
+                    }
+
+                    _db.AssignmentMilestones.Remove(milestoneConnection);
+                }
+
+                _db.Assignments.Remove(connection);
+
+            }
         }
     }
 }

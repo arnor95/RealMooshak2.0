@@ -113,5 +113,79 @@ namespace projectMoo.Services
             _db.Courses.Add(c);
             _db.SaveChanges();
         }
+
+      
+        public void DeleteCourseWithName(string courseName)
+        {
+
+            var courseToDelete = (from course in _db.Courses
+                                 where course.Title == courseName
+                                 select course).ToList();
+
+            if (courseToDelete.Count == 0)
+                return;
+
+
+            int courseId = courseToDelete.First().ID;
+
+            foreach (var connection in courseToDelete)
+            {
+                _db.Courses.Remove(connection);
+
+            }
+
+
+
+            var userCourses = (from course in _db.UserCourses
+                                  where course.CourseID == courseId
+                                  select course).ToList();
+
+            if (userCourses.Count == 0)
+                return;
+
+
+            foreach (var connection in userCourses)
+            {
+                _db.UserCourses.Remove(connection);
+
+            }
+
+
+            var assignments = (from assignemt in _db.Assignments
+                               where assignemt.CourseID == courseId
+                               select assignemt).ToList();
+
+            if (assignments.Count == 0)
+                return;
+
+            foreach (var connection in assignments)
+            {
+                var milestones = (from milestone in _db.AssignmentMilestones
+                                   where milestone.AssignmentID == connection.ID
+                                   select milestone).ToList();
+
+               
+
+                foreach (var milestoneConnection in milestones)
+                {
+                    var submissions = (from submission in _db.Submissions
+                                      where submission.MilestoneID == milestoneConnection.ID
+                                      select submission).ToList();
+
+                    foreach(var submissionConnection in submissions)
+                    {
+                        _db.Submissions.Remove(submissionConnection);
+                    }
+
+                    _db.AssignmentMilestones.Remove(milestoneConnection);
+                }
+
+                _db.Assignments.Remove(connection);
+
+            }
+
+
+
+        }
     }
 }

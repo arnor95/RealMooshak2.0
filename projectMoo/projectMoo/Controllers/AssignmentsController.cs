@@ -72,13 +72,25 @@ namespace projectMoo.Controllers
 
         public ActionResult DeleteAssignment()
         {
+            List<SelectListItem> assignments = new List<SelectListItem>();
+
+            var allAssignments = _assignmentService.GetAllAssignments();
+
+            foreach (Assignment s in allAssignments)
+            {
+                assignments.Add(new SelectListItem
+                {
+                    Text = s.Title,
+                    Value = s.Title
+
+                });
+            }
+
+            ViewData["Assignments"] = assignments;
+
             return View(new DeleteAssignment());
         }
 
-        public ActionResult DeleteCourse(DeleteCourseViewModel model)
-        {
-            return RedirectToAction("Index");
-        }
 
         public ActionResult UploadMilestone()
         {

@@ -118,13 +118,34 @@ namespace projectMoo.Controllers
 
         public ActionResult DeleteCourse()
         {
+
+            List<SelectListItem> courses = new List<SelectListItem>();
+
+            var allCourses = _courseService.getAllCourses();
+
+            foreach (Course s in allCourses)
+            {
+                courses.Add(new SelectListItem
+                {
+                    Text = s.Title,
+                    Value = s.Title
+
+                });
+            }
+
+            ViewData["Courses"] = courses;
+
             return View(new DeleteCourseViewModel());
         }
 
         [HttpPost]
         public ActionResult DeleteCourse(DeleteCourseViewModel model)
         {
-
+            if(model.courseName != null)
+            {
+                _courseService.DeleteCourseWithName(model.courseName);
+            }
+          
             return RedirectToAction("Index");
         }
     }
