@@ -256,6 +256,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\CustomErrorHandler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
@@ -296,6 +297,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\code-wallpaper-4.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\Profile\cow.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\AssignmentsScript.js" />
@@ -362,11 +364,11 @@
     <Content Include="Views\CreateUser\DeleteUser.cshtml" />
     <Content Include="Views\Assignments\Result.cshtml" />
     <Content Include="Views\Assignments\ViewSubmissions.cshtml" />
+    <Content Include="Views\Shared\CustomError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Code\" />
-    <Folder Include="Images\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

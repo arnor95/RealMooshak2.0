@@ -22,6 +22,8 @@ namespace projectMoo.Controllers
         // GET: Courses
         public ActionResult Index()
         {
+            //throw new Exception();
+
             string currentUserId = User.Identity.GetUserId();
             System.Diagnostics.Debug.WriteLine("user id " + currentUserId);
             List<CourseViewModel> ViewModel = _courseService.getCoursesForUser(currentUserId);
