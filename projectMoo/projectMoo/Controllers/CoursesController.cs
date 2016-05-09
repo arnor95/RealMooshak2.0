@@ -146,9 +146,22 @@ namespace projectMoo.Controllers
             if(model.courseName != null)
             {
                 _courseService.DeleteCourseWithName(model.courseName);
+                _courseService.SaveToDataBase();
+
+                Success success = new Success();
+                success.Title = "Success";
+                success.Description = @"Course deleted";
+                success.ActionTitle = "Delete another user";
+                success.ActionPath = @"DeleteCourse";
+
+                return View("~/Views/Success/Success.cshtml", success);
             }
-          
-            return RedirectToAction("Index");
+            else
+            {
+                return RedirectToAction("Index");
+
+            }
+
         }
     }
 }

@@ -140,8 +140,6 @@ namespace projectMoo.Services
                                   where course.CourseID == courseId
                                   select course).ToList();
 
-            if (userCourses.Count == 0)
-                return;
 
 
             foreach (var connection in userCourses)
