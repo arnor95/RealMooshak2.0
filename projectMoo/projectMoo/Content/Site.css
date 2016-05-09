@@ -370,3 +370,10 @@ li#profile-list:hover {
 .settingsdiv{
     padding-top: 15px;
 }
+
+#error-picture{
+    width:120px;
+    height:120px;
+    margin-left:auto;
+    margin-right:auto;
+}
