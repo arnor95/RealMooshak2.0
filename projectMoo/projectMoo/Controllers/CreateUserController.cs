@@ -31,7 +31,7 @@ namespace projectMoo.Controllers
         {
             Success success = new Success();
             success.Title = "Success";
-            success.Description = @"A news user was creted.";
+            success.Description = @"A new user was creted.";
             success.ActionTitle = "Create another user";
             success.ActionPath = @"NewUser";
 
