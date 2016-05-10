@@ -1,10 +1,10 @@
-﻿$(document).ready(function () {
-    // $('.datepicker').datepicker(); //Initialise any date pickers
+﻿
+    
 
-    var milestones = $('#milestones');
-    var url = '@Url.Action("AddMilestone", "Assignments")'; // adjust to suit
+    $('#btnNewMilestone').click(function () {
 
-    $('#addMilestone').click(function () {
+        var milestones = $('#milestones');
+        var url = 'AddMilestone';
 
         $.get(url, function(response) {
 
@@ -12,6 +12,7 @@
 
         });
     });
-});
 
-
+    $(document).on('click', '.deleteRow', function () {
+        $(this).parent().remove();
+    });

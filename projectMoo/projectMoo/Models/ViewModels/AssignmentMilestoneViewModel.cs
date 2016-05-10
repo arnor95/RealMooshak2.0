@@ -17,5 +17,8 @@ namespace projectMoo.Models.ViewModels
         /// then this property contains the value 15.
         /// </summary>
         public int Percentage { get; set; }
+        public List<string> Output { get; set; }
+        public List<string> Input { get; set; }
+
     }
 }

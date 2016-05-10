@@ -80,8 +80,8 @@ namespace projectMoo.Controllers
 
         public ActionResult AddMilestone()
         {
-            var model = new AssignmentMilestone();
-            return PartialView("AddMilestone");
+            var model = new AssignmentMilestoneViewModel();
+            return PartialView("AddMilestone",model);
         }
 
         public ActionResult AssignmentCreated()
