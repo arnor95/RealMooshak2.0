@@ -245,7 +245,9 @@ textarea#Description {
 
 #footer{
     width: 92%;
+    position:fixed;
     bottom:0;
+    margin-left: 4%;
 }
 
 .btn-file {
@@ -375,4 +377,8 @@ li#profile-list:hover {
     height:120px;
     margin-left:auto;
     margin-right:auto;
+}
+
+.create{
+    padding-left: 20px;
 }
