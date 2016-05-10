@@ -1,4 +1,4 @@
-﻿@model projectMoo.Models.Entities.Assignment
+﻿@model projectMoo.Models.ViewModels.AssignmentViewModel
 
 @using (Html.BeginForm())
 {
@@ -8,7 +8,7 @@
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
     </div>
 
-    <div class="form-horizontal center col-md-6">
+    <div class="form-horizontal center col-md-4">
         <h4>New Assignment</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -25,14 +25,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Grade, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Grade, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Grade, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -58,7 +50,21 @@
             </div>
         </div>
     </div>
+
+    <div class="form-horizontal center col-md-4" id="milestones">
+        <h4>Milestones</h4>
+
+       @for(int i = 0; i< Model.Milestones.Count; i++)
+         {
+            @Html.Partial("AddMilestone", Model.Milestones[i]);
+         }
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" id="addMilestone">New Milestone</button>
+
+    </div>
+
 }
 
-@Scripts.Render("~/Scripts/CreateAssignmentScript.js")
-@Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/Scripts/CreateAssignmentScript.js")
+        @Scripts.Render("~/bundles/jqueryval")

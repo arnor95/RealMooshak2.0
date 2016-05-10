@@ -9,6 +9,7 @@ namespace projectMoo
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new CustomErrorHandler());
+            //filters.Add(new HandleErrorAttribute());
         }
     }
 }

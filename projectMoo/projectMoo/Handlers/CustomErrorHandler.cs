@@ -12,6 +12,8 @@ namespace projectMoo.Handlers
         {
             //Get the exception
             Exception ex = filterContext.Exception;
+            string message = string.Format("{0} was thrown on the {1}.{4}For: {2}{3}{4}", 
+				ex.Message, DateTime.Now, ex.Source, ex.StackTrace, Environment.NewLine);
 
             //Set the view name to be returned, maybe return different error view for different exception types
             string viewName = "CustomError";

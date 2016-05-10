@@ -33,6 +33,7 @@ namespace projectMoo.Controllers
         }
 
         [Authorize(Roles = "Admin, Teacher")]
+        [HttpGet]
         public ActionResult CreateAssignment()
         {
             List<Course> courses = new List<Course>();
@@ -51,23 +52,47 @@ namespace projectMoo.Controllers
 
             ViewData["Courses"] = listItems;
 
-            return View(new Assignment());
+            AssignmentViewModel model = new AssignmentViewModel();
+            model.Milestones = new List<AssignmentMilestoneViewModel>();
+            model.Milestones.Add(new AssignmentMilestoneViewModel());
+           
+            return View(model);
         }
 
         [Authorize(Roles = "Admin, Teacher")]
         [HttpPost]
-        public ActionResult CreateAssignment(Assignment a)
+        public ActionResult CreateAssignment(AssignmentViewModel data)
         {
             if (ModelState.IsValid)
             {
                 Assignment assignment = new Assignment();
-                UpdateModel(assignment);
+                assignment.CourseID = data.CourseID;
+                assignment.Title = data.Title;
+                assignment.Description = data.Description;
+                assignment.DueDate = data.DueDate;
                 _assignmentService.addNewAssignment(assignment);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("AssignmentCreated");
             }
 
-            return View(a);
+            return View(data);
+        }
+
+        public ActionResult AddMilestone()
+        {
+            var model = new AssignmentMilestone();
+            return PartialView("AddMilestone");
+        }
+
+        public ActionResult AssignmentCreated()
+        {
+            Success success = new Success();
+            success.Title = "Success";
+            success.Description = @"A news assignment was creted.";
+            success.ActionTitle = "Create another assignment";
+            success.ActionPath = @"CreateAssignment";
+
+            return View("~/Views/Success/Success.cshtml", success);
         }
 
         public ActionResult DeleteAssignment()
@@ -139,5 +164,7 @@ namespace projectMoo.Controllers
 
             return View(model);
         }
+
+    
     }
 }
