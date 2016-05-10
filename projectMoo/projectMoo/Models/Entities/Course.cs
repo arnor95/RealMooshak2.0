@@ -13,7 +13,9 @@ namespace projectMoo.Models.Entities
         public string Title { get; set; }
         [Required(ErrorMessage = "Please enter a description for this course")]
         public string Description { get; set; }
+        [Display(Name = "Begin Date")]
         public DateTime BeginDate { get; set; }
+        [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
         public string Group { get; set; }
 
