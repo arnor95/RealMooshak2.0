@@ -9,7 +9,6 @@ namespace projectMoo.Models.ViewModels
     public class DeleteAssignment
     {
         [Required(ErrorMessage = "Please enter a name. If the name matches an assignment, the assignment will be deleted.")]
-        [Display(Name = "Assignment Title")]
         public string assignmentName { get; set; }
     }
 }

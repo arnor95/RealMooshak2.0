@@ -11,11 +11,9 @@ namespace projectMoo.Models.Entities
         public int ID { get; set; }
 
         [Required(ErrorMessage = "Please select a course")]
-        [Display(Name = "Course")]
         public int CourseID { get; set; }
 
         [Required(ErrorMessage = "Please enter a title for this assignment")]
-
         public string Title { get; set; }
 
         public decimal Grade { get; set; }
@@ -24,7 +22,6 @@ namespace projectMoo.Models.Entities
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Please choose a due date for this assignment")]
-        [Display(Name = "Due Date")]
         public DateTime DueDate { get; set; }
     }
 }
