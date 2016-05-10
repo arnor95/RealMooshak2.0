@@ -177,7 +177,7 @@ namespace projectMoo.Controllers
             SubmissionViewModel model = new SubmissionViewModel();
 
             model.Milestone = _milestoneService.getMilestoneByID(ID);
-            model.Submissions = _submissionService.getAllSubmissionsByMilestoneID(ID);
+            model.Submissions = _submissionService.getAllSubmissionsByMilestoneIDForUser(ID);
 
             return View(model);
         }

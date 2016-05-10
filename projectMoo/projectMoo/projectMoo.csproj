@@ -253,6 +253,7 @@
     <Compile Include="Controllers\CreateUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -365,7 +366,12 @@
     <Content Include="Views\Assignments\Result.cshtml" />
     <Content Include="Views\Assignments\ViewSubmissions.cshtml" />
     <Content Include="Views\Shared\CustomError.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Shared\EditorTemplates\AssignmentMilestoneViewModel.cshtml" />
+=======
+    <Content Include="Views\Assignments\AddMilestone.cshtml" />
+    <Content Include="Views\Teacher\AllAssignmentsForMilestone.cshtml" />
+>>>>>>> 5586232f6c613b2fe9be92d3a535422e12488532
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

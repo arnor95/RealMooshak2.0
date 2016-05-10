@@ -26,10 +26,28 @@ namespace projectMoo.Controllers
             string userID = User.Identity.GetUserId();
             UserInfo info = _userService.getInfoForUser(userID);
 
-            model.Name = info.Name;
+
+            if (info.Name == null)
+            {
+                model.Name = "Please add a name";
+            }
+            else
+            {
+                model.Name = info.Name;
+            }
+            
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
             model.Courses = _courseService.getCoursesForUser(userID);
-            model.Phone =info.Phone;
+
+            if (info.Phone == 0)
+            {
+                model.Phone = 666;
+            }
+            else
+            {
+                model.Phone = info.Phone;
+            }
+            
             var picID = info.PicID;
 
             if (picID != null)
