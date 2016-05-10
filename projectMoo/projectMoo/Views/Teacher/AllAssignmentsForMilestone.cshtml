@@ -1,0 +1,24 @@
+﻿@model IEnumerable<projectMoo.Models.Entities.Submission>
+
+
+<div class="coursetable">
+    <table class="table table-hover courses">
+        <thead>
+            <tr>
+                <th>Milestone Title</th>
+                <th>State</th>
+                <th>File</th>
+            </tr>
+        </thead>
+        @foreach (var submission in Model)
+        {
+            <tr class="cursor-change">
+                <td class="lead">@submission.UserID</td>
+                <td>@submission.State</td>
+                <td>@submission.FileID</td>
+            </tr>
+
+
+        }
+    </table>
+</div>

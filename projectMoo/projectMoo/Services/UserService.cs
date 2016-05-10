@@ -23,6 +23,12 @@ namespace projectMoo.Services
             UserInfo info = (from user in _db.UserInfoes
                              where user.UserID == userID
                              select user).SingleOrDefault();
+
+            if (info == null)
+            {
+                return new UserInfo();
+            }
+
             return info;
 
         }

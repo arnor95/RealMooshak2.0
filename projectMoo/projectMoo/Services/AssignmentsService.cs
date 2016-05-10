@@ -54,12 +54,14 @@ namespace projectMoo.Services
                                      where storedCourse.ID == c.CourseID
                                      select storedCourse).SingleOrDefault();
 
+                if (userCourse == null)
+                    continue;
+
                 courses.Add(userCourse);
             }
 
             foreach (Course item in courses)
             {
-                System.Diagnostics.Debug.WriteLine(item.Title);
                 returnList.AddRange(GetAssignmentsInCourse(item.ID));
             }
 

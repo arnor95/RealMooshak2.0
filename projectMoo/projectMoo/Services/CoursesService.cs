@@ -67,6 +67,9 @@ namespace projectMoo.Services
                               where storedCourse.ID == c.CourseID
                               select storedCourse).SingleOrDefault();
 
+                if (userCourse == null)
+                    continue;
+
                 courses.Add(userCourse);
 
             }
