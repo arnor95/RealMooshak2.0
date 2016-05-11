@@ -14,7 +14,7 @@
         });
         */
         $.ajax({
-            url:url,
+            url: url,
             cache: false,
             success: function (html) {
                 milestones.append(html);

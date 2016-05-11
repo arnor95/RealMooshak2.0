@@ -28,7 +28,7 @@
         <ul class="list-group">
             @foreach (var assignment in Model.Assignments)
             {
-                <li id="assignment-li-a" data-type="@assignment.Title" href="#" class="list-group-item text-left cursor-change assignment-li-a">
+                <li id="@assignment.Title" data-type="@assignment.Title" href="#" class="list-group-item text-left cursor-change assignment-li-a">
                     @assignment.Title
                     <span class="badge">
                         @assignment.DueDate.ToShortDateString()
@@ -67,12 +67,14 @@
                                     {
                                         @Html.ActionLink("All Submissions", "AllAssignmentsForMilestone", "Teacher", new { ID = milestone.MilestoneID }, new { id = "nav-li" })
                                     }
-                                    @Html.ActionLink("Submissions", "ViewSubmissions", "Assignments", new { ID = milestone.MilestoneID }, new { id = "nav-li" })
+                                    @Html.ActionLink("Submissions", "ViewSubmissions", "Assignments", new { ID = milestone.MilestoneID }, new { id = "nav-li", @class ="btn btn-success" })
                                 </div>
                             </div>
                             <p>@milestone.Description</p>
                             <p>Percentage: @milestone.Percentage%</p>
                             <p>Status: Incomplete</p>
+                            <p class="pull-right"><strong>Grade:</strong> @milestone.Grade</p>
+
                             @using (Html.BeginForm("UploadMilestone", "Assignments", new { ID = milestone.MilestoneID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
                             {
                                 <span class="btn btn-default btn-file">
@@ -80,7 +82,6 @@
                                 </span>
                                 <input type="submit" value="OK" class="btn btn-primary" />
                             }
-                            <p class="pull-right"><strong>Grade:</strong> @milestone.Grade</p>
                         </div>
 
                     }
