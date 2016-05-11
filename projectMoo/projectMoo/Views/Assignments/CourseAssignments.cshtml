@@ -28,7 +28,7 @@
         <ul class="list-group">
             @foreach (var assignment in Model.Assignments)
             {
-                <li id="@assignment.Title" data-type="@assignment.Title" href="#" class="list-group-item text-left cursor-change assignment-li-a">
+                <li id="assignment-li-a" data-type="@assignment.Title.Replace(" ","")" href="#" class="list-group-item text-left cursor-change assignment-li-a">
                     @assignment.Title
                     <span class="badge">
                         @assignment.DueDate.ToShortDateString()
@@ -46,7 +46,7 @@
         </div>
         @foreach (var assignment in Model.Assignments)
         {
-            <div class="hidden" id="@assignment.Title">
+            <div class="hidden" id="@assignment.Title.Replace(" ","")">
                 <div class="Assinment">
                     <h2>@assignment.Title</h2>
                     <p>@assignment.Description</p>
