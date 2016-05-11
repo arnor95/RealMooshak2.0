@@ -14,5 +14,12 @@ namespace projectMoo.Models.ViewModels
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
         public List<AssignmentMilestoneViewModel> Milestones { get; set; }
+
+        public AssignmentViewModel()
+        {
+            Milestones = new List<AssignmentMilestoneViewModel>();
+            var milestoneVM = new AssignmentMilestoneViewModel();
+            Milestones.Add(milestoneVM);
+        }
     }
 }

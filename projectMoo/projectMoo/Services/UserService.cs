@@ -102,9 +102,24 @@ namespace projectMoo.Services
             g.UserID = userId;
 
             _db.UserGroups.Add(g);
-            _db.SaveChanges();
         }
 
+        public void AddInfoForUser(string name, int phone, string userID)
+        {
+            UserInfo info = new UserInfo();
+            info.Phone = phone;
+            info.Name = name;
+            info.PicID = "profile.png";
+            info.UserID = userID;
+            _db.UserInfoes.Add(info);
+
+        }
+
+        public void SaveToDatabase()
+        {
+            _db.SaveChanges();
+
+        }
 
         public async void DeleteUserByEmail(string Email, UserManager<ApplicationUser> manager)
         {

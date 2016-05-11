@@ -53,13 +53,6 @@ namespace projectMoo.Controllers
             ViewData["Courses"] = listItems;
 
             AssignmentViewModel model = new AssignmentViewModel();
-            model.Milestones = new List<AssignmentMilestoneViewModel>();
-            var milestoneVM = new AssignmentMilestoneViewModel();
-            milestoneVM.Input = new List<string>();
-            milestoneVM.Input.Add("");
-            milestoneVM.Output = new List<string>();
-            milestoneVM.Output.Add("");
-            model.Milestones.Add(milestoneVM);
            
             return View(model);
         }
@@ -94,10 +87,7 @@ namespace projectMoo.Controllers
         public ActionResult AddMilestone()
         {
             var milestoneVM = new AssignmentMilestoneViewModel();
-            milestoneVM.Input = new List<string>();
-            milestoneVM.Input.Add("");
-            milestoneVM.Output = new List<string>();
-            milestoneVM.Output.Add("");
+           
             return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
         }
 
