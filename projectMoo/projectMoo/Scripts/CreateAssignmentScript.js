@@ -1,10 +1,28 @@
 ﻿
-    
+
+    $('#btnNewRow').click(function () {
+
+    var rows = $('#rows').children();
+    var k = 10;
+    var max = 20;
+    $(rows).each(function (i, obj) {
+        if ($(obj).hasClass('visible')) {
+           k++;
+        }
+    });
+
+    if (k <= max) {
+        $("#" + (k)).removeClass("hidden").addClass("visible");
+    }
+
+    });
 
     $('#btnNewMilestone').click(function () {
 
         var milestones = $('#milestones').children();
         var k = 0;
+        var max = 10;
+
         $(milestones).each(function (i, obj) {
             if ($(obj).hasClass('visible')) {
                 k++;
@@ -13,7 +31,7 @@
        
         //alert(k);
 
-        if (k <= 10)
+        if (k <= max)
         {
             $("#" + (k)).removeClass("hidden").addClass("visible");
 
