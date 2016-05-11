@@ -156,13 +156,7 @@ namespace projectMoo.Controllers
         public ActionResult UploadMilestone(HttpPostedFileBase file, int ID)
         {
             string extension = Path.GetExtension(file.FileName);
-            ResultViewModel model = new ResultViewModel
-            {
-                Status = false,
-                Input = "What up",
-                Output = "pu tahW",
-                ExpectedOutput = "pu tahW"
-            };
+            ResultViewModel model = new ResultViewModel();
 
 
             if (extension != ".cpp")
@@ -175,14 +169,16 @@ namespace projectMoo.Controllers
                 string userID = User.Identity.GetUserId();
                 Guid fileID = Guid.NewGuid();
                 var fileName = fileID + extension;
-                
+
+                string realFileID = fileID.ToString();
+
                 string newFolderPath = Server.MapPath("~/Code/" + userID + "/" + ID);
                 Directory.CreateDirectory(newFolderPath);
                 
                 var path = Path.Combine(Server.MapPath("~/Code/" + userID + "/" + ID + "/"), fileName);
                 file.SaveAs(path);
 
-                model = _submissionService.CompileCode(newFolderPath, fileName, ID);
+                model = _submissionService.CompileCode(newFolderPath, realFileID, ID);
 
                 Submission newSubmission = new Submission();
                 newSubmission.MilestoneID = ID;

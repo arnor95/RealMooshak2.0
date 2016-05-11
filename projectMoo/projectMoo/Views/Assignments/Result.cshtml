@@ -5,14 +5,23 @@
 <div class="row">
     <div class="col-sm-4">
         <h3>Input</h3>
-        <p>@Model.Input</p>
+        @foreach (var input in Model.Input)
+        {
+            <p>@input</p>
+        }
     </div>
     <div class="col-sm-4">
         <h3>Output</h3>
-        <p>@Model.Output</p>
+        @foreach (var output in Model.Output)
+        {
+            <p>@output</p>
+        }
     </div>
     <div class="col-sm-4">
         <h3>Expected Output</h3>
-        <p>@Model.ExpectedOutput</p>
+        @foreach (var expected in Model.ExpectedOutput)
+        {
+            <p>@expected</p>
+        }
     </div>
 </div>

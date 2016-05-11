@@ -46,16 +46,26 @@ namespace projectMoo.Services
             return submissions;
         }
 
-        public ResultViewModel CompileCode(string workingFolder, string cppFileName, int milestoneID)
+        public ResultViewModel CompileCode(string workingFolder, string fileName, int milestoneID)
         {
-            ResultViewModel returnModel = new ResultViewModel();
+            ResultViewModel returnModel = new ResultViewModel
+            {
+                Status = false,
+                Input = new List<string>(),
+                Output = new List<string>(),
+                ExpectedOutput = new List<string>()
+            };
 
             #region SETUP
+            string cppFileName = fileName + ".cpp";
+
             // Set up our working folder, and the file names/paths.
             // In this example, this is all hardcoded, but in a
             // real life scenario, there should probably be individual
             // folders for each user/assignment/milestone.
-            var exeFilePath = workingFolder + "\\Hello.exe";
+            workingFolder = workingFolder + "\\";
+
+            var exeFilePath = workingFolder + fileName + ".exe";
 
             var inputFile = System.Web.Hosting.HostingEnvironment.MapPath("~/Code/Teacher/" + milestoneID + "/input.txt");
             var outputFile = System.Web.Hosting.HostingEnvironment.MapPath("~/Code/Teacher/" + milestoneID + "/output.txt");
@@ -138,15 +148,9 @@ namespace projectMoo.Services
 
                             lines.Add(myStreamReader.ReadLine());
 
-                            if (lines[i] != outputs[i])
-                            {
-                                returnModel.Input = inputs[i];
-                                returnModel.Output = lines[i];
-                                returnModel.ExpectedOutput = outputs[i];
-
-                                return returnModel;
-                            }
-
+                            returnModel.Input.Add(inputs[i]);
+                            returnModel.Output.Add(lines[i]);
+                            returnModel.ExpectedOutput.Add(outputs[i]);
                         }
 
 
@@ -158,11 +162,10 @@ namespace projectMoo.Services
 
                 // TODO: We might want to clean up after the process, there
                 // may be files we should delete etc.
-
-                return null;
+                
             }
 
-            return null;
+            return returnModel;
         }
     }
 }
