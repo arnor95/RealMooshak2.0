@@ -24,6 +24,7 @@ namespace projectMoo.Controllers
         // GET: Assignments
         public ActionResult CourseAssignments(int ID)
         {
+           
             System.Diagnostics.Debug.WriteLine("Index Assign");
             UserViewModel model = new UserViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);

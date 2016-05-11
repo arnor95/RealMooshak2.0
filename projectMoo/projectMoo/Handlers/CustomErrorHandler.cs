@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projectMoo.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,10 @@ namespace projectMoo.Handlers
         {
             //Get the exception
             Exception ex = filterContext.Exception;
+            string name = System.Web.HttpContext.Current.User.Identity.Name;
+
+            Logger.Instance.LogException(ex,name);
+
             string message = string.Format("{0} was thrown on the {1}.{4}For: {2}{3}{4}", 
 				ex.Message, DateTime.Now, ex.Source, ex.StackTrace, Environment.NewLine);
 
