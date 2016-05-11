@@ -269,6 +269,7 @@
     <Compile Include="Models\ViewModels\DeleteAssignment.cs" />
     <Compile Include="Models\ViewModels\DeleteCourseViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteUserViewModel.cs" />
+    <Compile Include="Models\ViewModels\ResultViewModel.cs" />
     <Compile Include="Models\ViewModels\SubmissionViewModel.cs" />
     <Compile Include="Models\ViewModels\Success.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />
@@ -290,6 +291,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Code\Teacher\4\input.txt" />
+    <Content Include="Code\Teacher\4\output.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -372,7 +375,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Code\Teacher\4\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
