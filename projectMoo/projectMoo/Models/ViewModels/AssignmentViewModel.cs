@@ -18,8 +18,14 @@ namespace projectMoo.Models.ViewModels
         public AssignmentViewModel()
         {
             Milestones = new List<AssignmentMilestoneViewModel>();
-            var milestoneVM = new AssignmentMilestoneViewModel();
-            Milestones.Add(milestoneVM);
+            int maxMilestones = 10;
+
+            for(int i = 0; i < maxMilestones ; i++)
+            {
+                var milestoneVM = new AssignmentMilestoneViewModel();
+                Milestones.Add(milestoneVM);
+            }
+       
         }
     }
 }

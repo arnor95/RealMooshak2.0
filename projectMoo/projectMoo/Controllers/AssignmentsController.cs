@@ -53,7 +53,7 @@ namespace projectMoo.Controllers
 
             ViewData["Courses"] = listItems;
 
-           AssignmentViewModel model = new AssignmentViewModel();
+            AssignmentViewModel model = new AssignmentViewModel();
 
             return View(model);
         }
@@ -66,8 +66,6 @@ namespace projectMoo.Controllers
             {
 
                 System.Diagnostics.Debug.WriteLine(data);
-
-               // throw new Exception();
 
                 Assignment assignment = new Assignment();
                 assignment.CourseID = data.CourseID;
@@ -110,7 +108,9 @@ namespace projectMoo.Controllers
 
         public ActionResult AddMilestone()
         {
+
             var milestoneVM = new AssignmentMilestoneViewModel();
+
             return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
         }
 

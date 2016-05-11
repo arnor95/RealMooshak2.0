@@ -3,9 +3,22 @@
 
     $('#btnNewMilestone').click(function () {
 
-        var milestones = $('#milestones');
-        var url = 'AddMilestone';
+        var milestones = $('#milestones').children();
+        var k = 0;
+        $(milestones).each(function (i, obj) {
+            if ($(obj).hasClass('visible')) {
+                k++;
+            }
+        });
+       
+        alert(k);
 
+        if (k <= 10)
+        {
+            $("#" + (k)).removeClass("hidden").addClass("visible");
+
+        }
+        
         /*
         $.get(url, function(response) {
 
@@ -13,6 +26,8 @@
 
         });
         */
+
+        /*
         $.ajax({
             url: url,
             cache: false,
@@ -22,9 +37,9 @@
 
         });
         return false;
-
+        */
     });
 
     $(document).on('click', '.deleteRow', function () {
-        $(this).parent().remove();
+       // $(this).parent().removeClass('visible').addClass('hidden');
     });

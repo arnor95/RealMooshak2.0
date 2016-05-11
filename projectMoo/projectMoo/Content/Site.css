@@ -48,30 +48,30 @@ textarea {
     background-color:white;
     margin-top: 40px;
     padding: 10px;
-    border:0.25px solid;
+    border:0.4px solid;
     border-color: cornflowerblue;
-    border-radius: 4px;
+    border-radius: 2px;
    
 }
 
-.Assinment{
+.Assignment{
 
     background-color:white;
     margin: 10px;
     padding: 10px;
     border:0.5px solid;
     border-color: cornflowerblue;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .Milestone{
 
     background-color:white;
     margin: 10px;
-    padding: 10px;
-    border:0.15px solid;
+    padding: 15px 30px;
+    border:0.25px solid;
     border-color: lightgray;
-    border-radius: 4px;
+    border-radius: 2px;
    
 }
 
@@ -175,14 +175,15 @@ a#loginLink {
 
 #main-nav {
     border-color: cornflowerblue;
+    border-bottom-width: 1.5px;
     height: 60px;
 }
 
 /* Logo */
 
 img#logo-nav {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-indent: -9999px; /* hides the link text */
     display: block;
     margin: 5px;
@@ -298,20 +299,21 @@ li#profile-list:hover {
     margin-left: 30px;
     padding:15px;
     align-content:center;
-    border:0.25px solid;
+    border:0.4px solid;
     border-color: lightgray;
-    border-radius: 4px;
+    border-radius: 2px;
     color: cornflowerblue;
     text-align:center;
+
 }
 
 .delete{
     background-color:white;
     margin-top: 40px;
     padding: 10px;
-    border:0.25px solid;
+    border:0.4px solid;
     border-color: indianred;
-    border-radius: 4px;
+    border-radius: 2px;
     height: 270px;
     width: 600px;
 } 
@@ -331,9 +333,9 @@ li#profile-list:hover {
     margin-top: 25px;
     margin-right:40px;
     margin-bottom:25px;
-    border:0.25px solid;
+    border:0.4px solid;
     border-color: lightgray;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .cursor-change:hover{
@@ -382,4 +384,38 @@ li#profile-list:hover {
 
 .create{
     padding-left: 20px;
+}
+
+.title-element{
+    margin-top:20px;
+    margin-bottom:10px;
+    color: cornflowerblue;
+}
+
+.assignment-li-a{
+
+    height:55px;
+    padding-top:17.5px;
+    font-size:18px;
+}
+
+.emphasis{
+    border-width:2.5px;
+    padding: 15px 30px;
+   
+}
+
+.assignment-header{
+    border-color: lightgray;
+    border-bottom-width: 4.5px;
+   
+}
+
+.inputoutput{
+    border-color: lightgray;
+    border-top-width: 1.75px;
+}
+
+.deleteRow{
+    padding-top:15px;
 }

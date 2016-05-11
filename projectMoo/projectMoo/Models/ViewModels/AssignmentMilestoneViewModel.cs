@@ -23,11 +23,19 @@ namespace projectMoo.Models.ViewModels
 
         public AssignmentMilestoneViewModel()
         {
+
             UniqueId = Guid.NewGuid();
             Input = new List<string>();
-            Input.Add("");
             Output = new List<string>();
-            Output.Add("");
+
+            int maxInputOutput = 2;
+
+            for (int i = 0; i < maxInputOutput; i++)
+            {
+                Input.Add("");
+                Output.Add("");
+
+            }
         }
     }
 }
