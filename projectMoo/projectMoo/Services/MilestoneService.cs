@@ -57,5 +57,34 @@ namespace projectMoo.Services
 
             return returnModel;
         }
+
+        public void AddMilestonesForAssignment(int assignment, List<AssignmentMilestoneViewModel> milestonesVM)
+        {
+            foreach (AssignmentMilestoneViewModel milestoneVM in milestonesVM)
+            {
+                AssignmentMilestone milestone = new AssignmentMilestone();
+                milestone.Description = milestoneVM.Description;
+                milestone.Title = milestoneVM.Title;
+                milestone.Grade = 0;
+                milestone.Percentage = milestoneVM.Percentage;
+                milestone.AssignmentID =assignment;
+
+                _db.AssignmentMilestones.Add(milestone);
+
+                foreach (var input in milestoneVM.Input)
+                {
+                    //save to file input/output
+                }
+
+            }
+        }
+
+        public void SaveToDatabase()
+        {
+            _db.SaveChanges();
+
+        }
+
+
     }
 }

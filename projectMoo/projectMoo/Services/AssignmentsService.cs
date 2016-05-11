@@ -135,6 +135,11 @@ namespace projectMoo.Services
             _db.Assignments.Add(a);
             _db.SaveChanges();
         }
+        public void SaveToDatabase()
+        {
+            _db.SaveChanges();
+
+        }
 
         public void DeleteAssignmentWithName(string assignmentName)
         {
