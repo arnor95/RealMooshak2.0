@@ -246,10 +246,17 @@ textarea#Description {
 }
 
 #footer{
-    width: 92%;
-    position:fixed;
-    bottom:0;
-    margin-left: 4%;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    left: 0;
+    background-color: cornflowerblue;
+    text-align: center;
+    height: 45px;
+    color: white;
+    padding-top: 10px;
+    font-size: 16px;
+    
 }
 
 .btn-file {
@@ -411,6 +418,10 @@ li#profile-list:hover {
    
 }
 
+.assignment-button{
+    margin-top: 20px;
+}
+
 .inputoutput{
     border-color: lightgray;
     border-top-width: 1.75px;
@@ -418,4 +429,31 @@ li#profile-list:hover {
 
 .deleteRow{
     padding-top:15px;
+}
+
+.assignment-pull-right{
+    margin-right: 25px;
+}
+
+.btn-text{
+    color: white;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
