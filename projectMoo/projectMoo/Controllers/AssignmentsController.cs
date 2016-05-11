@@ -146,10 +146,7 @@ namespace projectMoo.Controllers
                 var fileName = fileID + extension;
                 
                 string newFolderPath = Server.MapPath("~/Code/" + userID + "/" + ID);
-
                 Directory.CreateDirectory(newFolderPath);
-
-                
                 
                 var path = Path.Combine(Server.MapPath("~/Code/" + userID + "/" + ID + "/"), fileName);
                 file.SaveAs(path);
