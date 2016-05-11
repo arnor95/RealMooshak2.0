@@ -74,11 +74,13 @@ namespace projectMoo.Controllers
                 assignment.Description = data.Description;
                 assignment.DueDate = data.DueDate;
                 _assignmentService.addNewAssignment(assignment);
+                _assignmentService.SaveToDatabase();
+                _milestoneService.AddMilestonesForAssignment(assignment.ID, data.Milestones);
+                _milestoneService.SaveToDatabase();
+             
 
                 return RedirectToAction("AssignmentCreated");
             }
-
-         
 
 
             return View(data);
