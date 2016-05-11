@@ -185,6 +185,7 @@ namespace projectMoo.Controllers
                 newSubmission.UserID = userID;
                 newSubmission.FileID = path;
                 newSubmission.Date = DateTime.Now;
+                newSubmission.State = model.Status;
 
                 _db.Submissions.Add(newSubmission);
                 _db.SaveChanges();

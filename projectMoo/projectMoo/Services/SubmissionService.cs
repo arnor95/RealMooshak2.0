@@ -50,7 +50,7 @@ namespace projectMoo.Services
         {
             ResultViewModel returnModel = new ResultViewModel
             {
-                Status = false,
+                Status = true,
                 Input = new List<string>(),
                 Output = new List<string>(),
                 ExpectedOutput = new List<string>()
@@ -147,6 +147,11 @@ namespace projectMoo.Services
                         {
 
                             lines.Add(myStreamReader.ReadLine());
+
+                            if(outputs[i] != lines[i])
+                            {
+                                returnModel.Status = false;
+                            }
 
                             returnModel.Input.Add(inputs[i]);
                             returnModel.Output.Add(lines[i]);
