@@ -4,10 +4,6 @@
     ViewBag.Title = "NewUser";
 }
 
-<div class="button-top">
-    @Html.ActionLink("List of students", "Index", null, new { @class = "btn btn-primary" })
-</div>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -66,7 +62,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create User" class="btn btn-primary form-control" />
             </div>
         </div>
     </div>
