@@ -22,6 +22,7 @@ namespace projectMoo.Models.Entities
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Please choose a due date for this assignment")]
+        [DataType(DataType.Date)]
         public DateTime DueDate { get; set; }
     }
 }

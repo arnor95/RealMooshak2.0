@@ -12,6 +12,7 @@ namespace projectMoo.Models.ViewModels
         public string CourseTitle { get; set; }
         public int CourseID { get; set; }
         public string Description { get; set; }
+        [DataType(DataType.Date)]
         public DateTime DueDate { get; set; }
         public List<AssignmentMilestoneViewModel> Milestones { get; set; }
 

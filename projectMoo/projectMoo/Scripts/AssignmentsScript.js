@@ -5,3 +5,4 @@
     $("#" + type).removeClass("hidden").siblings("div").addClass("hidden");
     $(".Empty").addClass("hidden");
 });
+

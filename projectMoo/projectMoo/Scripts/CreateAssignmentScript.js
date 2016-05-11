@@ -43,3 +43,7 @@
     $(document).on('click', '.deleteRow', function () {
        // $(this).parent().removeClass('visible').addClass('hidden');
     });
+
+    $(function () {
+        $("#datepicker").datepicker();
+    });
