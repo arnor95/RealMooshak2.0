@@ -103,17 +103,54 @@ namespace projectMoo.Controllers
                 { 
                     var roleresult = manager.AddToRole(user.Id, data.Role);
                     userService.AddUserToGroup(user.Id, data.Group);
+                    userService.AddInfoForUser(data.Name, data.Phone, user.Id);
+                    userService.SaveToDatabase();
                     return RedirectToAction("UserCreated");
 
                 }
                 else
                 {
                     //whoops error;
+                    return View("Error");
                 }
 
             }
+            else
+            {
+                List<SelectListItem> roles = new List<SelectListItem>();
+                List<SelectListItem> groups = new List<SelectListItem>();
 
-            return View(data);
+                string[] systemRoles = new[] { "None", "Admin", "Teacher", "Student" };
+                string[] systemGroups = new[] { "None", "1st year students", "2nd year students", "3rd year students" };
+
+                foreach (string s in systemRoles)
+                {
+                    roles.Add(new SelectListItem
+                    {
+                        Text = s,
+                        Value = s
+
+                    });
+                }
+
+                ViewData["Roles"] = roles;
+
+
+                foreach (string s in systemGroups)
+                {
+                    groups.Add(new SelectListItem
+                    {
+                        Text = s,
+                        Value = s
+
+                    });
+                }
+
+                ViewData["Groups"] = groups;
+                return View(data);
+
+            }
+
         }
 
         public ActionResult DeleteUser()

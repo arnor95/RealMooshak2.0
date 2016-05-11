@@ -19,5 +19,12 @@ namespace projectMoo.Models.ViewModels
 
         public string Group { get; set; }
 
+        [Required(ErrorMessage = "Please add a name for this user.")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Please add a phone number for this user.")]
+        public int Phone { get; set; }
+
+
     }
 }

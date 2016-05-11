@@ -7,6 +7,7 @@ namespace projectMoo.Models.ViewModels
 {
     public class AssignmentMilestoneViewModel
     {
+        public Guid UniqueId { get; set; }
         public int MilestoneID { get; set; }
         public string Title { get; set; }
         public decimal Grade { get; set; }
@@ -20,5 +21,13 @@ namespace projectMoo.Models.ViewModels
         public List<string> Output { get; set; }
         public List<string> Input { get; set; }
 
+        public AssignmentMilestoneViewModel()
+        {
+            UniqueId = Guid.NewGuid();
+            Input = new List<string>();
+            Input.Add("");
+            Output = new List<string>();
+            Output.Add("");
+        }
     }
 }
