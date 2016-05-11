@@ -12,5 +12,6 @@ namespace projectMoo.Models.Entities
         public int MilestoneID { get; set; }
         public bool State { get; set; }
         public string FileID { get; set; }
+        public DateTime Date { get; set; }
     }
 }

@@ -146,19 +146,21 @@ namespace projectMoo.Controllers
                 string userID = User.Identity.GetUserId();
                 Guid fileID = Guid.NewGuid();
                 var fileName = fileID + extension;
+                
+                string newFolderPath = Server.MapPath("~/Code/" + userID + "/" + ID);
+                Directory.CreateDirectory(newFolderPath);
+                
+                var path = Path.Combine(Server.MapPath("~/Code/" + userID + "/" + ID + "/"), fileName);
+                file.SaveAs(path);
 
                 Submission newSubmission = new Submission();
                 newSubmission.MilestoneID = ID;
                 newSubmission.UserID = userID;
-                newSubmission.FileID = fileName;
+                newSubmission.FileID = path;
+                newSubmission.Date = DateTime.Now;
 
                 _db.Submissions.Add(newSubmission);
                 _db.SaveChanges();
-                    
-               
-                // store the file inside ~/App_Data/uploads folder
-                var path = Path.Combine(Server.MapPath("~/Code/"), fileName);
-                file.SaveAs(path);
             }
 
             return View("Result");
@@ -174,6 +176,20 @@ namespace projectMoo.Controllers
             return View(model);
         }
 
-    
+        public ActionResult Download(string file)
+        {
+            if (!System.IO.File.Exists(file))
+            {
+                return HttpNotFound();
+            }
+
+            var fileBytes = System.IO.File.ReadAllBytes(file);
+            var response = new FileContentResult(fileBytes, "application/octet-stream")
+            {
+                FileDownloadName = "code.cpp"
+            };
+            return response;
+        }
+
     }
 }
