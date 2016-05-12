@@ -34,6 +34,7 @@ namespace projectMoo.Services
 
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == ID && s.UserID == userID
+                                            orderby s.State descending
                                             select s).ToList();
 
             return submissions;
@@ -43,6 +44,7 @@ namespace projectMoo.Services
         {
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == ID
+                                            orderby s.State descending
                                             select s).ToList();
 
             return submissions;
@@ -179,6 +181,7 @@ namespace projectMoo.Services
         {
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == milestoneID
+                                            orderby s.State descending
                                             select s).ToList();
 
             List<SubmissionsForTeacherViewModel> teacherSubmissions = new List<SubmissionsForTeacherViewModel>();

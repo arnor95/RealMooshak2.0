@@ -13,7 +13,7 @@
         </thead>
         @foreach (var submission in Model)
         {
-            <tr class="cursor-change">
+            <tr onclick="location.href = '@(Url.Action("Download", "Assignments", new { file = submission.FileName }))'" class="cursor-change">
                 <td class="lead">@submission.UserName</td>
                 <td>@submission.Status</td>
                 <td><a href="http://localhost:1773/Assignments/Download?file=@submission.FileName" target="_blank">Download File</a></td>
