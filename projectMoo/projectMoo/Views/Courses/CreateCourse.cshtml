@@ -109,8 +109,12 @@
 
 <script>
   $(function() {
-      $("#datepicker-2").datepicker();
-      $("#datepicker-3").datepicker();
+      $("#datepicker-2").datepicker({
+          dateFormat: 'dd-mm-yyyy'
+      });
+      $("#datepicker-3").datepicker({
+          dateFormat: 'dd-mm-yyyy'
+      });
 
   });
 </script>

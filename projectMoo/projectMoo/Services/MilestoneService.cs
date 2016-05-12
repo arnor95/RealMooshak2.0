@@ -3,7 +3,9 @@ using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace projectMoo.Services
@@ -62,19 +64,51 @@ namespace projectMoo.Services
         {
             foreach (AssignmentMilestoneViewModel milestoneVM in milestonesVM)
             {
-                AssignmentMilestone milestone = new AssignmentMilestone();
-                milestone.Description = milestoneVM.Description;
-                milestone.Title = milestoneVM.Title;
-                milestone.Grade = 0;
-                milestone.Percentage = milestoneVM.Percentage;
-                milestone.AssignmentID =assignment;
-
-                _db.AssignmentMilestones.Add(milestone);
-
-                foreach (var input in milestoneVM.Input)
+                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "")
                 {
-                    //save to file input/output
+                    AssignmentMilestone milestone = new AssignmentMilestone();
+                    milestone.Description = milestoneVM.Description;
+                    milestone.Title = milestoneVM.Title;
+                    milestone.Grade = 0;
+                    milestone.Percentage = milestoneVM.Percentage;
+                    milestone.AssignmentID = assignment;
+
+                    _db.AssignmentMilestones.Add(milestone);
+                    _db.SaveChanges();
+
+                    if (milestoneVM.Input.Count == milestoneVM.Output.Count)
+                    {
+                        if (milestoneVM.Input.Count == 0 || milestoneVM.Output.Count == 0)
+                            return;
+
+                        int milestoneID = milestone.ID;
+                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/");
+                        Directory.CreateDirectory(newFolderPath);
+
+                        string logFilePath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/"), "Input");
+
+                      
+
+                        if (!Directory.Exists(logFilePath))
+                        {
+                            Directory.CreateDirectory("C:\\Test");
+                        }
+                        using (StreamWriter writer = new StreamWriter(logFilePath, true, Encoding.Default))
+                        {
+                            for (int i = 0; i < milestoneVM.Input.Count;i++)
+                            {
+                                //save to file input/output
+                                writer.WriteLine(milestoneVM.Input[i]);
+                                writer.WriteLine(milestoneVM.Output[i]);
+
+                            }
+                        }
+
+
+                    }
+                 
                 }
+               
 
             }
         }

@@ -23,6 +23,7 @@ namespace projectMoo.Models.Entities
 
         [Required(ErrorMessage = "Please choose a due date for this assignment")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DueDate { get; set; }
     }
 }

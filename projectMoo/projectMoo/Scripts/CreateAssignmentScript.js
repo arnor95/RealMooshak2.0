@@ -63,5 +63,7 @@ $(document).on('click', '.btnNewRow', function () {
     });
 
     $(function () {
-        $("#datepicker").datepicker();
+        $("#datepicker").datepicker({
+            dateFormat: 'dd-mm-yyyy'
+        });
     });
