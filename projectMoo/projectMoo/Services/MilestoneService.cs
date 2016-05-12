@@ -31,6 +31,7 @@ namespace projectMoo.Services
 
             foreach (AssignmentMilestone m in milestones)
             {
+
                 returnMilestones.Add(new AssignmentMilestoneViewModel
                 {
                     MilestoneID = m.ID,
@@ -64,7 +65,7 @@ namespace projectMoo.Services
         {
             foreach (AssignmentMilestoneViewModel milestoneVM in milestonesVM)
             {
-                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "")
+                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "" && !(milestoneVM.Input == "") && !(milestoneVM.Output == ""))
                 {
                     AssignmentMilestone milestone = new AssignmentMilestone();
                     milestone.Description = milestoneVM.Description;
@@ -76,36 +77,30 @@ namespace projectMoo.Services
                     _db.AssignmentMilestones.Add(milestone);
                     _db.SaveChanges();
 
-                    if (milestoneVM.Input.Count == milestoneVM.Output.Count)
-                    {
-                        if (milestoneVM.Input.Count == 0 || milestoneVM.Output.Count == 0)
-                            return;
-
                         int milestoneID = milestone.ID;
-                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/");
+                        System.Diagnostics.Debug.WriteLine(milestoneID);
+
+                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/");
                         Directory.CreateDirectory(newFolderPath);
 
-                        string logFilePath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/"), "Input");
+                        string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "input.txt");
+                        string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "output.txt");
 
-                      
-
-                        if (!Directory.Exists(logFilePath))
+                        if (!Directory.Exists(input))
                         {
                             Directory.CreateDirectory("C:\\Test");
                         }
-                        using (StreamWriter writer = new StreamWriter(logFilePath, true, Encoding.Default))
+                        using (StreamWriter writer = new StreamWriter(input, true, Encoding.Default))
+                        {    
+                                  writer.WriteLine(milestoneVM.Input);
+                        }
+                        using (StreamWriter writer = new StreamWriter(output, true, Encoding.Default))
                         {
-                            for (int i = 0; i < milestoneVM.Input.Count;i++)
-                            {
-                                //save to file input/output
-                                writer.WriteLine(milestoneVM.Input[i]);
-                                writer.WriteLine(milestoneVM.Output[i]);
-
-                            }
+                                 writer.WriteLine(milestoneVM.Output);
                         }
 
 
-                    }
+                 
                  
                 }
                

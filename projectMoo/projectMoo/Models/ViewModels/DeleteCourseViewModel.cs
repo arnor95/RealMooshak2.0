@@ -9,6 +9,7 @@ namespace projectMoo.Models.ViewModels
     public class DeleteCourseViewModel
     {
         [Required(ErrorMessage = "Please enter a name. If the name matches a course, the course will be deleted.")]
+        [Display(Name = "Course name")]
         public string courseName { get; set; }
     }
 }

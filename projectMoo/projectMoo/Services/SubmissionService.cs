@@ -14,10 +14,12 @@ namespace projectMoo.Services
     public class SubmissionService
     {
         private ApplicationDbContext _db;
+        private UserService _userService;
 
         public SubmissionService()
         {
             _db = new ApplicationDbContext();
+            _userService = new UserService();
         }
 
         public void SubmitSubmission(Submission data)
@@ -171,6 +173,28 @@ namespace projectMoo.Services
             }
 
             return returnModel;
+        }
+
+        public List<SubmissionsForTeacherViewModel> getSubmissionsForTeacherByMilestoneID(int milestoneID)
+        {
+            List<Submission> submissions = (from s in _db.Submissions
+                                            where s.MilestoneID == milestoneID
+                                            select s).ToList();
+
+            List<SubmissionsForTeacherViewModel> teacherSubmissions = new List<SubmissionsForTeacherViewModel>();
+
+            foreach (var s in submissions)
+            {
+                teacherSubmissions.Add(new SubmissionsForTeacherViewModel
+                {
+                    FileName = s.FileID,
+                    Status = s.State,
+                    UserName = _userService.getUserName(s.UserID),
+                    Date = s.Date
+                });
+            }
+
+            return teacherSubmissions;
         }
     }
 }
