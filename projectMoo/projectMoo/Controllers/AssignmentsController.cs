@@ -105,7 +105,7 @@ namespace projectMoo.Controllers
 
 
         }
-
+        /*
         public ActionResult AddMilestone()
         {
 
@@ -113,6 +113,7 @@ namespace projectMoo.Controllers
 
             return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
         }
+        */
 
         public ActionResult AssignmentCreated()
         {
@@ -144,6 +145,30 @@ namespace projectMoo.Controllers
             ViewData["Assignments"] = assignments;
 
             return View(new DeleteAssignment());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAssignment(DeleteAssignment model)
+        {
+            if (model.assignmentName != null)
+            {
+                _assignmentService.DeleteAssignmentWithName(model.assignmentName);
+                _assignmentService.SaveToDatabase();
+
+                Success success = new Success();
+                success.Title = "Success";
+                success.Description = @"Assignment deleted";
+                success.ActionTitle = "Delete another assignment";
+                success.ActionPath = @"DeleteAssignment";
+
+                return View("~/Views/Success/Success.cshtml", success);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+
+            }
+
         }
 
 
