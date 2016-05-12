@@ -389,7 +389,7 @@ li#profile-list:hover {
     margin-right:auto;
 }
 
-.create {
+.create{
     padding-left: 20px;
 }
 
@@ -400,13 +400,10 @@ li#profile-list:hover {
 }
 
 .assignment-li-a{
+
     height:55px;
     padding-top:17.5px;
     font-size:18px;
-}
-
-.assignment-color{
-    background-color: #C0C0C0;
 }
 
 .emphasis{
@@ -465,12 +462,11 @@ body {
 .dropdown-menu {
     right: 0;
     left: auto;
-    width: 100%;
 }
 .dropdown-menu a#nav-li:hover {
     color: #ffffff;
 }
 
-.btn-btn-primary{
+btn-btn-primary{
     background-color:cornflowerblue;
 }
