@@ -21,21 +21,21 @@ namespace projectMoo.BusinessLogicTest
         public MockDatabase()
         {
             // We're setting our DbSets to be InMemoryDbSets rather than using SQL Server.
-            this.Assignments            = new InMemoryDbSet<Assignment>();
-            this.AssignmentMilestones   = new InMemoryDbSet<AssignmentMilestone>();
-            this.Courses                = new InMemoryDbSet<Course>();
-            this.UserCourses            = new InMemoryDbSet<UserCourse>();
-            this.UserGroups             = new InMemoryDbSet<UserGroup>();
-            this.Submissions            = new InMemoryDbSet<Submission>();
+            Assignments            = new InMemoryDbSet<Assignment>();
+            AssignmentMilestones   = new InMemoryDbSet<AssignmentMilestone>();
+            Courses                = new InMemoryDbSet<Course>();
+            UserCourses            = new InMemoryDbSet<UserCourse>();
+            UserGroups             = new InMemoryDbSet<UserGroup>();
+            Submissions            = new InMemoryDbSet<Submission>();
         }
 
-        IDbSet<Assignment>              Assignments             { get; set; }
-        IDbSet<AssignmentMilestone>     AssignmentMilestones    { get; set; }
-        IDbSet<Course>                  Courses                 { get; set; }
-        IDbSet<UserCourse>              UserCourses             { get; set; }
-        IDbSet<UserInfo>                UserInfoes              { get; set; }
-        IDbSet<UserGroup>               UserGroups              { get; set; }
-        IDbSet<Submission>              Submissions             { get; set; }
+        public IDbSet<Assignment>              Assignments             { get; set; }
+        public IDbSet<AssignmentMilestone>     AssignmentMilestones    { get; set; }
+        public IDbSet<Course>                  Courses                 { get; set; }
+        public IDbSet<UserCourse>              UserCourses             { get; set; }
+        public IDbSet<UserInfo>                UserInfoes              { get; set; }
+        public IDbSet<UserGroup>               UserGroups              { get; set; }
+        public IDbSet<Submission>              Submissions             { get; set; }
 
         public int SaveChanges()
         {

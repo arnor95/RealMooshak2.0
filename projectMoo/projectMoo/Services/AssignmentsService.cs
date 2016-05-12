@@ -123,7 +123,7 @@ namespace projectMoo.Services
         /// </summary>
         /// <param name="AssignmentID">AssignmentID</param>
         /// <returns>AssignmentViewModel</returns>
-        public AssignmentViewModel GetAssignmentByID(int AssignmentID)
+        public Assignment GetAssignmentByID(int AssignmentID)
         {
             var Assignment = _db.Assignments.SingleOrDefault(x => x.ID == AssignmentID);
 
@@ -131,25 +131,8 @@ namespace projectMoo.Services
             {
                 System.Diagnostics.Debug.WriteLine("No assignment with that ID found");
             }
-            /*
-            var milestones = _db.AssignmentMilestones
-                .Where(x => x.AssignmentID == AssignmentID)
-                .Select(x => new AssignmentMilestoneViewModel
-                {
-                    Title = x.Title,
-                    Description = x.Description,
-                    Grade = x.Grade,
-                    Percentage = x.Percentage
-                })
-                .ToList();
-            */
-            var viewModel = new AssignmentViewModel
-            {
-                Title = Assignment.Title,
-                //Milestones = milestones
-            };
-
-            return viewModel;
+         
+            return Assignment;
         }
 
         /// <summary>
