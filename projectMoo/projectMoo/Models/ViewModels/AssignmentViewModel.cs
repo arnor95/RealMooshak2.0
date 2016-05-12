@@ -10,9 +10,14 @@ namespace projectMoo.Models.ViewModels
     {
         public string Title { get; set; }
         public string CourseTitle { get; set; }
+
+        [Display(Name = "Course")]
         public int CourseID { get; set; }
+
         public string Description { get; set; }
+
         [DataType(DataType.Date)]
+        [Display(Name = "Due Date")]
         public DateTime DueDate { get; set; }
         public List<AssignmentMilestoneViewModel> Milestones { get; set; }
 
