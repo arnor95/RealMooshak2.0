@@ -65,7 +65,7 @@ namespace projectMoo.Services
         {
             foreach (AssignmentMilestoneViewModel milestoneVM in milestonesVM)
             {
-                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "")
+                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "" && !(milestoneVM.Input == "") && !(milestoneVM.Output == ""))
                 {
                     AssignmentMilestone milestone = new AssignmentMilestone();
                     milestone.Description = milestoneVM.Description;
@@ -76,11 +76,6 @@ namespace projectMoo.Services
 
                     _db.AssignmentMilestones.Add(milestone);
                     _db.SaveChanges();
-
-                    if (milestoneVM.Input.Count == milestoneVM.Output.Count)
-                    {
-                        if (milestoneVM.Input.Count == 0 || milestoneVM.Output.Count == 0)
-                            return;
 
                         int milestoneID = milestone.ID;
                         System.Diagnostics.Debug.WriteLine(milestoneID);
@@ -96,32 +91,16 @@ namespace projectMoo.Services
                             Directory.CreateDirectory("C:\\Test");
                         }
                         using (StreamWriter writer = new StreamWriter(input, true, Encoding.Default))
-                        {
-                            for (int i = 0; i < milestoneVM.Input.Count;i++)
-                            {
-                                //save to file input/output
-                                if(milestoneVM.Input[i] != "")
-                                {
-                                    writer.WriteLine(milestoneVM.Input[i]);
-
-                                }
-
-                            }
+                        {    
+                                  writer.WriteLine(milestoneVM.Input);
                         }
                         using (StreamWriter writer = new StreamWriter(output, true, Encoding.Default))
                         {
-                            for (int i = 0; i < milestoneVM.Input.Count; i++)
-                            {
-                                //save to file input/output
-                                if (milestoneVM.Input[i] != "")
-                                {
-                                    writer.WriteLine(milestoneVM.Output[i]);
-                                }
-                            }
+                                 writer.WriteLine(milestoneVM.Output);
                         }
 
 
-                    }
+                 
                  
                 }
                
