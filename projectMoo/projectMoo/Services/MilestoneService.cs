@@ -84,11 +84,11 @@ namespace projectMoo.Services
                         int milestoneID = milestone.ID;
                         System.Diagnostics.Debug.WriteLine(milestoneID);
 
-                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/");
+                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/");
                         Directory.CreateDirectory(newFolderPath);
 
-                        string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/"), "Input");
-                        string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/"), "Output");
+                        string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "input.txt");
+                        string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "output.txt");
 
                         if (!Directory.Exists(input))
                         {
