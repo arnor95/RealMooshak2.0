@@ -82,25 +82,40 @@ namespace projectMoo.Services
                             return;
 
                         int milestoneID = milestone.ID;
-                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/");
+                        System.Diagnostics.Debug.WriteLine(milestoneID);
+
+                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/");
                         Directory.CreateDirectory(newFolderPath);
 
-                        string logFilePath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher" + milestoneID + "/"), "Input");
+                        string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "input.txt");
+                        string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "output.txt");
 
-                      
-
-                        if (!Directory.Exists(logFilePath))
+                        if (!Directory.Exists(input))
                         {
                             Directory.CreateDirectory("C:\\Test");
                         }
-                        using (StreamWriter writer = new StreamWriter(logFilePath, true, Encoding.Default))
+                        using (StreamWriter writer = new StreamWriter(input, true, Encoding.Default))
                         {
                             for (int i = 0; i < milestoneVM.Input.Count;i++)
                             {
                                 //save to file input/output
-                                writer.WriteLine(milestoneVM.Input[i]);
-                                writer.WriteLine(milestoneVM.Output[i]);
+                                if(milestoneVM.Input[i] != "")
+                                {
+                                    writer.WriteLine(milestoneVM.Input[i]);
 
+                                }
+
+                            }
+                        }
+                        using (StreamWriter writer = new StreamWriter(output, true, Encoding.Default))
+                        {
+                            for (int i = 0; i < milestoneVM.Input.Count; i++)
+                            {
+                                //save to file input/output
+                                if (milestoneVM.Input[i] != "")
+                                {
+                                    writer.WriteLine(milestoneVM.Output[i]);
+                                }
                             }
                         }
 
