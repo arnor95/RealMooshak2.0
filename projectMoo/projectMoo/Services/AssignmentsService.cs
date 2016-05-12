@@ -31,6 +31,11 @@ namespace projectMoo.Services
          }
          */
 
+
+        /// <summary>
+        /// Returns all existing assignments in all courses
+        /// </summary>
+        /// <returns>List<Assignment></returns>
         public List<Assignment>  GetAllAssignments()
         {
             var assignments = (from assignment in _db.Assignments
@@ -38,6 +43,12 @@ namespace projectMoo.Services
             return assignments;
         }
 
+
+        /// <summary>
+        /// Returns all existing assignments for a user
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <returns>List<AssignmentViewModel></returns>
         public List<AssignmentViewModel> GetAssignmentForUser(string userID)
         {
             List<AssignmentViewModel> returnList = new List<AssignmentViewModel>();
@@ -68,6 +79,12 @@ namespace projectMoo.Services
             return returnList;
         }
 
+
+        /// <summary>
+        /// Returns all existing assignment in a course
+        /// </summary>
+        /// <param name="CourseID">CourseID</param>
+        /// <returns>List<AssignmentViewModel></returns>
         public List<AssignmentViewModel> GetAssignmentsInCourse(int CourseID)
         {
             var Assignments = (from assignment in _db.Assignments
@@ -90,10 +107,10 @@ namespace projectMoo.Services
                 listAssignments.Add(new AssignmentViewModel
                 {
                     Title = assign.Title,
-                    CourseTitle = _courseService.getCourseByID(assign.CourseID).Title.ToString(),
+                    CourseTitle = _courseService.GetCourseByID(assign.CourseID).Title.ToString(),
                     CourseID = CourseID,
                     Description = assign.Description,
-                    Milestones = _milestoneService.getMilestonesForAssignment(assign.ID),
+                    Milestones = _milestoneService.GetMilestonesForAssignment(assign.ID),
                     DueDate = assign.DueDate
                 });
             }
@@ -101,6 +118,11 @@ namespace projectMoo.Services
             return listAssignments;
         }
 
+        /// <summary>
+        /// Returns a single assignment
+        /// </summary>
+        /// <param name="AssignmentID">AssignmentID</param>
+        /// <returns>AssignmentViewModel</returns>
         public AssignmentViewModel GetAssignmentByID(int AssignmentID)
         {
             var Assignment = _db.Assignments.SingleOrDefault(x => x.ID == AssignmentID);
@@ -130,17 +152,29 @@ namespace projectMoo.Services
             return viewModel;
         }
 
-        public void addNewAssignment(Assignment a)
+        /// <summary>
+        /// Writes an assignment to the database
+        /// </summary>
+        /// <param name="a">Assignment</param>
+        public void AddNewAssignment(Assignment a)
         {
             _db.Assignments.Add(a);
             _db.SaveChanges();
         }
+
+        /// <summary>
+        /// Save changes to database
+        /// </summary>
         public void SaveToDatabase()
         {
             _db.SaveChanges();
 
         }
 
+        /// <summary>
+        /// Delete an assignment
+        /// </summary>
+        /// <param name="assignmentName">Assignment name</param>
         public void DeleteAssignmentWithName(string assignmentName)
         {
 

@@ -18,7 +18,13 @@ namespace projectMoo.Services
             _db = new ApplicationDbContext();
         }
 
-        public UserInfo getInfoForUser(string userID)
+
+        /// <summary>
+        /// Returns info about a specific user
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <returns>UserInfo</returns>
+        public UserInfo GetInfoForUser(string userID)
         {
             UserInfo info = (from user in _db.UserInfoes
                              where user.UserID == userID
@@ -33,7 +39,13 @@ namespace projectMoo.Services
 
         }
 
-        public string getUserName(string userID)
+
+        /// <summary>
+        /// Returns the name of a specific user
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <returns>Users full name</returns>
+        public string GetUserName(string userID)
         {
             var userInfo = (from user in _db.UserInfoes
                             where user.UserID == userID
@@ -42,6 +54,11 @@ namespace projectMoo.Services
             return userInfo.Name;
         }
 
+
+        /// <summary>
+        /// Deletes all connection the user has in the database
+        /// </summary>
+        /// <param name="userID">UserID</param>
         public void DeleteConnectionsToUser(string userID)
         {
             var userGroups = _db.UserGroups.Where(a => a.UserID == userID).ToList();
@@ -75,7 +92,13 @@ namespace projectMoo.Services
             _db.SaveChanges();
         }
 
-        public string getUserPhone(string userID)
+
+        /// <summary>
+        /// Returns the phone number for a specific user
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <returns>Users phone number</returns>
+        public string GetUserPhone(string userID)
         {
             var userInfo = (from user in _db.UserInfoes
                             where user.UserID == userID
@@ -84,7 +107,13 @@ namespace projectMoo.Services
             return userInfo.Phone;
         }
 
-        public string getUserPic(string userID)
+
+        /// <summary>
+        /// Returns a path to the users profile picture
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <returns>Path to users profile picture</returns>
+        public string GetUserPic(string userID)
         {
             var picID = (from info in _db.UserInfoes
                          where info.UserID == userID
@@ -93,6 +122,12 @@ namespace projectMoo.Services
             return picID.PicID;
         }
 
+
+        /// <summary>
+        /// Add a specific user to a specific group
+        /// </summary>
+        /// <param name="userId">UserID</param>
+        /// <param name="Group">Group name</param>
         public void AddUserToGroup(string userId, string Group)
         {
             //Saves userId to a specific group
@@ -104,6 +139,13 @@ namespace projectMoo.Services
             _db.UserGroups.Add(g);
         }
 
+
+        /// <summary>
+        /// Writes info for a specific user to the database
+        /// </summary>
+        /// <param name="name">Users full name</param>
+        /// <param name="phone">Users phone number</param>
+        /// <param name="userID">UserID</param>
         public void AddInfoForUser(string name, string phone, string userID)
         {
             UserInfo info = new UserInfo();
@@ -115,12 +157,22 @@ namespace projectMoo.Services
 
         }
 
+
+        /// <summary>
+        /// Save changes to the database
+        /// </summary>
         public void SaveToDatabase()
         {
             _db.SaveChanges();
 
         }
 
+
+        /// <summary>
+        /// Deletes a user from the database based on his email
+        /// </summary>
+        /// <param name="Email">Email</param>
+        /// <param name="manager">UserManager</param>
         public async void DeleteUserByEmail(string Email, UserManager<ApplicationUser> manager)
         {
            

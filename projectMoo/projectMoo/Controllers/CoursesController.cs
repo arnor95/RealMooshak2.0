@@ -26,7 +26,7 @@ namespace projectMoo.Controllers
 
             string currentUserId = User.Identity.GetUserId();
             System.Diagnostics.Debug.WriteLine("user id " + currentUserId);
-            List<CourseViewModel> ViewModel = _courseService.getCoursesForUser(currentUserId);
+            List<CourseViewModel> ViewModel = _courseService.GetCoursesForUser(currentUserId);
             return View(ViewModel);
         }
 
@@ -80,7 +80,7 @@ namespace projectMoo.Controllers
             if (ModelState.IsValid)
             {
                
-                _courseService.addNewCourse(addCourseViewModel.course);
+                _courseService.AddNewCourse(addCourseViewModel.course);
 
                 if(!(addCourseViewModel.course.Group == "None") && addCourseViewModel.course.Group != null)
                 {
@@ -123,7 +123,7 @@ namespace projectMoo.Controllers
 
             List<SelectListItem> courses = new List<SelectListItem>();
 
-            var allCourses = _courseService.getAllCourses();
+            var allCourses = _courseService.GetAllCourses();
 
             foreach (Course s in allCourses)
             {

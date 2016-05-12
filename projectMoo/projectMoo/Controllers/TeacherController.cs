@@ -16,7 +16,7 @@ namespace projectMoo.Controllers
         // GET: Teacher
         public ActionResult AllAssignmentsForMilestone(int ID)
         {
-            List<SubmissionsForTeacherViewModel> model = _submissionService.getSubmissionsForTeacherByMilestoneID(ID);
+            List<SubmissionsForTeacherViewModel> model = _submissionService.GetSubmissionsForTeacherByMilestoneID(ID);
 
             return View(model);
         }

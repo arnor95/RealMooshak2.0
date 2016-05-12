@@ -22,13 +22,24 @@ namespace projectMoo.Services
             _userService = new UserService();
         }
 
+
+        /// <summary>
+        /// Write a submission to the database
+        /// </summary>
+        /// <param name="data">Submission</param>
         public void SubmitSubmission(Submission data)
         {
             _db.Submissions.Add(data);
             _db.SaveChanges();
         }
 
-        public List<Submission> getAllSubmissionsByMilestoneIDForUser(int ID)
+
+        /// <summary>
+        /// Get all submission for a milestone based on the userID
+        /// </summary>
+        /// <param name="ID">UserID</param>
+        /// <returns>List<Submission></returns>
+        public List<Submission> GetAllSubmissionsByMilestoneIDForUser(int ID)
         {
             string userID = HttpContext.Current.User.Identity.GetUserId();
 
@@ -40,7 +51,13 @@ namespace projectMoo.Services
             return submissions;
         }
 
-        public List<Submission> getAllSubmissionsByMilestoneID(int ID)
+
+        /// <summary>
+        /// Get all submissions for a milestone
+        /// </summary>
+        /// <param name="ID">MilestoneID</param>
+        /// <returns>List<Submission></returns>
+        public List<Submission> GetAllSubmissionsByMilestoneID(int ID)
         {
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == ID
@@ -50,6 +67,14 @@ namespace projectMoo.Services
             return submissions;
         }
 
+
+        /// <summary>
+        /// Compile a code that the user submits
+        /// </summary>
+        /// <param name="workingFolder">Working Directory</param>
+        /// <param name="fileName">Filename</param>
+        /// <param name="milestoneID">MilestoneID</param>
+        /// <returns>ResultViewModel</returns>
         public ResultViewModel CompileCode(string workingFolder, string fileName, int milestoneID)
         {
             ResultViewModel returnModel = new ResultViewModel
@@ -177,7 +202,13 @@ namespace projectMoo.Services
             return returnModel;
         }
 
-        public List<SubmissionsForTeacherViewModel> getSubmissionsForTeacherByMilestoneID(int milestoneID)
+
+        /// <summary>
+        /// Returns all submissions for a teacher based for a specific milestone
+        /// </summary>
+        /// <param name="milestoneID">MilestoneID</param>
+        /// <returns>List<SubmissionsForTeacherViewModel></returns>
+        public List<SubmissionsForTeacherViewModel> GetSubmissionsForTeacherByMilestoneID(int milestoneID)
         {
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == milestoneID
@@ -192,7 +223,7 @@ namespace projectMoo.Services
                 {
                     FileName = s.FileID,
                     Status = s.State,
-                    UserName = _userService.getUserName(s.UserID),
+                    UserName = _userService.GetUserName(s.UserID),
                     Date = s.Date
                 });
             }

@@ -28,7 +28,7 @@ namespace projectMoo.Controllers
             System.Diagnostics.Debug.WriteLine("Index Assign");
             UserViewModel model = new UserViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
-            model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
+            model.Courses = _courseService.GetCoursesForUser(User.Identity.GetUserId());
             model.Name = model.Assignments.FirstOrDefault().CourseTitle;
             return View(model);
         }
@@ -38,7 +38,7 @@ namespace projectMoo.Controllers
         public ActionResult CreateAssignment()
         {
             List<Course> courses = new List<Course>();
-            courses = _courseService.getAllCourses();
+            courses = _courseService.GetAllCourses();
 
             List<SelectListItem> listItems = new List<SelectListItem>();
 
@@ -72,7 +72,7 @@ namespace projectMoo.Controllers
                 assignment.Title = data.Title;
                 assignment.Description = data.Description;
                 assignment.DueDate = data.DueDate;
-                _assignmentService.addNewAssignment(assignment);
+                _assignmentService.AddNewAssignment(assignment);
                 _assignmentService.SaveToDatabase();
 
                 _milestoneService.AddMilestonesForAssignment(assignment.ID, data.Milestones);
@@ -84,7 +84,7 @@ namespace projectMoo.Controllers
             else
             {
                 List<Course> courses = new List<Course>();
-                courses = _courseService.getAllCourses();
+                courses = _courseService.GetAllCourses();
 
                 List<SelectListItem> listItems = new List<SelectListItem>();
 
@@ -198,8 +198,8 @@ namespace projectMoo.Controllers
         {
             SubmissionViewModel model = new SubmissionViewModel();
 
-            model.Milestone = _milestoneService.getMilestoneByID(ID);
-            model.Submissions = _submissionService.getAllSubmissionsByMilestoneIDForUser(ID);
+            model.Milestone = _milestoneService.GetMilestoneByID(ID);
+            model.Submissions = _submissionService.GetAllSubmissionsByMilestoneIDForUser(ID);
 
             return View(model);
         }

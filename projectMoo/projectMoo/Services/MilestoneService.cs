@@ -21,7 +21,13 @@ namespace projectMoo.Services
             _courseService = new CoursesService();
         }
 
-        public List<AssignmentMilestoneViewModel> getMilestonesForAssignment(int assignmentID)
+
+        /// <summary>
+        /// Gets all milestone for a specific assignment
+        /// </summary>
+        /// <param name="assignmentID">AssignmentID</param>
+        /// <returns>List<AssignmentMilestoneViewModel></returns>
+        public List<AssignmentMilestoneViewModel> GetMilestonesForAssignment(int assignmentID)
         {
             List<AssignmentMilestone> milestones = (from m in _db.AssignmentMilestones
                                                    where m.AssignmentID == assignmentID
@@ -45,7 +51,13 @@ namespace projectMoo.Services
             return returnMilestones;
         }
 
-        public AssignmentMilestoneViewModel getMilestoneByID(int ID)
+
+        /// <summary>
+        /// Get a milestone by its ID
+        /// </summary>
+        /// <param name="ID">MilestoneID</param>
+        /// <returns>AssignmentMilestoneViewModel</returns>
+        public AssignmentMilestoneViewModel GetMilestoneByID(int ID)
         {
             AssignmentMilestone milestone = (from m in _db.AssignmentMilestones
                                              where m.ID == ID
@@ -61,6 +73,12 @@ namespace projectMoo.Services
             return returnModel;
         }
 
+
+        /// <summary>
+        /// Writes a list of milestones to the database and assigns it to an assignment
+        /// </summary>
+        /// <param name="assignment">AssignmentID</param>
+        /// <param name="milestonesVM">List of milestones</param>
         public void AddMilestonesForAssignment(int assignment, List<AssignmentMilestoneViewModel> milestonesVM)
         {
             foreach (AssignmentMilestoneViewModel milestoneVM in milestonesVM)
@@ -108,6 +126,10 @@ namespace projectMoo.Services
             }
         }
 
+
+        /// <summary>
+        /// Saves the changes to the database
+        /// </summary>
         public void SaveToDatabase()
         {
             _db.SaveChanges();

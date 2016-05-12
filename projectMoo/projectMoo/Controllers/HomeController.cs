@@ -24,7 +24,7 @@ namespace projectMoo.Controllers
         {
             UserViewModel model = new UserViewModel();
             string userID = User.Identity.GetUserId();
-            UserInfo info = _userService.getInfoForUser(userID);
+            UserInfo info = _userService.GetInfoForUser(userID);
 
 
             if (info.Name == null)
@@ -37,7 +37,7 @@ namespace projectMoo.Controllers
             }
             
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
-            model.Courses = _courseService.getCoursesForUser(userID);
+            model.Courses = _courseService.GetCoursesForUser(userID);
 
             if (info.Phone == null)
             {
