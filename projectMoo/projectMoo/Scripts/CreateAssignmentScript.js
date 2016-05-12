@@ -1,6 +1,6 @@
 ﻿
 
-    $('#btnNewRow').click(function () {
+$(document).on('click', '.btnNewRow', function () {
 
     var rows = $('#rows').children();
     var k = 10;
@@ -63,5 +63,7 @@
     });
 
     $(function () {
-        $("#datepicker").datepicker();
+        $("#datepicker").datepicker({
+            dateFormat: 'dd-mm-yyyy'
+        });
     });

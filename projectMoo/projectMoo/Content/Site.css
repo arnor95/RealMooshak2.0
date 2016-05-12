@@ -422,11 +422,12 @@ li#profile-list:hover {
     margin-top: 20px;
 }
 
-.inputoutput{
-    border-color: lightgray;
-    border-top-width: 1.75px;
-}
 
+
+.input-output {
+    border-top: 0.5px solid lightgray;
+    padding-top: 25px;
+}
 .deleteRow{
     padding-top:15px;
 }
@@ -457,10 +458,15 @@ body {
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
+
 .dropdown-menu {
     right: 0;
     left: auto;
 }
 .dropdown-menu a#nav-li:hover {
     color: #ffffff;
+}
+
+btn-btn-primary{
+    background-color:cornflowerblue;
 }
