@@ -28,7 +28,7 @@ namespace projectMoo.Models.ViewModels
             Input = new List<string>();
             Output = new List<string>();
 
-            int maxInputOutput = 2;
+            int maxInputOutput = 10;
 
             for (int i = 0; i < maxInputOutput; i++)
             {
