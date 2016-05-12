@@ -15,9 +15,9 @@ namespace projectMoo.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        private UserService _userService = new UserService();
-        private AssignmentsService _assignmentService = new AssignmentsService();
-        private CoursesService _courseService = new CoursesService();
+        private UserService _userService = new UserService(null);
+        private AssignmentsService _assignmentService = new AssignmentsService(null);
+        private CoursesService _courseService = new CoursesService(null);
 
         [Authorize]
         public ActionResult Index()

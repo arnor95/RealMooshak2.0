@@ -19,15 +19,28 @@ namespace projectMoo.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public interface IAppDataContext
     {
-        public DbSet<Assignment>            Assignments             { get; set; }
-        public DbSet<AssignmentMilestone>   AssignmentMilestones    { get; set; }
-        public DbSet<Course>                Courses                 { get; set; }
-        public DbSet<UserCourse>            UserCourses             { get; set; }
-        public DbSet<UserInfo>              UserInfoes              { get; set; }
-        public DbSet<UserGroup>             UserGroups              { get; set; }
-        public DbSet<Submission>           Submissions             { get; set; }
+        IDbSet<Assignment> Assignments { get; set; }
+        IDbSet<AssignmentMilestone> AssignmentMilestones { get; set; }
+        IDbSet<Course> Courses { get; set; }
+        IDbSet<UserCourse> UserCourses { get; set; }
+        IDbSet<UserInfo> UserInfoes { get; set; }
+        IDbSet<UserGroup> UserGroups { get; set; }
+        IDbSet<Submission> Submissions { get; set; }
+
+        int SaveChanges();
+    }
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IAppDataContext
+    {
+        public IDbSet<Assignment>            Assignments             { get; set; }
+        public IDbSet<AssignmentMilestone>   AssignmentMilestones    { get; set; }
+        public IDbSet<Course>                Courses                 { get; set; }
+        public IDbSet<UserCourse>            UserCourses             { get; set; }
+        public IDbSet<UserInfo>              UserInfoes              { get; set; }
+        public IDbSet<UserGroup>             UserGroups              { get; set; }
+        public IDbSet<Submission>            Submissions             { get; set; }
 
 
         public ApplicationDbContext()

@@ -15,7 +15,7 @@ namespace projectMoo.Controllers
     public class CoursesController : Controller
     {
 
-        private CoursesService _courseService = new CoursesService();
+        private CoursesService _courseService = new CoursesService(null);
         private ApplicationUserManager manager;
 
         [Authorize]

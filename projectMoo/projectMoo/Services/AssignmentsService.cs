@@ -10,15 +10,15 @@ namespace projectMoo.Services
 {
     public class AssignmentsService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
         private CoursesService _courseService;
         private MilestoneService _milestoneService;
 
-        public AssignmentsService()
+        public AssignmentsService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
-            _courseService = new CoursesService();
-            _milestoneService = new MilestoneService();
+            _db = context ?? new ApplicationDbContext();
+            _courseService = new CoursesService(null);
+            _milestoneService = new MilestoneService(null);
         }
 
         /* public DateTime getDateForAssignment(int assignmentID)

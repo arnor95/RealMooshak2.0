@@ -11,11 +11,11 @@ namespace projectMoo.Services
 {
     public class UserService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
         
-        public UserService()
+        public UserService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
+            _db = context ?? new ApplicationDbContext();
         }
 
 

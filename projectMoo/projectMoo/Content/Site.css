@@ -470,3 +470,11 @@ body {
 btn-btn-primary{
     background-color:cornflowerblue;
 }
+
+#red-background {
+    background-color: red;
+}
+
+#green-background {
+    background-color: green;
+}

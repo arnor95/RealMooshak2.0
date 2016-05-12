@@ -16,7 +16,7 @@ namespace projectMoo.Controllers
     public class CreateUserController : Controller
     {
         private ApplicationUserManager manager;
-        private UserService userService = new UserService();
+        private UserService userService = new UserService(null);
 
         // GET: CreateUser
         public ActionResult Index()

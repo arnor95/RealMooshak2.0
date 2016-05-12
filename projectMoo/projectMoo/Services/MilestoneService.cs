@@ -12,13 +12,13 @@ namespace projectMoo.Services
 {
     public class MilestoneService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
         private CoursesService _courseService;
 
-        public MilestoneService()
+        public MilestoneService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
-            _courseService = new CoursesService();
+            _db = context ?? new ApplicationDbContext();
+            _courseService = new CoursesService(null);
         }
 
 

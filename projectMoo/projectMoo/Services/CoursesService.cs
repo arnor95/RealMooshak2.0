@@ -10,11 +10,11 @@ namespace projectMoo.Services
 {
     public class CoursesService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
 
-        public CoursesService()
+        public CoursesService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
+            _db = context ?? new ApplicationDbContext();
         }
 
 

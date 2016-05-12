@@ -15,10 +15,10 @@ namespace projectMoo.Controllers
     public class AssignmentsController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        private AssignmentsService _assignmentService = new AssignmentsService();
-        private CoursesService _courseService = new CoursesService();
-        private MilestoneService _milestoneService = new MilestoneService();
-        private SubmissionService _submissionService = new SubmissionService();
+        private AssignmentsService _assignmentService = new AssignmentsService(null);
+        private CoursesService _courseService = new CoursesService(null);
+        private MilestoneService _milestoneService = new MilestoneService(null);
+        private SubmissionService _submissionService = new SubmissionService(null);
 
         [Authorize]
         // GET: Assignments

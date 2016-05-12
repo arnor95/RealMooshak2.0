@@ -13,13 +13,13 @@ namespace projectMoo.Services
 {
     public class SubmissionService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
         private UserService _userService;
 
-        public SubmissionService()
+        public SubmissionService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
-            _userService = new UserService();
+            _db = context ?? new ApplicationDbContext();
+            _userService = new UserService(null);
         }
 
 

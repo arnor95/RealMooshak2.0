@@ -11,7 +11,7 @@ namespace projectMoo.Controllers
 {
     public class TeacherController : Controller
     {
-        SubmissionService _submissionService = new SubmissionService();
+        SubmissionService _submissionService = new SubmissionService(null);
 
         // GET: Teacher
         public ActionResult AllAssignmentsForMilestone(int ID)
