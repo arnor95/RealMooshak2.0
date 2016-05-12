@@ -422,9 +422,10 @@ li#profile-list:hover {
     margin-top: 20px;
 }
 
-.inputoutput{
-    border-color: lightgray;
-    border-top-width: 1.75px;
+.input-output{
+
+    border-top: 0.5px solid lightgray;
+    padding-top:25px;
 }
 
 .deleteRow{
@@ -456,4 +457,9 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+btn-btn-primary{
+    background-color:cornflowerblue;
 }

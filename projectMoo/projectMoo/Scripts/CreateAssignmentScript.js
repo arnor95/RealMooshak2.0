@@ -1,6 +1,6 @@
 ﻿
 
-    $('#btnNewRow').click(function () {
+$(document).on('click', '.btnNewRow', function () {
 
     var rows = $('#rows').children();
     var k = 10;
