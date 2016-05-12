@@ -31,6 +31,7 @@ namespace projectMoo.Services
 
             foreach (AssignmentMilestone m in milestones)
             {
+
                 returnMilestones.Add(new AssignmentMilestoneViewModel
                 {
                     MilestoneID = m.ID,
