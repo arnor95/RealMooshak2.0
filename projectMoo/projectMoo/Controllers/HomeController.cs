@@ -39,9 +39,9 @@ namespace projectMoo.Controllers
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
             model.Courses = _courseService.getCoursesForUser(userID);
 
-            if (info.Phone == 0)
+            if (info.Phone == null)
             {
-                model.Phone = 666;
+                model.Phone = "Please enter a phone number";
             }
             else
             {

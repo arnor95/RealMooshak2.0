@@ -75,7 +75,7 @@ namespace projectMoo.Services
             _db.SaveChanges();
         }
 
-        public int getUserPhone(string userID)
+        public string getUserPhone(string userID)
         {
             var userInfo = (from user in _db.UserInfoes
                             where user.UserID == userID
@@ -104,7 +104,7 @@ namespace projectMoo.Services
             _db.UserGroups.Add(g);
         }
 
-        public void AddInfoForUser(string name, int phone, string userID)
+        public void AddInfoForUser(string name, string phone, string userID)
         {
             UserInfo info = new UserInfo();
             info.Phone = phone;
