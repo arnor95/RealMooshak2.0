@@ -291,6 +291,10 @@ li#profile-list:hover {
     background-color: white;
 }
 
+li#profile-list:active {
+    color:black;
+}
+
 .coursetable {
     margin-top: 10px;
 }
