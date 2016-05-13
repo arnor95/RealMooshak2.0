@@ -111,7 +111,9 @@ namespace projectMoo.Services
                     CourseID = CourseID,
                     Description = assign.Description,
                     Milestones = _milestoneService.GetMilestonesForAssignment(assign.ID),
-                    DueDate = assign.DueDate
+                    DueDate = assign.DueDate,
+                    AssignmentID = assign.ID
+                    
                 });
             }
 

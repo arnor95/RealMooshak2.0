@@ -22,14 +22,15 @@ namespace projectMoo.Controllers
 
         [Authorize]
         // GET: Assignments
-        public ActionResult CourseAssignments(int ID)
+        public ActionResult CourseAssignments(int ID , int AssignmentID)
         {
            
             System.Diagnostics.Debug.WriteLine("Index Assign");
-            UserViewModel model = new UserViewModel();
+            CourseAssignmentsViewModel model = new CourseAssignmentsViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
             model.Courses = _courseService.GetCoursesForUser(User.Identity.GetUserId());
             model.Name = model.Assignments.FirstOrDefault().CourseTitle;
+            model.Active = AssignmentID;
             return View(model);
         }
 

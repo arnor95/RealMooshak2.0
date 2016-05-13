@@ -23,7 +23,7 @@
                 <li class="list-group-item text-muted" id="profile-list">Courses<i class="fa fa-dashboard fa-1x"></i></li>
                 @foreach (var item in Model.Courses)
                 {
-                    <li onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="list-group-item text-left cursor-change">@item.Title</li>
+                    <li onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID,  AssignmentID = -1 }))'" class="list-group-item text-left cursor-change">@item.Title</li>
                 }
             </ul>
 
@@ -54,7 +54,7 @@
                                 {
                                     if (DateTime.Today < item.DueDate)
                                     { 
-                                    <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="cursor-change">
+                                    <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID, AssignmentID = item.AssignmentID }))'" class="cursor-change">
                                         <td>@item.Title</td>
                                         <td>@item.CourseTitle</td>
                                         <td>Not completed</td>
@@ -91,7 +91,7 @@
                                 {
                                     if (DateTime.Today > item.DueDate)
                                     {
-                                        <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID }))'" class="cursor-change">
+                                        <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = item.CourseID, AssignmentID = item.AssignmentID  }))'" class="cursor-change">
                                             <td>@item.Title</td>
                                             <td>@item.CourseTitle</td>
                                             <td>9</td>

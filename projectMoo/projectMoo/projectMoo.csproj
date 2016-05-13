@@ -214,6 +214,7 @@
     <Compile Include="Models\Entities\Submission.cs" />
     <Compile Include="Models\Entities\UserGroup.cs" />
     <Compile Include="Models\ViewModels\AddCourseViewModel.cs" />
+    <Compile Include="Models\ViewModels\CourseAssignmentsViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteAssignment.cs" />
     <Compile Include="Models\ViewModels\DeleteCourseViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteUserViewModel.cs" />
