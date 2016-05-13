@@ -27,6 +27,20 @@
                     <li>@Html.ActionLink("My page", "Index", "Home", null, new { id = "nav-li" })</li>
                     <li>@Html.ActionLink("Courses", "Index", "Courses", null, new { id = "nav-li" })</li>
                 </ul>
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="btn-group create-object update-object">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Update Actions
+                            <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-divider"></div>
+                                 @Html.ActionLink("Course Users", "UpdateCourseUsers", "Courses", null, new { @class = "create" })
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </div>
+                }
                 @if (User.IsInRole("Teacher") || User.IsInRole("Admin"))
                 {
                     <div class="btn-group create-object">
@@ -39,10 +53,10 @@
                             <div class="dropdown-divider"></div>
                             @if (User.IsInRole("Admin"))
                             {
-                                 @Html.ActionLink("Create Course", "CreateCourse", "Courses", null, new { @class = "create" })
-                                  <div class="dropdown-divider"></div>
-                                 @Html.ActionLink("Create User", "NewUser", "CreateUser", null, new { @class = "create" })
-                                 <div class="dropdown-divider"></div>
+                                @Html.ActionLink("Create Course", "CreateCourse", "Courses", null, new { @class = "create" })
+                                <div class="dropdown-divider"></div>
+                                @Html.ActionLink("Create User", "NewUser", "CreateUser", null, new { @class = "create" })
+                                <div class="dropdown-divider"></div>
                             }
                         </div>
                     </div>

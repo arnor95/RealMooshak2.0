@@ -159,5 +159,86 @@ namespace projectMoo.Controllers
             }
         }
         #endregion
+
+        #region Update Assignment
+
+        [Authorize(Roles = "Admin, Teacher")]
+        [HttpGet]
+        public ActionResult UpdateCourseUsers()
+        {
+            var context = new ApplicationDbContext();
+
+            List<SelectListItem> courses = new List<SelectListItem>();
+            List<SelectListItem> users = new List<SelectListItem>();
+
+            var allAssignments = _courseService.GetAllCourses();
+            var allUsers = context.Users.ToList();
+
+            foreach (Course s in allAssignments)
+            {
+                courses.Add(new SelectListItem
+                {
+                    Text = s.Title,
+                    Value = s.ID.ToString()
+
+                });
+            }
+
+            ViewData["Courses"] = courses;
+
+            foreach (ApplicationUser user in allUsers)
+            {
+                users.Add(new SelectListItem
+                {
+                    Text = user.UserName,
+                    Value = user.Id
+
+                });
+            }
+
+            ViewData["Users"] = users;
+
+            UpdateCourseUsers model = new UpdateCourseUsers();
+
+            return View(model);
+        }
+
+        [Authorize(Roles = "Admin, Teacher")]
+        [HttpPost]
+        public ActionResult UpdateCourseUsers(UpdateCourseUsers data)
+        {
+            if (data.Course != null && data.UserID != null)
+            {
+                bool isUserInCourse = false;
+                var courses = _courseService.GetCoursesForUser(data.UserID);
+                foreach (var course in courses)
+                {
+                    if (course.CourseID.ToString() == data.Course)
+                    {
+                        isUserInCourse = true;
+                        break;
+                    }
+                }
+
+                if (!isUserInCourse)
+                {
+                    _courseService.AddUserToCourse(data.UserID, Int32.Parse(data.Course));
+                    _courseService.SaveToDataBase();
+                }
+
+                Success success = new Success();
+                success.Title = "Success";
+                success.Description = @"User added";
+                success.ActionTitle = "Add another user to course";
+                success.ActionPath = @"UpdateCourseUsers";
+
+                return View("~/Views/Success/Success.cshtml", success);
+            }
+            else
+            {
+                return RedirectToAction("UpdateAssignment");
+            }
+        }
+        #endregion
     }
 }

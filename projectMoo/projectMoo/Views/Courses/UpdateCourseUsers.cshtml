@@ -1,0 +1,32 @@
+﻿@model projectMoo.Models.ViewModels.UpdateCourseUsers
+
+@{
+    ViewBag.Title = "Add user to assignment";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+  <div class="form-horizontal center col-md-4">
+    <h4>Add User To Course</h4>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Course, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Course, ViewData["Courses"] as List<SelectListItem>, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.UserID, ViewData["Users"] as List<SelectListItem>, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create Assignment" class="btn btn-primary form-control" />
+        </div>
+    </div>
+</div>
+}

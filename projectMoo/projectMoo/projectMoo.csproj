@@ -231,6 +231,7 @@
     <Compile Include="Models\ViewModels\AssignmentViewModel.cs" />
     <Compile Include="Models\ViewModels\CourseViewModel.cs" />
     <Compile Include="Models\ViewModels\NewUserViewModel.cs" />
+    <Compile Include="Models\ViewModels\UpdateCourseUsers.cs" />
     <Compile Include="Models\ViewModels\UserRole.cs" />
     <Compile Include="Models\ViewModels\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,6 +325,7 @@
     <Content Include="Views\Shared\CustomError.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AssignmentMilestoneViewModel.cshtml" />
     <Content Include="Views\Teacher\AllAssignmentsForMilestone.cshtml" />
+    <Content Include="Views\Courses\UpdateCourseUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
