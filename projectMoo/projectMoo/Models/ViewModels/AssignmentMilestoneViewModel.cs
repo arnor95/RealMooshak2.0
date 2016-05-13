@@ -20,9 +20,5 @@ namespace projectMoo.Models.ViewModels
         public bool Status { get; set; }
         public string Output { get; set; }
         public string Input { get; set; }
-<<<<<<< HEAD
-=======
-
->>>>>>> 44b61e98c5eb6cb904d692f6590ecb154750f7d7
     }
 }

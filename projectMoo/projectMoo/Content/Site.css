@@ -472,11 +472,11 @@ btn-btn-primary{
 }
 
 #red-background {
-    background-color: red;
+    background-color: #ff9999;
 }
 
 #green-background {
-    background-color: green;
+    background-color: #99ff99;
 }
 
 .success{
@@ -524,4 +524,12 @@ btn-btn-primary{
   to {
     stroke-dashoffset:0; 
   }
+}
+
+#text-color-green {
+    color: #99ff99;
+}
+
+#text-color-red {
+    color: #ff9999;
 }

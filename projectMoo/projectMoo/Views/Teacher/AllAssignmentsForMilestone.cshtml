@@ -13,12 +13,25 @@
         </thead>
         @foreach (var submission in Model)
         {
-            <tr onclick="location.href = '@(Url.Action("Download", "Assignments", new { file = submission.FileName }))'" class="cursor-change">
-                <td class="lead">@submission.UserName</td>
-                <td>@submission.Status</td>
-                <td><a href="http://localhost:1773/Assignments/Download?file=@submission.FileName" target="_blank">Download File</a></td>
-                <td><span class="badge">@submission.Date.ToShortDateString()</span></td>
-            </tr>
+            if (submission.Status)
+            {
+                <tr onclick="location.href = '@(Url.Action("Download", "Assignments", new { file = submission.FileName }))'" class="cursor-change" id="green-background">
+                    <td class="lead">@submission.UserName</td>
+                    <td>@submission.Status</td>
+                    <td><a href="http://localhost:1773/Assignments/Download?file=@submission.FileName" target="_blank">Download File</a></td>
+                    <td><span class="badge">@submission.Date.ToShortDateString()</span></td>
+                </tr>
+            }
+            else
+            {
+                <tr onclick="location.href = '@(Url.Action("Download", "Assignments", new { file = submission.FileName }))'" class="cursor-change" id="red-background">
+                    <td class="lead">@submission.UserName</td>
+                    <td>@submission.Status</td>
+                    <td><a href="http://localhost:1773/Assignments/Download?file=@submission.FileName" target="_blank">Download File</a></td>
+                    <td><span class="badge">@submission.Date.ToShortDateString()</span></td>
+                </tr>
+            }
+
 
 
         }

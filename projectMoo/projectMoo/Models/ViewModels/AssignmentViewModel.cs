@@ -14,7 +14,7 @@ namespace projectMoo.Models.ViewModels
 
         [Display(Name = "Course")]
         public int CourseID { get; set; }
-
+        public bool Status { get; set; }
         public string Description { get; set; }
 
         [DataType(DataType.Date)]

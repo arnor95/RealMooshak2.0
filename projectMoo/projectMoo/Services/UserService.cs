@@ -203,5 +203,20 @@ namespace projectMoo.Services
 
             return false;
         }
+
+        public bool HasFinishedAssignment(string userID, int assignmentID)
+        {
+            var milestones = (from m in _db.AssignmentMilestones
+                              where m.AssignmentID == assignmentID
+                              select m).ToList();
+
+            foreach (var m in milestones)
+            {
+                if (!HasFinishedMilestone(userID, m.ID))
+                    return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -110,19 +110,6 @@ namespace projectMoo.Controllers
 
 
         }
-<<<<<<< HEAD
-        /*
-        public ActionResult AddMilestone()
-        {
-
-            var milestoneVM = new AssignmentMilestoneViewModel();
-
-            return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
-        }
-        */
-=======
-
->>>>>>> 44b61e98c5eb6cb904d692f6590ecb154750f7d7
 
         public ActionResult AssignmentCreated()
         {

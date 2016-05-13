@@ -1,4 +1,5 @@
-﻿using projectMoo.Models;
+﻿using Microsoft.AspNet.Identity;
+using projectMoo.Models;
 using projectMoo.Models.Entities;
 using projectMoo.Models.ViewModels;
 using System;
@@ -13,12 +14,14 @@ namespace projectMoo.Services
         private IAppDataContext _db;
         private CoursesService _courseService;
         private MilestoneService _milestoneService;
+        private UserService _userService;
 
         public AssignmentsService(IAppDataContext context)
         {
             _db = context ?? new ApplicationDbContext();
             _courseService = new CoursesService(null);
             _milestoneService = new MilestoneService(null);
+            _userService = new UserService(null);
         }
 
 
@@ -91,6 +94,9 @@ namespace projectMoo.Services
             }
 
             List<AssignmentViewModel> listAssignments = new List<AssignmentViewModel>();
+            string userID = HttpContext.Current.User.Identity.GetUserId();
+
+
 
             foreach (var assign in Assignments)
             {
@@ -102,6 +108,7 @@ namespace projectMoo.Services
                     CourseTitle = _courseService.GetCourseByID(assign.CourseID).Title.ToString(),
                     CourseID = CourseID,
                     Description = assign.Description,
+                    Status = _userService.HasFinishedAssignment(userID, assign.ID),
                     Milestones = _milestoneService.GetMilestonesForAssignment(assign.ID),
                     DueDate = assign.DueDate,
                     AssignmentID = assign.ID
