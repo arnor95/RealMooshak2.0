@@ -323,7 +323,6 @@
     <Content Include="Views\Assignments\ViewSubmissions.cshtml" />
     <Content Include="Views\Shared\CustomError.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AssignmentMilestoneViewModel.cshtml" />
-    <Content Include="Views\Assignments\AddMilestone.cshtml" />
     <Content Include="Views\Teacher\AllAssignmentsForMilestone.cshtml" />
   </ItemGroup>
   <ItemGroup>
