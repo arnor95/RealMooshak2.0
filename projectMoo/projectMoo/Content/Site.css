@@ -189,9 +189,6 @@ img#logo-nav {
     margin: 5px;
 }
 
-img#profile-picture {
-    margin-left: 80px;
-}
 
 #topright {
     float: right;
@@ -544,3 +541,12 @@ btn-btn-primary{
     color: #ff9999;
 }
 
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+.btn-primary {
+    color: #ffffff;
+    background-color: cornflowerblue;
+    border-color: #357ebd;
+}
