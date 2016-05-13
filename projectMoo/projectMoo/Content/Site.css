@@ -189,6 +189,13 @@ img#logo-nav {
     margin: 5px;
 }
 
+img#logo-login{
+    width: 100px;
+    height: 80px;
+    text-indent: -9999px; /* hides the link text */
+    float: right;
+}
+
 
 #topright {
     float: right;

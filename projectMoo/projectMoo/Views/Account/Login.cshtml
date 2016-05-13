@@ -10,7 +10,7 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Log in to Mooshak</h4>
+                <h4>Log in to Mooshak <img id="logo-login" src='@Url.Content("~/Images/logo.png")' /></h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
