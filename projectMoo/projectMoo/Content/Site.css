@@ -487,5 +487,41 @@ btn-btn-primary{
     border:0.4px solid;
     border-color: cornflowerblue;
     border-radius: 2px;
+    margin: 25px auto;
+    text-align:center;
+
+}
+
+.succesIcon {
+  height: 50px;
+  width: 60px;
+  background-color: white; 
+  margin: 0 auto;
+}
+
+.succesIcon polyline {
+  display: none;
+  fill: none;
+  stroke: cornflowerblue;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 80;
   
+  -webkit-animation: succesIconAnim 0.7s ease-in 1 paused;
+
+  *-webkit-animation-name: succesIconAnim;	
+  *-webkit-animation-duration: 0.7s;
+  *-webkit-animation-timing-function: ease-in;
+  *-webkit-animation-iteration-count: 1;
+  *-webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes succesIconAnim {
+  from {
+    stroke-dashoffset:80; 
+  }
+  to {
+    stroke-dashoffset:0; 
+  }
 }
