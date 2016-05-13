@@ -138,6 +138,8 @@ namespace projectMoo.Services
             compiler.Close();
             #endregion
 
+            Stopwatch sw = Stopwatch.StartNew();
+
             // Check if the compile succeeded, and if it did,
             // we try to execute the code:
             if (System.IO.File.Exists(exeFilePath))
@@ -164,12 +166,23 @@ namespace projectMoo.Services
                         processExe.Start();
                         StreamWriter myStreamWriter = processExe.StandardInput;
                         StreamReader myStreamReader = processExe.StandardOutput;
-
+                        
                         myStreamWriter.WriteLine(inputs[i]);
 
                         // We then read the output of the program:
                         while (!processExe.StandardOutput.EndOfStream)
                         {
+                            if (sw.Elapsed.Seconds > 30)
+                            {
+                                sw.Stop();
+                                processExe.Close();
+                                returnModel.Input.Add("Compiler timed out");
+                                returnModel.ExpectedOutput.Add("Compiler timed out");
+                                returnModel.Output.Add("Compiler timed out");
+                                returnModel.Status = false;
+                                return (returnModel);
+                            }
+
                             lines.Add(myStreamReader.ReadLine());
 
                             if(outputs[i] != lines[i])
@@ -181,10 +194,12 @@ namespace projectMoo.Services
                             returnModel.Output.Add(lines[i]);
                             returnModel.ExpectedOutput.Add(outputs[i]);
                         }
+                        processExe.Close();
+                        processExe.Kill();
                     }
                 } 
             }
-
+            
             return returnModel;
         }
 
