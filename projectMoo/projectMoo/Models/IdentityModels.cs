@@ -28,6 +28,7 @@ namespace projectMoo.Models
         IDbSet<UserInfo>                UserInfoes              { get; set; }
         IDbSet<UserGroup>               UserGroups              { get; set; }
         IDbSet<Submission>              Submissions             { get; set; }
+        IDbSet<MilestoneFinished>       MilestoneFinisheds      { get; set; }
 
         int SaveChanges();
     }
@@ -41,6 +42,7 @@ namespace projectMoo.Models
         public IDbSet<UserInfo>              UserInfoes              { get; set; }
         public IDbSet<UserGroup>             UserGroups              { get; set; }
         public IDbSet<Submission>            Submissions             { get; set; }
+        public IDbSet<MilestoneFinished>     MilestoneFinisheds      { get; set; }
 
 
         public ApplicationDbContext()

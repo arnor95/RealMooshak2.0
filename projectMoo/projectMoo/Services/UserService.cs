@@ -191,5 +191,17 @@ namespace projectMoo.Services
             await manager.DeleteAsync(user);
 
         }
+
+        public bool HasFinishedMilestone(string userID, int milestoneID)
+        {
+            var milestone = (from b in _db.MilestoneFinisheds
+                             where b.UserID == userID && b.MilestoneID == milestoneID
+                             select b).SingleOrDefault();
+
+            if (milestone != null)
+                return true;
+
+            return false;
+        }
     }
 }

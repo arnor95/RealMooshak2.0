@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -18,11 +17,8 @@ namespace projectMoo.Models.ViewModels
         /// then this property contains the value 15.
         /// </summary>
         public int Percentage { get; set; }
+        public bool Status { get; set; }
         public string Output { get; set; }
         public string Input { get; set; }
-
-        [DataType(DataType.Upload)]
-        public HttpPostedFileBase Code { get; set; }
-
     }
 }

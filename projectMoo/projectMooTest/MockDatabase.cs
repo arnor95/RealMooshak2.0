@@ -29,6 +29,7 @@ namespace projectMoo.BusinessLogicTest
             UserGroups             = new InMemoryDbSet<UserGroup>();
             Submissions            = new InMemoryDbSet<Submission>();
             UserInfoes             = new InMemoryDbSet<UserInfo>();
+            MilestoneFinisheds     = new InMemoryDbSet<MilestoneFinished>();
         }
 
         public IDbSet<Assignment>              Assignments             { get; set; }
@@ -38,6 +39,7 @@ namespace projectMoo.BusinessLogicTest
         public IDbSet<UserInfo>                UserInfoes              { get; set; }
         public IDbSet<UserGroup>               UserGroups              { get; set; }
         public IDbSet<Submission>              Submissions             { get; set; }
+        public IDbSet<MilestoneFinished>       MilestoneFinisheds      { get; set; }
 
         public int SaveChanges()
         {

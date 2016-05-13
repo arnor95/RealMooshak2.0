@@ -29,10 +29,8 @@ namespace projectMoo.Controllers
             CourseAssignmentsViewModel model = new CourseAssignmentsViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
             model.Courses = _courseService.GetCoursesForUser(User.Identity.GetUserId());
-            model.ActiveCourse = _courseService.GetCourseByID(ID);
-            model.Name = model.ActiveCourse.Title;
+            model.Name = model.Assignments.FirstOrDefault().CourseTitle;
             model.Active = AssignmentID;
-
             return View(model);
         }
 
@@ -65,7 +63,6 @@ namespace projectMoo.Controllers
         [HttpPost]
         public ActionResult CreateAssignment(AssignmentViewModel data)
         {
-
             if (ModelState.IsValid)
             {
 
@@ -109,7 +106,16 @@ namespace projectMoo.Controllers
 
 
         }
- 
+        /*
+        public ActionResult AddMilestone()
+        {
+
+            var milestoneVM = new AssignmentMilestoneViewModel();
+
+            return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
+        }
+        */
+
         public ActionResult AssignmentCreated()
         {
             Success success = new Success();
@@ -181,7 +187,6 @@ namespace projectMoo.Controllers
 
             if (extension != ".cpp")
             {
-                
                 return View("Error");
             }
 
@@ -207,6 +212,18 @@ namespace projectMoo.Controllers
                 newSubmission.FileID = path;
                 newSubmission.Date = DateTime.Now;
                 newSubmission.State = model.Status;
+
+                if (model.Status)
+                {
+                    MilestoneFinished m = new MilestoneFinished
+                    {
+                        MilestoneID = ID,
+                        UserID = User.Identity.GetUserId()
+                    };
+
+                    _db.MilestoneFinisheds.Add(m);
+                    _db.SaveChanges();
+                }
 
                 _db.Submissions.Add(newSubmission);
                 _db.SaveChanges();

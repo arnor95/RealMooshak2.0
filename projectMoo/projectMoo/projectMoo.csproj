@@ -210,6 +210,7 @@
     <Compile Include="Models\Entities\Assignment.cs" />
     <Compile Include="Models\Entities\AssignmentMilestone.cs" />
     <Compile Include="Models\Entities\Course.cs" />
+    <Compile Include="Models\Entities\MilestoneFinished.cs" />
     <Compile Include="Models\Entities\SessionCourse.cs" />
     <Compile Include="Models\Entities\Submission.cs" />
     <Compile Include="Models\Entities\UserGroup.cs" />
@@ -242,8 +243,6 @@
     <Compile Include="Utilities\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Code\Teacher\24\input.txt" />
-    <Content Include="Code\Teacher\24\output.txt" />
     <Content Include="Code\Teacher\5\input.txt" />
     <Content Include="Code\Teacher\5\output.txt" />
     <Content Include="Content\bootstrap.css" />
@@ -264,7 +263,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Exceptions\gunnarbb15%40ru.is\406a3f0c-2dc8-4a38-a8c9-3c3bfd38c02e" />
-    <Content Include="Code\Teacher\24\code.cpp" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CreateAssignmentScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -277,7 +275,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\SuccessScript.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
