@@ -80,8 +80,5 @@ namespace projectMooTest.Services
             Assert.AreEqual("Vefforritun", courses[1].Title);
             Assert.AreEqual("Mental course", courses[2].Description);
         }
-
-        [TestMethod]
-        public void
     }
 }
