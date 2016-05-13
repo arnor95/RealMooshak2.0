@@ -4,18 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using projectMoo.Models.Entities;
+using projectMoo.Models.ViewModels;
 using projectMoo.Services;
 
 namespace projectMoo.Controllers
 {
     public class TeacherController : Controller
     {
-        SubmissionService _submissionService = new SubmissionService();
+        SubmissionService _submissionService = new SubmissionService(null);
 
         // GET: Teacher
         public ActionResult AllAssignmentsForMilestone(int ID)
         {
-            List<Submission> model = _submissionService.getAllSubmissionsByMilestoneID(ID);
+            List<SubmissionsForTeacherViewModel> model = _submissionService.GetSubmissionsForTeacherByMilestoneID(ID);
 
             return View(model);
         }

@@ -13,39 +13,68 @@ namespace projectMoo.Services
 {
     public class SubmissionService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
+        private UserService _userService;
 
-        public SubmissionService()
+        public SubmissionService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
+            _db = context ?? new ApplicationDbContext();
+            _userService = new UserService(null);
         }
 
+
+        /// <summary>
+        /// Write a submission to the database
+        /// </summary>
+        /// <param name="data">Submission</param>
         public void SubmitSubmission(Submission data)
         {
             _db.Submissions.Add(data);
             _db.SaveChanges();
         }
 
-        public List<Submission> getAllSubmissionsByMilestoneIDForUser(int ID)
+
+        /// <summary>
+        /// Get all submission for a milestone based on the userID
+        /// </summary>
+        /// <param name="ID">UserID</param>
+        /// <returns>List<Submission></returns>
+        public List<Submission> GetAllSubmissionsByMilestoneIDForUser(int ID)
         {
             string userID = HttpContext.Current.User.Identity.GetUserId();
 
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == ID && s.UserID == userID
+                                            orderby s.State descending
                                             select s).ToList();
 
             return submissions;
         }
 
-        public List<Submission> getAllSubmissionsByMilestoneID(int ID)
+
+        /// <summary>
+        /// Get all submissions for a milestone
+        /// </summary>
+        /// <param name="ID">MilestoneID</param>
+        /// <returns>List<Submission></returns>
+        public List<Submission> GetAllSubmissionsByMilestoneID(int ID)
         {
             List<Submission> submissions = (from s in _db.Submissions
                                             where s.MilestoneID == ID
+                                            orderby s.State descending
                                             select s).ToList();
 
             return submissions;
         }
 
+
+        /// <summary>
+        /// Compile a code that the user submits
+        /// </summary>
+        /// <param name="workingFolder">Working Directory</param>
+        /// <param name="fileName">Filename</param>
+        /// <param name="milestoneID">MilestoneID</param>
+        /// <returns>ResultViewModel</returns>
         public ResultViewModel CompileCode(string workingFolder, string fileName, int milestoneID)
         {
             ResultViewModel returnModel = new ResultViewModel
@@ -171,6 +200,35 @@ namespace projectMoo.Services
             }
 
             return returnModel;
+        }
+
+
+        /// <summary>
+        /// Returns all submissions for a teacher based for a specific milestone
+        /// </summary>
+        /// <param name="milestoneID">MilestoneID</param>
+        /// <returns>List<SubmissionsForTeacherViewModel></returns>
+        public List<SubmissionsForTeacherViewModel> GetSubmissionsForTeacherByMilestoneID(int milestoneID)
+        {
+            List<Submission> submissions = (from s in _db.Submissions
+                                            where s.MilestoneID == milestoneID
+                                            orderby s.State descending
+                                            select s).ToList();
+
+            List<SubmissionsForTeacherViewModel> teacherSubmissions = new List<SubmissionsForTeacherViewModel>();
+
+            foreach (var s in submissions)
+            {
+                teacherSubmissions.Add(new SubmissionsForTeacherViewModel
+                {
+                    FileName = s.FileID,
+                    Status = s.State,
+                    UserName = _userService.GetUserName(s.UserID),
+                    Date = s.Date
+                });
+            }
+
+            return teacherSubmissions;
         }
     }
 }

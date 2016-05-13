@@ -214,10 +214,12 @@
     <Compile Include="Models\Entities\Submission.cs" />
     <Compile Include="Models\Entities\UserGroup.cs" />
     <Compile Include="Models\ViewModels\AddCourseViewModel.cs" />
+    <Compile Include="Models\ViewModels\CourseAssignmentsViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteAssignment.cs" />
     <Compile Include="Models\ViewModels\DeleteCourseViewModel.cs" />
     <Compile Include="Models\ViewModels\DeleteUserViewModel.cs" />
     <Compile Include="Models\ViewModels\ResultViewModel.cs" />
+    <Compile Include="Models\ViewModels\SubmissionsForTeacherViewModel.cs" />
     <Compile Include="Models\ViewModels\SubmissionViewModel.cs" />
     <Compile Include="Models\ViewModels\Success.cs" />
     <Compile Include="Models\Entities\UserCourse.cs" />
@@ -240,6 +242,8 @@
     <Compile Include="Utilities\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Code\Teacher\24\input.txt" />
+    <Content Include="Code\Teacher\24\output.txt" />
     <Content Include="Code\Teacher\5\input.txt" />
     <Content Include="Code\Teacher\5\output.txt" />
     <Content Include="Content\bootstrap.css" />
@@ -260,6 +264,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Exceptions\gunnarbb15%40ru.is\406a3f0c-2dc8-4a38-a8c9-3c3bfd38c02e" />
+    <Content Include="Code\Teacher\24\code.cpp" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CreateAssignmentScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -272,6 +277,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\SuccessScript.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

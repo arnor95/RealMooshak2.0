@@ -15,21 +15,24 @@ namespace projectMoo.Controllers
     public class AssignmentsController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        private AssignmentsService _assignmentService = new AssignmentsService();
-        private CoursesService _courseService = new CoursesService();
-        private MilestoneService _milestoneService = new MilestoneService();
-        private SubmissionService _submissionService = new SubmissionService();
+        private AssignmentsService _assignmentService = new AssignmentsService(null);
+        private CoursesService _courseService = new CoursesService(null);
+        private MilestoneService _milestoneService = new MilestoneService(null);
+        private SubmissionService _submissionService = new SubmissionService(null);
 
         [Authorize]
         // GET: Assignments
-        public ActionResult CourseAssignments(int ID)
+        public ActionResult CourseAssignments(int ID , int AssignmentID)
         {
            
             System.Diagnostics.Debug.WriteLine("Index Assign");
-            UserViewModel model = new UserViewModel();
+            CourseAssignmentsViewModel model = new CourseAssignmentsViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
-            model.Courses = _courseService.getCoursesForUser(User.Identity.GetUserId());
-            model.Name = model.Courses.FirstOrDefault().Title;
+            model.Courses = _courseService.GetCoursesForUser(User.Identity.GetUserId());
+            model.ActiveCourse = _courseService.GetCourseByID(ID);
+            model.Name = model.ActiveCourse.Title;
+            model.Active = AssignmentID;
+
             return View(model);
         }
 
@@ -38,7 +41,7 @@ namespace projectMoo.Controllers
         public ActionResult CreateAssignment()
         {
             List<Course> courses = new List<Course>();
-            courses = _courseService.getAllCourses();
+            courses = _courseService.GetAllCourses();
 
             List<SelectListItem> listItems = new List<SelectListItem>();
 
@@ -62,6 +65,7 @@ namespace projectMoo.Controllers
         [HttpPost]
         public ActionResult CreateAssignment(AssignmentViewModel data)
         {
+
             if (ModelState.IsValid)
             {
 
@@ -72,7 +76,7 @@ namespace projectMoo.Controllers
                 assignment.Title = data.Title;
                 assignment.Description = data.Description;
                 assignment.DueDate = data.DueDate;
-                _assignmentService.addNewAssignment(assignment);
+                _assignmentService.AddNewAssignment(assignment);
                 _assignmentService.SaveToDatabase();
 
                 _milestoneService.AddMilestonesForAssignment(assignment.ID, data.Milestones);
@@ -84,7 +88,7 @@ namespace projectMoo.Controllers
             else
             {
                 List<Course> courses = new List<Course>();
-                courses = _courseService.getAllCourses();
+                courses = _courseService.GetAllCourses();
 
                 List<SelectListItem> listItems = new List<SelectListItem>();
 
@@ -105,15 +109,7 @@ namespace projectMoo.Controllers
 
 
         }
-
-        public ActionResult AddMilestone()
-        {
-
-            var milestoneVM = new AssignmentMilestoneViewModel();
-
-            return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
-        }
-
+ 
         public ActionResult AssignmentCreated()
         {
             Success success = new Success();
@@ -146,6 +142,30 @@ namespace projectMoo.Controllers
             return View(new DeleteAssignment());
         }
 
+        [HttpPost]
+        public ActionResult DeleteAssignment(DeleteAssignment model)
+        {
+            if (model.assignmentName != null)
+            {
+                _assignmentService.DeleteAssignmentWithName(model.assignmentName);
+                _assignmentService.SaveToDatabase();
+
+                Success success = new Success();
+                success.Title = "Success";
+                success.Description = @"Assignment deleted";
+                success.ActionTitle = "Delete another assignment";
+                success.ActionPath = @"DeleteAssignment";
+
+                return View("~/Views/Success/Success.cshtml", success);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+
+            }
+
+        }
+
 
         public ActionResult UploadMilestone()
         {
@@ -161,6 +181,7 @@ namespace projectMoo.Controllers
 
             if (extension != ".cpp")
             {
+                
                 return View("Error");
             }
 
@@ -198,8 +219,8 @@ namespace projectMoo.Controllers
         {
             SubmissionViewModel model = new SubmissionViewModel();
 
-            model.Milestone = _milestoneService.getMilestoneByID(ID);
-            model.Submissions = _submissionService.getAllSubmissionsByMilestoneIDForUser(ID);
+            model.Milestone = _milestoneService.GetMilestoneByID(ID);
+            model.Submissions = _submissionService.GetAllSubmissionsByMilestoneIDForUser(ID);
 
             return View(model);
         }

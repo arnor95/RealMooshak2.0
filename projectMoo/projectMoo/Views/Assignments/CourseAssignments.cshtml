@@ -1,4 +1,4 @@
-﻿@model projectMoo.Models.ViewModels.UserViewModel
+﻿@model projectMoo.Models.ViewModels.CourseAssignmentsViewModel
 @{ 
     ViewBag.Title = "Assignments";
 }
@@ -16,7 +16,7 @@
             <ul class="dropdown-menu">
                 @foreach (var course in Model.Courses)
                 {
-                    <li>@Html.ActionLink(@course.Title, "CourseAssignments", "Assignments", new { ID = course.CourseID }, new { id = "nav-li" })</li>
+                    <li>@Html.ActionLink(@course.Title, "CourseAssignments", "Assignments", new { ID = course.CourseID, AssignmentID = -1 }, new { id = "nav-li" })</li>
                 }
             </ul>
         </div>
@@ -28,7 +28,7 @@
         <ul class="list-group">
             @foreach (var assignment in Model.Assignments)
             {
-                <li id="assignment-li-a" data-type="@assignment.Title.Replace(" ","")" href="#" class="list-group-item text-left cursor-change assignment-li-a">
+                <li id="@assignment.AssignmentID" data-type="@assignment.Title.Replace(" ","")" href="#" class="list-group-item text-left cursor-change assignment-li-a">
                     @assignment.Title
                     <span class="badge">
                         @assignment.DueDate.ToShortDateString()
@@ -39,20 +39,32 @@
             }
         </ul>
     </div>
+
     <div class="col-sm-7">
-        <div class="Empty">
-            <h3>No Assigment Selected :(</h3>
-            <p class="SmallText">Select an assignment from the list on the left.</p>
-        </div>
-        @foreach (var assignment in Model.Assignments)
+
+        @if (Model.Active == -1)
         {
-            <div class="hidden" id="@assignment.Title.Replace(" ","")">
-                <div class="Assignment emphasis">
-                    <h2>@assignment.Title</h2>
-                    <p>@assignment.Description</p>
-                    <p class="badge">@assignment.DueDate.ToShortDateString()</p>
-                    <p class="pull-element-right"><strong>Grade:</strong> 8</p>
-                </div>
+            <div class="Empty">
+                <h3>No Assigment Selected :(</h3>
+                <p class="SmallText">Select an assignment from the list on the left.</p>
+            </div>
+        }
+
+
+        @foreach (var assignment in Model.Assignments)
+            {
+                string className = "hidden";
+                if (assignment.AssignmentID == Model.Active)
+                {
+                    className = "";
+                }
+                <div class="@className" id="@assignment.Title.Replace(" ","")">
+                    <div class="Assignment emphasis">
+                        <h2>@assignment.Title</h2>
+                        <p>@assignment.Description</p>
+                        <p class="badge">@assignment.DueDate.ToShortDateString()</p>
+                        <p class="pull-element-right"><strong>Grade:</strong> 8</p>
+                    </div>
 
 
                     @foreach (var milestone in assignment.Milestones)
@@ -62,16 +74,16 @@
                                 <div class="assignment-header">
                                     <div class="col-sm-10 assignment-header">
                                         <h2>@milestone.Title</h2>
-                                        
+
                                     </div>
                                     <div class="col-sm-2  assignment-button">
-                                        @if (User.IsInRole("Teacher"))
+                                        @if (User.IsInRole("Teacher") || User.IsInRole("Teachers Assistant") || User.IsInRole("Admin"))
                                         {
                                             @Html.ActionLink("All Submissions", "AllAssignmentsForMilestone", "Teacher", new { ID = milestone.MilestoneID }, new { id = "nav-li" })
                                         }
                                         @Html.ActionLink("Submissions", "ViewSubmissions", "Assignments", new { ID = milestone.MilestoneID }, new { id = "nav-li", @class = "btn btn-success btn-text" })
                                     </div>
-                               </div>
+                                </div>
                             </div>
 
                             <hr class="assignment-pull-right" />
@@ -86,14 +98,17 @@
                                 <span class="btn btn-default btn-file">
                                     Add File<input type="file" name="file" />
                                 </span>
-                                <input type="submit" value="OK" class="btn btn-primary" />
+                                <input type="submit" value="Submit Solution" class="btn btn-primary" />
                             }
                         </div>
 
                     }
-            </div>
+                </div>
         }
     </div>
+
+
+
 </div>
 
 @Scripts.Render("~/Scripts/AssignmentsScript.js")

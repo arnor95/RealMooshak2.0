@@ -16,7 +16,7 @@ namespace projectMoo.Controllers
     public class CreateUserController : Controller
     {
         private ApplicationUserManager manager;
-        private UserService userService = new UserService();
+        private UserService userService = new UserService(null);
 
         // GET: CreateUser
         public ActionResult Index()
@@ -58,7 +58,7 @@ namespace projectMoo.Controllers
             List<SelectListItem> roles = new List<SelectListItem>();
             List<SelectListItem> groups = new List<SelectListItem>();
 
-            string[] systemRoles = new[] {"None", "Admin", "Teacher", "Student" };
+            string[] systemRoles = new[] {"None", "Admin", "Teacher", "Teachers Assistant", "Student" };
             string[] systemGroups = new[] {"None", "1st year students", "2nd year students", "3rd year students" };
 
             foreach (string s in systemRoles)
@@ -110,7 +110,6 @@ namespace projectMoo.Controllers
                 }
                 else
                 {
-                    //whoops error;
                     return View("Error");
                 }
 
@@ -120,7 +119,7 @@ namespace projectMoo.Controllers
                 List<SelectListItem> roles = new List<SelectListItem>();
                 List<SelectListItem> groups = new List<SelectListItem>();
 
-                string[] systemRoles = new[] { "None", "Admin", "Teacher", "Student" };
+                string[] systemRoles = new[] { "None", "Admin", "Teacher", "Teachers Assistant", "Student" };
                 string[] systemGroups = new[] { "None", "1st year students", "2nd year students", "3rd year students" };
 
                 foreach (string s in systemRoles)

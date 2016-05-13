@@ -15,16 +15,16 @@ namespace projectMoo.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
-        private UserService _userService = new UserService();
-        private AssignmentsService _assignmentService = new AssignmentsService();
-        private CoursesService _courseService = new CoursesService();
+        private UserService _userService = new UserService(null);
+        private AssignmentsService _assignmentService = new AssignmentsService(null);
+        private CoursesService _courseService = new CoursesService(null);
 
         [Authorize]
         public ActionResult Index()
         {
             UserViewModel model = new UserViewModel();
             string userID = User.Identity.GetUserId();
-            UserInfo info = _userService.getInfoForUser(userID);
+            UserInfo info = _userService.GetInfoForUser(userID);
 
 
             if (info.Name == null)
@@ -37,11 +37,11 @@ namespace projectMoo.Controllers
             }
             
             model.Assignments = _assignmentService.GetAssignmentForUser(userID);
-            model.Courses = _courseService.getCoursesForUser(userID);
+            model.Courses = _courseService.GetCoursesForUser(userID);
 
-            if (info.Phone == 0)
+            if (info.Phone == null)
             {
-                model.Phone = 666;
+                model.Phone = "Please enter a phone number";
             }
             else
             {

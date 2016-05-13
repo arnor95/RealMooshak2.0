@@ -5,10 +5,17 @@
 }
 
 
-<div class="col-md-5">
-    <div class="form-horizontal center">
+<div class="col-md-4">
+    <div class="success">
+        <div class="succesIcon">
+            <svg>
+                <polyline points="10,30 30,50 60,10" />
+            </svg>
+        </div>
         <h2>@Model.Title</h2>
         <h4>@Model.Description </h4>
         @Html.ActionLink(Model.ActionTitle, Model.ActionPath, null, new { @class = "btn btn-primary" })
     </div>
  </div>
+
+@Scripts.Render("~/Scripts/SuccessScript.js")

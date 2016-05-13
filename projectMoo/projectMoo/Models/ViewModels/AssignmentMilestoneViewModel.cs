@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +8,6 @@ namespace projectMoo.Models.ViewModels
 {
     public class AssignmentMilestoneViewModel
     {
-        public Guid UniqueId { get; set; }
         public int MilestoneID { get; set; }
         public string Title { get; set; }
         public decimal Grade { get; set; }
@@ -18,24 +18,11 @@ namespace projectMoo.Models.ViewModels
         /// then this property contains the value 15.
         /// </summary>
         public int Percentage { get; set; }
-        public List<string> Output { get; set; }
-        public List<string> Input { get; set; }
+        public string Output { get; set; }
+        public string Input { get; set; }
 
-        public AssignmentMilestoneViewModel()
-        {
+        [DataType(DataType.Upload)]
+        public HttpPostedFileBase Code { get; set; }
 
-            UniqueId = Guid.NewGuid();
-            Input = new List<string>();
-            Output = new List<string>();
-
-            int maxInputOutput = 10;
-
-            for (int i = 0; i < maxInputOutput; i++)
-            {
-                Input.Add("");
-                Output.Add("");
-
-            }
-        }
     }
 }

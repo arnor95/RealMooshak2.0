@@ -10,15 +10,15 @@ namespace projectMoo.Services
 {
     public class AssignmentsService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
         private CoursesService _courseService;
         private MilestoneService _milestoneService;
 
-        public AssignmentsService()
+        public AssignmentsService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
-            _courseService = new CoursesService();
-            _milestoneService = new MilestoneService();
+            _db = context ?? new ApplicationDbContext();
+            _courseService = new CoursesService(null);
+            _milestoneService = new MilestoneService(null);
         }
 
         /* public DateTime getDateForAssignment(int assignmentID)
@@ -31,6 +31,11 @@ namespace projectMoo.Services
          }
          */
 
+
+        /// <summary>
+        /// Returns all existing assignments in all courses
+        /// </summary>
+        /// <returns>List<Assignment></returns>
         public List<Assignment>  GetAllAssignments()
         {
             var assignments = (from assignment in _db.Assignments
@@ -38,6 +43,12 @@ namespace projectMoo.Services
             return assignments;
         }
 
+
+        /// <summary>
+        /// Returns all existing assignments for a user
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <returns>List<AssignmentViewModel></returns>
         public List<AssignmentViewModel> GetAssignmentForUser(string userID)
         {
             List<AssignmentViewModel> returnList = new List<AssignmentViewModel>();
@@ -68,6 +79,12 @@ namespace projectMoo.Services
             return returnList;
         }
 
+
+        /// <summary>
+        /// Returns all existing assignment in a course
+        /// </summary>
+        /// <param name="CourseID">CourseID</param>
+        /// <returns>List<AssignmentViewModel></returns>
         public List<AssignmentViewModel> GetAssignmentsInCourse(int CourseID)
         {
             var Assignments = (from assignment in _db.Assignments
@@ -90,18 +107,25 @@ namespace projectMoo.Services
                 listAssignments.Add(new AssignmentViewModel
                 {
                     Title = assign.Title,
-                    CourseTitle = _courseService.getCourseByID(assign.CourseID).Title.ToString(),
+                    CourseTitle = _courseService.GetCourseByID(assign.CourseID).Title.ToString(),
                     CourseID = CourseID,
                     Description = assign.Description,
-                    Milestones = _milestoneService.getMilestonesForAssignment(assign.ID),
-                    DueDate = assign.DueDate
+                    Milestones = _milestoneService.GetMilestonesForAssignment(assign.ID),
+                    DueDate = assign.DueDate,
+                    AssignmentID = assign.ID
+                    
                 });
             }
 
             return listAssignments;
         }
 
-        public AssignmentViewModel GetAssignmentByID(int AssignmentID)
+        /// <summary>
+        /// Returns a single assignment
+        /// </summary>
+        /// <param name="AssignmentID">AssignmentID</param>
+        /// <returns>AssignmentViewModel</returns>
+        public Assignment GetAssignmentByID(int AssignmentID)
         {
             var Assignment = _db.Assignments.SingleOrDefault(x => x.ID == AssignmentID);
 
@@ -109,38 +133,33 @@ namespace projectMoo.Services
             {
                 System.Diagnostics.Debug.WriteLine("No assignment with that ID found");
             }
-            /*
-            var milestones = _db.AssignmentMilestones
-                .Where(x => x.AssignmentID == AssignmentID)
-                .Select(x => new AssignmentMilestoneViewModel
-                {
-                    Title = x.Title,
-                    Description = x.Description,
-                    Grade = x.Grade,
-                    Percentage = x.Percentage
-                })
-                .ToList();
-            */
-            var viewModel = new AssignmentViewModel
-            {
-                Title = Assignment.Title,
-                //Milestones = milestones
-            };
-
-            return viewModel;
+         
+            return Assignment;
         }
 
-        public void addNewAssignment(Assignment a)
+        /// <summary>
+        /// Writes an assignment to the database
+        /// </summary>
+        /// <param name="a">Assignment</param>
+        public void AddNewAssignment(Assignment a)
         {
             _db.Assignments.Add(a);
             _db.SaveChanges();
         }
+
+        /// <summary>
+        /// Save changes to database
+        /// </summary>
         public void SaveToDatabase()
         {
             _db.SaveChanges();
 
         }
 
+        /// <summary>
+        /// Delete an assignment
+        /// </summary>
+        /// <param name="assignmentName">Assignment name</param>
         public void DeleteAssignmentWithName(string assignmentName)
         {
 

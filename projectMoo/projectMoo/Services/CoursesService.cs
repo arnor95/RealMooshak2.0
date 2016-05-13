@@ -10,14 +10,19 @@ namespace projectMoo.Services
 {
     public class CoursesService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
 
-        public CoursesService()
+        public CoursesService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
+            _db = context ?? new ApplicationDbContext();
         }
 
-        public List<Course> getAllCourses()
+
+        /// <summary>
+        /// Returns all existing courses
+        /// </summary>
+        /// <returns>List<Course></returns>
+        public List<Course> GetAllCourses()
         {
             List<Course> courses = new List<Course>();
 
@@ -27,16 +32,31 @@ namespace projectMoo.Services
             return courses;
         }
 
+        /// <summary>
+        /// Adds a user to a specific course
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <param name="courseID">CourseID</param>
         public void AddUserToCourse(string userID , int courseID)
         {
             _db.UserCourses.Add(new UserCourse() { UserID = userID, CourseID = courseID });
         }
 
+
+        /// <summary>
+        /// Saves changes to the database
+        /// </summary>
         public void SaveToDataBase()
         {
             _db.SaveChanges();
         }
 
+
+        /// <summary>
+        /// Add a group of users to a specific course
+        /// </summary>
+        /// <param name="groupName">Groupname</param>
+        /// <param name="courseID">CourseID</param>
         public void AddUsersBasedOnGroup(string groupName, int courseID)
         {
             List<UserGroup> usersInGroup = (from userGroup in _db.UserGroups
@@ -50,7 +70,13 @@ namespace projectMoo.Services
 
         }
 
-        public List<CourseViewModel> getCoursesForUser(string userId)
+
+        /// <summary>
+        /// Returns existing courses for a specific user
+        /// </summary>
+        /// <param name="userId">UserID</param>
+        /// <returns>List<CourseViewModel></returns>
+        public List<CourseViewModel> GetCoursesForUser(string userId)
         {
             var links = (from courseRelation in _db.UserCourses
                                where courseRelation.UserID == userId
@@ -90,7 +116,13 @@ namespace projectMoo.Services
             return coursesViewModel;
         }
 
-        public CourseViewModel getCourseByID(int ID)
+
+        /// <summary>
+        /// Get a course by its ID
+        /// </summary>
+        /// <param name="ID">CourseID</param>
+        /// <returns>CourseViewModel</returns>
+        public CourseViewModel GetCourseByID(int ID)
         {
             var course = (from c in _db.Courses
                           where c.ID == ID
@@ -111,13 +143,22 @@ namespace projectMoo.Services
             return returnCourse;
         }
 
-        public void addNewCourse(Course c)
+
+        /// <summary>
+        /// Writes a course to the database
+        /// </summary>
+        /// <param name="c">Course</param>
+        public void AddNewCourse(Course c)
         {
             _db.Courses.Add(c);
             _db.SaveChanges();
         }
 
       
+        /// <summary>
+        /// Delete a course from the database by its name
+        /// </summary>
+        /// <param name="courseName">CourseName</param>
         public void DeleteCourseWithName(string courseName)
         {
 

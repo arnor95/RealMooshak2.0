@@ -12,16 +12,22 @@ namespace projectMoo.Services
 {
     public class MilestoneService
     {
-        private ApplicationDbContext _db;
+        private IAppDataContext _db;
         private CoursesService _courseService;
 
-        public MilestoneService()
+        public MilestoneService(IAppDataContext context)
         {
-            _db = new ApplicationDbContext();
-            _courseService = new CoursesService();
+            _db = context ?? new ApplicationDbContext();
+            _courseService = new CoursesService(null);
         }
 
-        public List<AssignmentMilestoneViewModel> getMilestonesForAssignment(int assignmentID)
+
+        /// <summary>
+        /// Gets all milestone for a specific assignment
+        /// </summary>
+        /// <param name="assignmentID">AssignmentID</param>
+        /// <returns>List<AssignmentMilestoneViewModel></returns>
+        public List<AssignmentMilestoneViewModel> GetMilestonesForAssignment(int assignmentID)
         {
             List<AssignmentMilestone> milestones = (from m in _db.AssignmentMilestones
                                                    where m.AssignmentID == assignmentID
@@ -31,6 +37,7 @@ namespace projectMoo.Services
 
             foreach (AssignmentMilestone m in milestones)
             {
+
                 returnMilestones.Add(new AssignmentMilestoneViewModel
                 {
                     MilestoneID = m.ID,
@@ -44,7 +51,13 @@ namespace projectMoo.Services
             return returnMilestones;
         }
 
-        public AssignmentMilestoneViewModel getMilestoneByID(int ID)
+
+        /// <summary>
+        /// Get a milestone by its ID
+        /// </summary>
+        /// <param name="ID">MilestoneID</param>
+        /// <returns>AssignmentMilestoneViewModel</returns>
+        public AssignmentMilestoneViewModel GetMilestoneByID(int ID)
         {
             AssignmentMilestone milestone = (from m in _db.AssignmentMilestones
                                              where m.ID == ID
@@ -60,11 +73,17 @@ namespace projectMoo.Services
             return returnModel;
         }
 
+
+        /// <summary>
+        /// Writes a list of milestones to the database and assigns it to an assignment
+        /// </summary>
+        /// <param name="assignment">AssignmentID</param>
+        /// <param name="milestonesVM">List of milestones</param>
         public void AddMilestonesForAssignment(int assignment, List<AssignmentMilestoneViewModel> milestonesVM)
         {
             foreach (AssignmentMilestoneViewModel milestoneVM in milestonesVM)
             {
-                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "")
+                if(milestoneVM.Title != "" && milestoneVM.Percentage != 0 && milestoneVM.Description != "" && !(milestoneVM.Input == "") && !(milestoneVM.Output == ""))
                 {
                     AssignmentMilestone milestone = new AssignmentMilestone();
                     milestone.Description = milestoneVM.Description;
@@ -76,11 +95,6 @@ namespace projectMoo.Services
                     _db.AssignmentMilestones.Add(milestone);
                     _db.SaveChanges();
 
-                    if (milestoneVM.Input.Count == milestoneVM.Output.Count)
-                    {
-                        if (milestoneVM.Input.Count == 0 || milestoneVM.Output.Count == 0)
-                            return;
-
                         int milestoneID = milestone.ID;
                         System.Diagnostics.Debug.WriteLine(milestoneID);
 
@@ -89,37 +103,29 @@ namespace projectMoo.Services
 
                         string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "input.txt");
                         string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "output.txt");
+                        string codePath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "code.cpp");
 
-                        if (!Directory.Exists(input))
+                    if (!Directory.Exists(input))
                         {
                             Directory.CreateDirectory("C:\\Test");
                         }
                         using (StreamWriter writer = new StreamWriter(input, true, Encoding.Default))
-                        {
-                            for (int i = 0; i < milestoneVM.Input.Count;i++)
-                            {
-                                //save to file input/output
-                                if(milestoneVM.Input[i] != "")
-                                {
-                                    writer.WriteLine(milestoneVM.Input[i]);
-
-                                }
-
-                            }
+                        {    
+                                  writer.WriteLine(milestoneVM.Input);
                         }
                         using (StreamWriter writer = new StreamWriter(output, true, Encoding.Default))
                         {
-                            for (int i = 0; i < milestoneVM.Input.Count; i++)
-                            {
-                                //save to file input/output
-                                if (milestoneVM.Input[i] != "")
-                                {
-                                    writer.WriteLine(milestoneVM.Output[i]);
-                                }
-                            }
+                                 writer.WriteLine(milestoneVM.Output);
                         }
 
+                        if(milestoneVM.Code != null && milestoneVM.Code.ContentLength != 0)
+                        {
 
+                        string extension = Path.GetExtension(milestoneVM.Code.FileName);
+                        if (extension == ".cpp")
+                        {
+                            milestoneVM.Code.SaveAs(codePath);
+                        }
                     }
                  
                 }
@@ -128,6 +134,10 @@ namespace projectMoo.Services
             }
         }
 
+
+        /// <summary>
+        /// Saves the changes to the database
+        /// </summary>
         public void SaveToDatabase()
         {
             _db.SaveChanges();

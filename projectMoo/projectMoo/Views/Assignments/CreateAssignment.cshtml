@@ -1,17 +1,11 @@
 ﻿@model projectMoo.Models.ViewModels.AssignmentViewModel
 
 
-<link type="text/css"  rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <div class="body-content">
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("CreateAssignment", "Assignments", FormMethod.Post, new { encType = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
-
-        <div class="button-top">
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-        </div>
 
         <div class="form-horizontal center col-md-4">
             <h4>New Assignment</h4>
@@ -51,7 +45,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create Assignmet" class="btn btn-primary form-control" />
+                    <input type="submit" value="Create Assignment" class="btn btn-primary form-control" />
                 </div>
             </div>
         </div>
@@ -83,7 +77,5 @@
 
     }
 </div>
-
-
-@Scripts.Render("~/Scripts/CreateAssignmentScript.js")
      
+@Scripts.Render("~/Scripts/CreateAssignmentScript.js")

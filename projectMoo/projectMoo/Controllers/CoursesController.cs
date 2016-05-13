@@ -15,7 +15,7 @@ namespace projectMoo.Controllers
     public class CoursesController : Controller
     {
 
-        private CoursesService _courseService = new CoursesService();
+        private CoursesService _courseService = new CoursesService(null);
         private ApplicationUserManager manager;
 
         [Authorize]
@@ -26,7 +26,7 @@ namespace projectMoo.Controllers
 
             string currentUserId = User.Identity.GetUserId();
             System.Diagnostics.Debug.WriteLine("user id " + currentUserId);
-            List<CourseViewModel> ViewModel = _courseService.getCoursesForUser(currentUserId);
+            List<CourseViewModel> ViewModel = _courseService.GetCoursesForUser(currentUserId);
             return View(ViewModel);
         }
 
@@ -50,7 +50,7 @@ namespace projectMoo.Controllers
                     students.Add(new UserRole() { Username = user.UserName, Roles = "Student", UserId = user.Id, Selected = false });
 
                 }
-                else if (manager.IsInRole(user.Id, "Teacher"))
+                else if (manager.IsInRole(user.Id, "Teacher") || manager.IsInRole(user.Id, "Admin") || manager.IsInRole(user.Id, "Teachers Assistant"))
                 {
                     teachers.Add(new UserRole() { Username = user.UserName, Roles = "Teacher" , UserId = user.Id, Selected = false});
 
@@ -80,11 +80,10 @@ namespace projectMoo.Controllers
             if (ModelState.IsValid)
             {
                
-                _courseService.addNewCourse(addCourseViewModel.course);
+                _courseService.AddNewCourse(addCourseViewModel.course);
 
                 if(!(addCourseViewModel.course.Group == "None") && addCourseViewModel.course.Group != null)
                 {
-                    //TODO save this course for all people in the selected group
                     _courseService.AddUsersBasedOnGroup(addCourseViewModel.course.Group, addCourseViewModel.course.ID);
                     _courseService.SaveToDataBase();
 
@@ -123,7 +122,7 @@ namespace projectMoo.Controllers
 
             List<SelectListItem> courses = new List<SelectListItem>();
 
-            var allCourses = _courseService.getAllCourses();
+            var allCourses = _courseService.GetAllCourses();
 
             foreach (Course s in allCourses)
             {
