@@ -6,6 +6,7 @@ using FakeDbSet;
 using System.Data.Entity;
 using projectMoo.Models;
 using projectMoo.Models.Entities;
+using projectMoo.Models.ViewModels;
 
 namespace projectMoo.BusinessLogicTest
 {
@@ -27,6 +28,7 @@ namespace projectMoo.BusinessLogicTest
             UserCourses            = new InMemoryDbSet<UserCourse>();
             UserGroups             = new InMemoryDbSet<UserGroup>();
             Submissions            = new InMemoryDbSet<Submission>();
+            UserInfoes             = new InMemoryDbSet<UserInfo>();
         }
 
         public IDbSet<Assignment>              Assignments             { get; set; }

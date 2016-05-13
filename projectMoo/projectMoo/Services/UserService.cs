@@ -47,7 +47,7 @@ namespace projectMoo.Services
         /// <returns>Users full name</returns>
         public string GetUserName(string userID)
         {
-            var userInfo = (from user in _db.UserInfoes
+            UserInfo userInfo = (from user in _db.UserInfoes
                             where user.UserID == userID
                             select user).SingleOrDefault();
 
@@ -100,7 +100,7 @@ namespace projectMoo.Services
         /// <returns>Users phone number</returns>
         public string GetUserPhone(string userID)
         {
-            var userInfo = (from user in _db.UserInfoes
+            UserInfo userInfo = (from user in _db.UserInfoes
                             where user.UserID == userID
                             select user).SingleOrDefault();
 
@@ -115,7 +115,7 @@ namespace projectMoo.Services
         /// <returns>Path to users profile picture</returns>
         public string GetUserPic(string userID)
         {
-            var picID = (from info in _db.UserInfoes
+            UserInfo picID = (from info in _db.UserInfoes
                          where info.UserID == userID
                          select info).SingleOrDefault();
 
