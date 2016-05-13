@@ -17,7 +17,7 @@
         </thead>
         @foreach (var course in Model)
         {
-            <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = course.CourseID }))'" class="cursor-change">
+            <tr onclick="location.href = '@(Url.Action("CourseAssignments", "Assignments", new { ID = course.CourseID, AssignmentID = -1 }))'" class="cursor-change">
                 <td class="lead">@course.Title</td>
                 <td>@course.Description</td>
                 <td><span class="badge">@course.BeginDate.ToShortDateString()</span></td>
