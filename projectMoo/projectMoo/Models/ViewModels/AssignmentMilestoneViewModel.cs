@@ -21,8 +21,5 @@ namespace projectMoo.Models.ViewModels
         public string Output { get; set; }
         public string Input { get; set; }
 
-        [DataType(DataType.Upload)]
-        public HttpPostedFileBase Code { get; set; }
-
     }
 }

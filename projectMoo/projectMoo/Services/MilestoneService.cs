@@ -117,16 +117,6 @@ namespace projectMoo.Services
                         {
                                  writer.WriteLine(milestoneVM.Output);
                         }
-
-                        if(milestoneVM.Code != null && milestoneVM.Code.ContentLength != 0)
-                        {
-
-                        string extension = Path.GetExtension(milestoneVM.Code.FileName);
-                        if (extension == ".cpp")
-                        {
-                            milestoneVM.Code.SaveAs(codePath);
-                        }
-                    }
                  
                 }
                

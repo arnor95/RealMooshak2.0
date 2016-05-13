@@ -13,12 +13,14 @@ namespace projectMoo.Controllers
     {
         SubmissionService _submissionService = new SubmissionService(null);
 
-        // GET: Teacher
+        #region Assignments for milestone
         public ActionResult AllAssignmentsForMilestone(int ID)
         {
             List<SubmissionsForTeacherViewModel> model = _submissionService.GetSubmissionsForTeacherByMilestoneID(ID);
 
             return View(model);
         }
+
+        #endregion
     }
 }

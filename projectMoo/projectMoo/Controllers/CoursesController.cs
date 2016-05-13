@@ -18,6 +18,7 @@ namespace projectMoo.Controllers
         private CoursesService _courseService = new CoursesService(null);
         private ApplicationUserManager manager;
 
+        #region Display Courses
         [Authorize]
         // GET: Courses
         public ActionResult Index()
@@ -30,6 +31,9 @@ namespace projectMoo.Controllers
             return View(ViewModel);
         }
 
+        #endregion
+
+        #region Create Course
         [Authorize(Roles = "Admin")]
         public ActionResult CreateCourse()
         {
@@ -117,6 +121,9 @@ namespace projectMoo.Controllers
             return View(addCourseViewModel);
         }
 
+        #endregion
+
+        #region Delete Course
         public ActionResult DeleteCourse()
         {
 
@@ -162,5 +169,6 @@ namespace projectMoo.Controllers
             }
 
         }
+        #endregion
     }
 }

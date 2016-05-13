@@ -18,38 +18,7 @@ namespace projectMoo.Controllers
         private ApplicationUserManager manager;
         private UserService userService = new UserService(null);
 
-        // GET: CreateUser
-        public ActionResult Index()
-        {
-            
-
-
-            return View();
-        }
-
-        public ActionResult UserCreated()
-        {
-            Success success = new Success();
-            success.Title = "Success";
-            success.Description = @"A new user was creted.";
-            success.ActionTitle = "Create another user";
-            success.ActionPath = @"NewUser";
-
-            return View("~/Views/Success/Success.cshtml",success);
-        }
-
-        public ActionResult UserDeleted()
-        {
-            Success success = new Success();
-            success.Title = "Success";
-            success.Description = @"The user has been deleted.";
-            success.ActionTitle = "Delete another user";
-            success.ActionPath = @"DeleteUser";
-
-            return View("~/Views/Success/Success.cshtml", success);
-        }
-
-
+        #region New User
         [HttpGet]
         public ActionResult NewUser()
         {
@@ -151,7 +120,34 @@ namespace projectMoo.Controllers
             }
 
         }
+        #endregion
 
+        #region Created Actions
+        public ActionResult UserCreated()
+        {
+            Success success = new Success();
+            success.Title = "Success";
+            success.Description = @"A new user was creted.";
+            success.ActionTitle = "Create another user";
+            success.ActionPath = @"NewUser";
+
+            return View("~/Views/Success/Success.cshtml", success);
+        }
+
+        public ActionResult UserDeleted()
+        {
+            Success success = new Success();
+            success.Title = "Success";
+            success.Description = @"The user has been deleted.";
+            success.ActionTitle = "Delete another user";
+            success.ActionPath = @"DeleteUser";
+
+            return View("~/Views/Success/Success.cshtml", success);
+        }
+
+        #endregion
+
+        #region Delete User
         public ActionResult DeleteUser()
         {
             return View(new DeleteUserViewModel());
@@ -189,7 +185,10 @@ namespace projectMoo.Controllers
 
         }
 
+        #endregion
+
+
     }
 
-   
+
 }
