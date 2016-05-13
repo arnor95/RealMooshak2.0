@@ -7,10 +7,6 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="button-top">
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-        </div>
-
         <div class="form-horizontal center col-md-4">
             <h4>New Assignment</h4>
             <hr />
@@ -82,3 +78,4 @@
     }
 </div>
      
+@Scripts.Render("~/Scripts/CreateAssignmentScript.js")

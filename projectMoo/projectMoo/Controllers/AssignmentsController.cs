@@ -29,8 +29,10 @@ namespace projectMoo.Controllers
             CourseAssignmentsViewModel model = new CourseAssignmentsViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
             model.Courses = _courseService.GetCoursesForUser(User.Identity.GetUserId());
-            model.Name = model.Assignments.FirstOrDefault().CourseTitle;
+            model.ActiveCourse = _courseService.GetCourseByID(ID);
+            model.Name = model.ActiveCourse.Title;
             model.Active = AssignmentID;
+
             return View(model);
         }
 

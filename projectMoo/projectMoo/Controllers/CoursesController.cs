@@ -50,7 +50,7 @@ namespace projectMoo.Controllers
                     students.Add(new UserRole() { Username = user.UserName, Roles = "Student", UserId = user.Id, Selected = false });
 
                 }
-                else if (manager.IsInRole(user.Id, "Teacher"))
+                else if (manager.IsInRole(user.Id, "Teacher") || manager.IsInRole(user.Id, "Admin"))
                 {
                     teachers.Add(new UserRole() { Username = user.UserName, Roles = "Teacher" , UserId = user.Id, Selected = false});
 
