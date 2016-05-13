@@ -11,7 +11,7 @@ namespace projectMoo.Models.ViewModels
         public int Active { get; set; }
         public List<CourseViewModel> Courses { get; set; }
         public CourseViewModel ActiveCourse { get; set; }
-
+        public CourseViewModel Course { get; set; }
         public List<AssignmentViewModel> Assignments { get; set; }
     }
 }

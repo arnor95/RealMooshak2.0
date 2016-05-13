@@ -25,12 +25,11 @@ namespace projectMoo.Controllers
         // GET: Assignments
         public ActionResult CourseAssignments(int ID , int AssignmentID)
         {
-           
-            System.Diagnostics.Debug.WriteLine("Index Assign");
             CourseAssignmentsViewModel model = new CourseAssignmentsViewModel();
             model.Assignments = _assignmentService.GetAssignmentsInCourse(ID);
             model.Courses = _courseService.GetCoursesForUser(User.Identity.GetUserId());
-            model.Name = model.Assignments.FirstOrDefault().CourseTitle;
+            model.Course = _courseService.GetCourseByID(ID);
+            model.Name = model.Course.Title;
             model.Active = AssignmentID;
             return View(model);
         }
@@ -83,7 +82,6 @@ namespace projectMoo.Controllers
                 _milestoneService.AddMilestonesForAssignment(assignment.ID, data.Milestones);
                 _milestoneService.SaveToDatabase();
              
-
                 return RedirectToAction("AssignmentCreated");
             }
             else
@@ -105,10 +103,7 @@ namespace projectMoo.Controllers
                 ViewData["Courses"] = listItems;
 
                 return View(data);
-
             }
-
-
         }
 
         public ActionResult AssignmentCreated()
@@ -166,9 +161,7 @@ namespace projectMoo.Controllers
             else
             {
                 return RedirectToAction("Index");
-
             }
-
         }
 
         #endregion
