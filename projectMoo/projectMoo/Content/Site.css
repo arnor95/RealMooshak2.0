@@ -478,3 +478,14 @@ btn-btn-primary{
 #green-background {
     background-color: green;
 }
+
+.success{
+
+    background-color:white;
+    margin-top: 40px;
+    padding: 10px;
+    border:0.4px solid;
+    border-color: cornflowerblue;
+    border-radius: 2px;
+  
+}
