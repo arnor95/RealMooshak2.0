@@ -16,8 +16,8 @@ namespace projectMoo.Controllers
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
         private UserService _userService = new UserService(null);
-        private AssignmentsService _assignmentService = new AssignmentsService(null);
-        private CoursesService _courseService = new CoursesService(null);
+        private AssignmentService _assignmentService = new AssignmentService(null);
+        private CourseService _courseService = new CourseService(null);
 
         #region My Page
         [Authorize]
@@ -59,8 +59,6 @@ namespace projectMoo.Controllers
             {
                 model.PicID = "profile.png";
             }
-
-            //SessionCourse.Instance.SetActiveCourse(model.Courses.FirstOrDefault());
             
             return View(model);
         }
@@ -84,19 +82,14 @@ namespace projectMoo.Controllers
                 var updateUser = (from user in _db.UserInfoes
                                   where user.UserID == userID
                                   select user).SingleOrDefault();
-
                 
-
                 updateUser.PicID = fileName;
                 _db.SaveChanges();
-                // store the file inside ~/App_Data/uploads folder
                 var path = Path.Combine(Server.MapPath("~/Images/Profile/"), fileName);
                 file.SaveAs(path);
             }
-            // redirect back to the index action to show the form once again
             return RedirectToAction("Index");
         }
-
         #endregion
 
     }

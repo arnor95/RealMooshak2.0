@@ -20,7 +20,6 @@ namespace projectMoo.Controllers
 
             return View(model);
         }
-
         #endregion
     }
 }

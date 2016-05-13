@@ -14,13 +14,13 @@ namespace projectMoo.Services
     public class MilestoneService
     {
         private IAppDataContext _db;
-        private CoursesService _courseService;
+        private CourseService _courseService;
         private UserService _userService;
 
         public MilestoneService(IAppDataContext context)
         {
             _db = context ?? new ApplicationDbContext();
-            _courseService = new CoursesService(null);
+            _courseService = new CourseService(null);
             _userService = new UserService(null);
         }
 
@@ -41,7 +41,6 @@ namespace projectMoo.Services
 
             foreach (AssignmentMilestone m in milestones)
             {
-
                 returnMilestones.Add(new AssignmentMilestoneViewModel
                 {
                     MilestoneID = m.ID,
@@ -100,32 +99,29 @@ namespace projectMoo.Services
                     _db.AssignmentMilestones.Add(milestone);
                     _db.SaveChanges();
 
-                        int milestoneID = milestone.ID;
-                        System.Diagnostics.Debug.WriteLine(milestoneID);
+                    int milestoneID = milestone.ID;
+                    System.Diagnostics.Debug.WriteLine(milestoneID);
 
-                        string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/");
-                        Directory.CreateDirectory(newFolderPath);
+                    string newFolderPath = System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/");
+                    Directory.CreateDirectory(newFolderPath);
 
-                        string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "input.txt");
-                        string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "output.txt");
-                        string codePath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "code.cpp");
+                    string input = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "input.txt");
+                    string output = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "output.txt");
+                    string codePath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Code/Teacher/" + milestoneID + "/"), "code.cpp");
 
                     if (!Directory.Exists(input))
-                        {
-                            Directory.CreateDirectory("C:\\Test");
-                        }
-                        using (StreamWriter writer = new StreamWriter(input, true, Encoding.Default))
-                        {    
-                                  writer.WriteLine(milestoneVM.Input);
-                        }
-                        using (StreamWriter writer = new StreamWriter(output, true, Encoding.Default))
-                        {
-                                 writer.WriteLine(milestoneVM.Output);
-                        }
-                 
+                    {
+                        Directory.CreateDirectory("C:\\Test");
+                    }
+                    using (StreamWriter writer = new StreamWriter(input, true, Encoding.Default))
+                    {    
+                        writer.WriteLine(milestoneVM.Input);
+                    }
+                    using (StreamWriter writer = new StreamWriter(output, true, Encoding.Default))
+                    {
+                        writer.WriteLine(milestoneVM.Output);
+                    }
                 }
-               
-
             }
         }
 
@@ -136,9 +132,6 @@ namespace projectMoo.Services
         public void SaveToDatabase()
         {
             _db.SaveChanges();
-
         }
-
-
     }
 }

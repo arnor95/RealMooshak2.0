@@ -15,7 +15,7 @@ namespace projectMoo.Controllers
     public class CoursesController : Controller
     {
 
-        private CoursesService _courseService = new CoursesService(null);
+        private CourseService _courseService = new CourseService(null);
         private ApplicationUserManager manager;
 
         #region Display Courses
@@ -23,8 +23,6 @@ namespace projectMoo.Controllers
         // GET: Courses
         public ActionResult Index()
         {
-            //throw new Exception();
-
             string currentUserId = User.Identity.GetUserId();
             System.Diagnostics.Debug.WriteLine("user id " + currentUserId);
             List<CourseViewModel> ViewModel = _courseService.GetCoursesForUser(currentUserId);
@@ -37,8 +35,7 @@ namespace projectMoo.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult CreateCourse()
         {
-
-        ApplicationDbContext context = new ApplicationDbContext();
+            ApplicationDbContext context = new ApplicationDbContext();
 
             var allusers = context.Users.ToList();
             manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -68,7 +65,6 @@ namespace projectMoo.Controllers
                 {
                     Text = s,
                     Value = s
-
                 });
             }
 
@@ -83,7 +79,6 @@ namespace projectMoo.Controllers
         {
             if (ModelState.IsValid)
             {
-               
                 _courseService.AddNewCourse(addCourseViewModel.course);
 
                 if(!(addCourseViewModel.course.Group == "None") && addCourseViewModel.course.Group != null)
@@ -92,7 +87,6 @@ namespace projectMoo.Controllers
                     _courseService.SaveToDataBase();
 
                     return RedirectToAction("Index");
-
                 }
 
                 foreach (UserRole user in addCourseViewModel.Students)
@@ -112,9 +106,7 @@ namespace projectMoo.Controllers
                 }
 
                 _courseService.SaveToDataBase();
-
-
-
+                
                 return RedirectToAction("Index");
             }
 
@@ -137,7 +129,6 @@ namespace projectMoo.Controllers
                 {
                     Text = s.Title,
                     Value = s.Title
-
                 });
             }
 
@@ -165,9 +156,7 @@ namespace projectMoo.Controllers
             else
             {
                 return RedirectToAction("Index");
-
             }
-
         }
         #endregion
     }

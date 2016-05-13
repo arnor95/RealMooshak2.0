@@ -11,6 +11,5 @@ namespace projectMoo.Models.ViewModels
         public string Roles { get; set; }
         public string UserId { get; set; }
         public bool Selected { get; set; }
-
     }
 }

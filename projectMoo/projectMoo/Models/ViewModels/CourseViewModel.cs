@@ -23,6 +23,5 @@ namespace projectMoo.Models.ViewModels
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
-
     }
 }

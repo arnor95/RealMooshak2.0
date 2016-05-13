@@ -8,11 +8,11 @@ using System.Web;
 
 namespace projectMoo.Services
 {
-    public class CoursesService
+    public class CourseService
     {
         private IAppDataContext _db;
 
-        public CoursesService(IAppDataContext context)
+        public CourseService(IAppDataContext context)
         {
             _db = context ?? new ApplicationDbContext();
         }
@@ -67,7 +67,6 @@ namespace projectMoo.Services
             {
                 AddUserToCourse(g.UserID, courseID);
             }
-
         }
 
 
@@ -85,8 +84,7 @@ namespace projectMoo.Services
             List<Course> courses = new List<Course>();
 
             List<CourseViewModel> coursesViewModel = new List<CourseViewModel>();
-
-
+            
             foreach ( UserCourse c in links)
             {
                 Course userCourse = (from storedCourse in _db.Courses
@@ -97,7 +95,6 @@ namespace projectMoo.Services
                     continue;
 
                 courses.Add(userCourse);
-
             }
 
             foreach (Course c in courses)
@@ -168,8 +165,7 @@ namespace projectMoo.Services
 
             if (courseToDelete.Count == 0)
                 return;
-
-
+            
             int courseId = courseToDelete.First().ID;
 
             foreach (var connection in courseToDelete)
@@ -177,22 +173,17 @@ namespace projectMoo.Services
                 _db.Courses.Remove(connection);
 
             }
-
-
-
+            
             var userCourses = (from course in _db.UserCourses
                                   where course.CourseID == courseId
                                   select course).ToList();
-
-
-
+            
             foreach (var connection in userCourses)
             {
                 _db.UserCourses.Remove(connection);
 
             }
-
-
+            
             var assignments = (from assignemt in _db.Assignments
                                where assignemt.CourseID == courseId
                                select assignemt).ToList();
@@ -205,9 +196,7 @@ namespace projectMoo.Services
                 var milestones = (from milestone in _db.AssignmentMilestones
                                    where milestone.AssignmentID == connection.ID
                                    select milestone).ToList();
-
-               
-
+                
                 foreach (var milestoneConnection in milestones)
                 {
                     var submissions = (from submission in _db.Submissions
@@ -223,11 +212,7 @@ namespace projectMoo.Services
                 }
 
                 _db.Assignments.Remove(connection);
-
             }
-
-
-
         }
     }
 }

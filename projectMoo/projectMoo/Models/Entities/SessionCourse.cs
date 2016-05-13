@@ -9,10 +9,7 @@ namespace projectMoo.Models.Entities
     public class SessionCourse
     {
         private CourseViewModel _activeCourse { get; set; }
-
-
         private static SessionCourse theInstance = null;
-
         public static SessionCourse Instance
         {
             get
@@ -25,12 +22,10 @@ namespace projectMoo.Models.Entities
                 return theInstance;
             }
         }
-
         public void SetActiveCourse(CourseViewModel c)
         {
             _activeCourse = c;
         }
-
         public CourseViewModel GetActiveCourse()
         {
             return _activeCourse;

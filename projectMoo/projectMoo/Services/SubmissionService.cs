@@ -98,8 +98,7 @@ namespace projectMoo.Services
 
             var inputFile = System.Web.Hosting.HostingEnvironment.MapPath("~/Code/Teacher/" + milestoneID + "/input.txt");
             var outputFile = System.Web.Hosting.HostingEnvironment.MapPath("~/Code/Teacher/" + milestoneID + "/output.txt");
-
-
+            
             // In this case, we use the C++ compiler (cl.exe) which ships
             // with Visual Studio. It is located in this folder:
             var compilerFolder = "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\";
@@ -137,7 +136,6 @@ namespace projectMoo.Services
             string output = compiler.StandardOutput.ReadToEnd();
             compiler.WaitForExit();
             compiler.Close();
-
             #endregion
 
             // Check if the compile succeeded, and if it did,
@@ -157,24 +155,21 @@ namespace projectMoo.Services
                 processInfoExe.RedirectStandardError = true;
                 processInfoExe.CreateNoWindow = true;
                 var lines = new List<string>();
-
-
+                
                 for (int i = 0; i < inputs.Count; i++)
                 {
                     using (var processExe = new Process())
                     {
-
                         processExe.StartInfo = processInfoExe;
                         processExe.Start();
                         StreamWriter myStreamWriter = processExe.StandardInput;
                         StreamReader myStreamReader = processExe.StandardOutput;
 
                         myStreamWriter.WriteLine(inputs[i]);
-                        // We then read the output of the program:
 
+                        // We then read the output of the program:
                         while (!processExe.StandardOutput.EndOfStream)
                         {
-
                             lines.Add(myStreamReader.ReadLine());
 
                             if(outputs[i] != lines[i])
@@ -186,17 +181,8 @@ namespace projectMoo.Services
                             returnModel.Output.Add(lines[i]);
                             returnModel.ExpectedOutput.Add(outputs[i]);
                         }
-
-
                     }
-
-
-                }
-                //ViewBag.Success = lines;
-
-                // TODO: We might want to clean up after the process, there
-                // may be files we should delete etc.
-                
+                } 
             }
 
             return returnModel;

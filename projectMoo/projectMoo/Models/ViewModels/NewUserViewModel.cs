@@ -16,7 +16,6 @@ namespace projectMoo.Models.ViewModels
 
         [Required(ErrorMessage = "Please add a role for this user Admin/Teacher/Student.")]
         public string Role { get; set; }
-
         public string Group { get; set; }
 
         [Required(ErrorMessage = "Please add a name for this user.")]

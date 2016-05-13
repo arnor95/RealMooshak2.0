@@ -41,8 +41,7 @@ namespace projectMoo.Controllers
             }
 
             ViewData["Roles"] = roles;
-
-
+            
             foreach (string s in systemGroups)
             {
                 groups.Add(new SelectListItem
@@ -75,7 +74,6 @@ namespace projectMoo.Controllers
                     userService.AddInfoForUser(data.Name, data.Phone, user.Id);
                     userService.SaveToDatabase();
                     return RedirectToAction("UserCreated");
-
                 }
                 else
                 {
@@ -103,7 +101,6 @@ namespace projectMoo.Controllers
 
                 ViewData["Roles"] = roles;
 
-
                 foreach (string s in systemGroups)
                 {
                     groups.Add(new SelectListItem
@@ -116,9 +113,7 @@ namespace projectMoo.Controllers
 
                 ViewData["Groups"] = groups;
                 return View(data);
-
             }
-
         }
         #endregion
 
@@ -177,12 +172,10 @@ namespace projectMoo.Controllers
 
                     await manager.DeleteAsync(user);
                     return RedirectToAction("UserDeleted");
-
                 }
             }
 
             return View("Error");
-
         }
 
         #endregion

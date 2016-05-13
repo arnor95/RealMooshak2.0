@@ -12,7 +12,7 @@ namespace projectMooTest.Services
     public class CourseService
     {
 
-        private AssignmentsService _service;
+        private AssignmentService _service;
 
         [TestInitialize]
         public void Initialize()
@@ -76,7 +76,7 @@ namespace projectMooTest.Services
 
             mockDb.Assignments.Add(a4);
 
-            _service = new AssignmentsService(mockDb);
+            _service = new AssignmentService(mockDb);
 
         }
 

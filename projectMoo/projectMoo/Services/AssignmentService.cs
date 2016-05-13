@@ -9,17 +9,17 @@ using System.Web;
 
 namespace projectMoo.Services
 {
-    public class AssignmentsService
+    public class AssignmentService
     {
         private IAppDataContext _db;
-        private CoursesService _courseService;
+        private CourseService _courseService;
         private MilestoneService _milestoneService;
         private UserService _userService;
 
-        public AssignmentsService(IAppDataContext context)
+        public AssignmentService(IAppDataContext context)
         {
             _db = context ?? new ApplicationDbContext();
-            _courseService = new CoursesService(null);
+            _courseService = new CourseService(null);
             _milestoneService = new MilestoneService(null);
             _userService = new UserService(null);
         }
@@ -85,9 +85,7 @@ namespace projectMoo.Services
             var Assignments = (from assignment in _db.Assignments
                                where assignment.CourseID == CourseID
                                select assignment).ToList();
-
-
-
+            
             if (Assignments == null)
             {
                 System.Diagnostics.Debug.WriteLine("No assignment with that course ID found");
@@ -95,13 +93,9 @@ namespace projectMoo.Services
 
             List<AssignmentViewModel> listAssignments = new List<AssignmentViewModel>();
             string userID = HttpContext.Current.User.Identity.GetUserId();
-
-
-
+            
             foreach (var assign in Assignments)
             {
-                System.Diagnostics.Debug.WriteLine(assign.CourseID);
-
                 listAssignments.Add(new AssignmentViewModel
                 {
                     Title = assign.Title,
@@ -112,7 +106,6 @@ namespace projectMoo.Services
                     Milestones = _milestoneService.GetMilestonesForAssignment(assign.ID),
                     DueDate = assign.DueDate,
                     AssignmentID = assign.ID
-                    
                 });
             }
 
@@ -152,7 +145,6 @@ namespace projectMoo.Services
         public void SaveToDatabase()
         {
             _db.SaveChanges();
-
         }
 
         /// <summary>
@@ -174,9 +166,7 @@ namespace projectMoo.Services
                 var milestones = (from milestone in _db.AssignmentMilestones
                                   where milestone.AssignmentID == connection.ID
                                   select milestone).ToList();
-
-
-
+                
                 foreach (var milestoneConnection in milestones)
                 {
                     var submissions = (from submission in _db.Submissions
@@ -192,7 +182,6 @@ namespace projectMoo.Services
                 }
 
                 _db.Assignments.Remove(connection);
-
             }
         }
     }
