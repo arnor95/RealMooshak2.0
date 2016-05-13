@@ -242,6 +242,8 @@
     <Compile Include="Utilities\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Code\Teacher\24\input.txt" />
+    <Content Include="Code\Teacher\24\output.txt" />
     <Content Include="Code\Teacher\5\input.txt" />
     <Content Include="Code\Teacher\5\output.txt" />
     <Content Include="Content\bootstrap.css" />
@@ -262,6 +264,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Exceptions\gunnarbb15%40ru.is\406a3f0c-2dc8-4a38-a8c9-3c3bfd38c02e" />
+    <Content Include="Code\Teacher\24\code.cpp" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CreateAssignmentScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
