@@ -1,7 +1,5 @@
 ﻿@model projectMoo.Models.ViewModels.AddCourseViewModel
 
-<link type="text/css" rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     @using (Html.BeginForm())
     {
@@ -106,17 +104,4 @@
         </div>
  }
 
-
-<script>
-  $(function() {
-      $("#datepicker-2").datepicker({
-          dateFormat: 'dd-mm-yyyy'
-      });
-      $("#datepicker-3").datepicker({
-          dateFormat: 'dd-mm-yyyy'
-      });
-
-  });
-</script>
-
-
+@Scripts.Render("~/Scripts/CourseScript.js")
