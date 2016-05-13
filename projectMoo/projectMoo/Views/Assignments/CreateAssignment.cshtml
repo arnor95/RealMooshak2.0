@@ -1,7 +1,5 @@
 ﻿@model projectMoo.Models.ViewModels.AssignmentViewModel
 
-
-
 <div class="body-content">
     @using (Html.BeginForm())
     {
@@ -18,7 +16,6 @@
                     @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -26,7 +23,6 @@
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -34,7 +30,6 @@
                     @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.DueDate, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -42,16 +37,13 @@
                     @Html.ValidationMessageFor(model => model.DueDate, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create Assignment" class="btn btn-primary form-control" />
                 </div>
             </div>
         </div>
-
         <div class="col-md-5 allMilestones">
-
             <div id="milestones">
                 @for (int i = 0; i < Model.Milestones.Count; i++)
                 {
@@ -61,20 +53,14 @@
                         className = "visible";
                     }
                     <div class="@className" id="@i">
-                       @Html.EditorFor(model => model.Milestones[i])
-                      
+                       @Html.EditorFor(model => model.Milestones[i]) 
                     </div>
-
                 }
                 <div>
                     <button type="button" class="btn btn-primary button-top form-control" id="btnNewMilestone">+ Milestone</button>
                 </div>
             </div>
-
-           
         </div>
-
-
     }
 </div>
      

@@ -207,9 +207,19 @@ img#profile-picture {
 }
 
 .list-group-item:hover {
-   background-color: #f1f1f1;
-   
+   background-color: #f1f1f1;  
 }
+
+.list-group-item:active {
+   background-color: cornflowerblue;  
+   color:white;
+}
+
+.table-click:active {
+   background-color: cornflowerblue;  
+   color:white;
+}
+
 
 
 
@@ -533,3 +543,4 @@ btn-btn-primary{
 #text-color-red {
     color: #ff9999;
 }
+

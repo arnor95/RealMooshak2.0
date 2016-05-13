@@ -4,7 +4,6 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
         <div class="col-md-5">
             <div class="form-horizontal">
                 <h4 class="center-text">New Course</h4>
@@ -17,7 +16,6 @@
                         @Html.ValidationMessageFor(model => model.course.Title, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.course.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -25,7 +23,6 @@
                         @Html.ValidationMessageFor(model => model.course.Description, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.course.BeginDate, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -33,7 +30,6 @@
                         @Html.ValidationMessageFor(model => model.course.BeginDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.course.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -41,7 +37,6 @@
                         @Html.ValidationMessageFor(model => model.course.EndDate, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.course.Group, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -49,8 +44,6 @@
                         @Html.ValidationMessageFor(model => model.course.Group, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10 ">
                         <input type="submit" value="Create Course" class="btn btn-primary form-control" />
@@ -60,47 +53,33 @@
         </div>
 
         <div class="col-md-4">
-
                 <div class="form-horizontal">
                     <h4 class="center-text">Add Teachers/Assistants</h4>
                     <table class="table">
-
                         @for (var i = 0; i < Model.Teachers.Count; i++)
                         {
                             <tr>
                                 <td>@Model.Teachers[i].Username</td>
                                 <td>@Html.CheckBoxFor(mo => @Model.Teachers[i].Selected, new { @checked = "checked" ,@class = "checkbox-custom" })</td>
                                 @Html.HiddenFor(x => x.Teachers[i].UserId)
-
-
                             </tr>
                         }
-
-                      
                     </table>
-
                 </div>
-
-
                 <div class="form-horizontal">
                     <h4 class="center-text">Add Students</h4>
                     <hr />
                     <table class="table">
-
                         @for (var i = 0; i < Model.Students.Count; i++)
                         {
                             <tr>
                                 <td>@Model.Students[i].Username</td>
                                 <td>@Html.CheckBoxFor(mo => @Model.Students[i].Selected, new { @checked = "checked", @class = "checkbox-custom" })</td>
                                 @Html.HiddenFor(x => x.Students[i].UserId)
-
-
                             </tr>
                         }
                     </table>
                 </div>
-
-
         </div>
  }
 

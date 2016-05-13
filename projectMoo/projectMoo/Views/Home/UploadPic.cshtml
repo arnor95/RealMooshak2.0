@@ -7,8 +7,10 @@
 
 @using (Html.BeginForm("UploadPic", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <span class="btn btn-default btn-file">
-        Browse File<input type="file" name="file" />
-    </span>
-    <input type="submit" value="OK" class="btn btn-primary"/>
+    <div class="form-horizontal">
+        <span class="btn btn-default btn-file">
+            Browse File<input type="file" name="file" />
+        </span>
+        <input type="submit" value="OK" class="btn btn-primary" />
+    </div>
 }
