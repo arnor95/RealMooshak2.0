@@ -2,26 +2,65 @@
 
 <h1>Submitted</h1>
 
-<div class="row">
-    <div class="col-sm-4">
-        <h3>Input</h3>
-        @foreach (var input in Model.Input)
-        {
-            <p>@input</p>
-        }
+@if (Model.Status == true)
+{
+    <div class="panel panel-success">
+        <div class="panel-heading">Success!</div>
+        <table class="table table-condensed">
+            <tr>
+                <th class="text-center">Input</th>
+                <th class="text-center">Output</th>
+                <th class="text-center">Expected Output</th>
+            </tr>
+            @for (int i = 0; i < Model.Input.Count; i++)
+            {
+                <tr>
+                    <td>@Model.Input[i]</td>
+                    @if (Model.Output[i] == Model.ExpectedOutput[i])
+                    {
+                        <td class="success">@Model.Output[i]</td>
+                        <td class="success">@Model.ExpectedOutput[i]</td>
+                    }
+                    else
+                    {
+                        <td class="danger">@Model.Output[i]</td>
+                        <td class="success">@Model.ExpectedOutput[i]</td>
+                    }
+                </tr>
+            }
+
+        </table>
     </div>
-    <div class="col-sm-4">
-        <h3>Output</h3>
-        @foreach (var output in Model.Output)
-        {
-            <p>@output</p>
-        }
+}
+else
+{
+    <div class="panel panel-danger">
+        <div class="panel-heading">Error!</div>
+        <table class="table table-condensed">
+            <tr>
+                <th class="text-center">Input</th>
+                <th class="text-center">Output</th>
+                <th class="text-center">Expected Output</th>
+            </tr>
+            @for (int i = 0; i < Model.Input.Count; i++)
+            {
+                <tr>
+                    <td>@Model.Input[i]</td>
+                    @if (Model.Output[i] == Model.ExpectedOutput[i])
+                    {
+                        <td class="success">@Model.Output[i]</td>
+                        <td class="success">@Model.ExpectedOutput[i]</td>
+                    }
+                    else
+                    {
+                        <td class="danger">@Model.Output[i]</td>
+                        <td class="success">@Model.ExpectedOutput[i]</td>
+                    }
+                </tr>
+            }
+
+        </table>
     </div>
-    <div class="col-sm-4">
-        <h3>Expected Output</h3>
-        @foreach (var expected in Model.ExpectedOutput)
-        {
-            <p>@expected</p>
-        }
-    </div>
-</div>
+}
+   
+   

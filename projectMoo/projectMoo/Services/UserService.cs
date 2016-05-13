@@ -196,7 +196,7 @@ namespace projectMoo.Services
         {
             var milestone = (from b in _db.MilestoneFinisheds
                              where b.UserID == userID && b.MilestoneID == milestoneID
-                             select b).SingleOrDefault();
+                             select b).FirstOrDefault();
 
             if (milestone != null)
                 return true;
