@@ -9,6 +9,7 @@ namespace projectMoo.Handlers
 {
     public class CustomErrorHandler: HandleErrorAttribute
     {
+        #region Log Exception
         public override void OnException(ExceptionContext filterContext)
         {
             //Get the exception
@@ -42,5 +43,7 @@ namespace projectMoo.Handlers
             // Call the base class implementation:
             base.OnException(filterContext);
         }
+
+        #endregion
     }
 }

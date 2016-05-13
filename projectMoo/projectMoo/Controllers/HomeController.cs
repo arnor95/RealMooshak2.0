@@ -19,6 +19,7 @@ namespace projectMoo.Controllers
         private AssignmentsService _assignmentService = new AssignmentsService(null);
         private CoursesService _courseService = new CoursesService(null);
 
+        #region My Page
         [Authorize]
         public ActionResult Index()
         {
@@ -64,6 +65,9 @@ namespace projectMoo.Controllers
             return View(model);
         }
 
+        #endregion
+
+        #region Profile Picture
         public ActionResult UploadPic()
         {
             return View();
@@ -92,5 +96,8 @@ namespace projectMoo.Controllers
             // redirect back to the index action to show the form once again
             return RedirectToAction("Index");
         }
+
+        #endregion
+
     }
 }

@@ -20,6 +20,7 @@ namespace projectMoo.Controllers
         private MilestoneService _milestoneService = new MilestoneService(null);
         private SubmissionService _submissionService = new SubmissionService(null);
 
+        #region Display Assignments
         [Authorize]
         // GET: Assignments
         public ActionResult CourseAssignments(int ID , int AssignmentID)
@@ -34,6 +35,9 @@ namespace projectMoo.Controllers
             return View(model);
         }
 
+        #endregion
+
+        #region Create Assignment
         [Authorize(Roles = "Admin, Teacher")]
         [HttpGet]
         public ActionResult CreateAssignment()
@@ -106,6 +110,7 @@ namespace projectMoo.Controllers
 
 
         }
+<<<<<<< HEAD
         /*
         public ActionResult AddMilestone()
         {
@@ -115,6 +120,9 @@ namespace projectMoo.Controllers
             return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
         }
         */
+=======
+
+>>>>>>> 44b61e98c5eb6cb904d692f6590ecb154750f7d7
 
         public ActionResult AssignmentCreated()
         {
@@ -126,6 +134,10 @@ namespace projectMoo.Controllers
 
             return View("~/Views/Success/Success.cshtml", success);
         }
+
+        #endregion
+
+        #region Delete Assignment
 
         public ActionResult DeleteAssignment()
         {
@@ -172,7 +184,9 @@ namespace projectMoo.Controllers
 
         }
 
+        #endregion
 
+        #region Handin Code
         public ActionResult UploadMilestone()
         {
             return View();
@@ -232,6 +246,9 @@ namespace projectMoo.Controllers
             return View("Result", model);
         }
 
+        #endregion
+
+        #region Submissions
         public ActionResult ViewSubmissions(int ID)
         {
             SubmissionViewModel model = new SubmissionViewModel();
@@ -256,6 +273,8 @@ namespace projectMoo.Controllers
             };
             return response;
         }
+
+        #endregion
 
     }
 }

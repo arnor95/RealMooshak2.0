@@ -21,17 +21,8 @@ namespace projectMoo.Services
             _milestoneService = new MilestoneService(null);
         }
 
-        /* public DateTime getDateForAssignment(int assignmentID)
-         {
-             var dueDate = (from date in _db.Assignments
-                            where date.ID == assignmentID
-                            select date).SingleOrDefault();
 
-             return dueDate.DueDate;
-         }
-         */
-
-
+        #region Get all assignments
         /// <summary>
         /// Returns all existing assignments in all courses
         /// </summary>
@@ -43,6 +34,7 @@ namespace projectMoo.Services
             return assignments;
         }
 
+        #endregion
 
         /// <summary>
         /// Returns all existing assignments for a user
