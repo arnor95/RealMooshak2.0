@@ -11,6 +11,5 @@ namespace projectMoo.Models.ViewModels
         public Course course { get; set; }
         public List<UserRole> Teachers { get; set; }
         public List<UserRole> Students { get; set; }
-
     }
 }

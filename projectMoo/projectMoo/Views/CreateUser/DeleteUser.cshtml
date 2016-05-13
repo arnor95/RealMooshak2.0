@@ -4,11 +4,9 @@
     ViewBag.Title = "DeleteUser";
 }
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
     <div class="col-md-5">
         <div class="delete">
             <h4 class="center-text-delete">Delete User</h4>
@@ -24,7 +22,6 @@
             </div>
             <br />
             <br />
-
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Delete User" class="btn btn-danger form-control" />

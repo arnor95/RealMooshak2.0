@@ -13,19 +13,14 @@ namespace projectMoo.Models.Entities
         public string Title { get; set; }
         [Required(ErrorMessage = "Please enter a description for this course")]
         public string Description { get; set; }
-
         [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Display(Name = "Begin Date")]
         public DateTime BeginDate { get; set; }
-
         [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
         public string Group { get; set; }
-
-
-        // TODO: Begin and end date
     }
 }

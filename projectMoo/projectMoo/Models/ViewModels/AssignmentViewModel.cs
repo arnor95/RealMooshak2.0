@@ -21,7 +21,6 @@ namespace projectMoo.Models.ViewModels
         [Display(Name = "Due Date")]
         public DateTime DueDate { get; set; }
         public List<AssignmentMilestoneViewModel> Milestones { get; set; }
-
         public AssignmentViewModel()
         {
             Milestones = new List<AssignmentMilestoneViewModel>();
@@ -32,7 +31,6 @@ namespace projectMoo.Models.ViewModels
                 var milestoneVM = new AssignmentMilestoneViewModel();
                 Milestones.Add(milestoneVM);
             }
-       
         }
     }
 }

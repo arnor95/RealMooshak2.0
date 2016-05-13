@@ -36,7 +36,6 @@ namespace projectMoo.Services
             }
 
             return info;
-
         }
 
 
@@ -154,7 +153,6 @@ namespace projectMoo.Services
             info.PicID = "profile.png";
             info.UserID = userID;
             _db.UserInfoes.Add(info);
-
         }
 
 
@@ -164,7 +162,6 @@ namespace projectMoo.Services
         public void SaveToDatabase()
         {
             _db.SaveChanges();
-
         }
 
 
@@ -175,7 +172,6 @@ namespace projectMoo.Services
         /// <param name="manager">UserManager</param>
         public async void DeleteUserByEmail(string Email, UserManager<ApplicationUser> manager)
         {
-           
             var user = await manager.FindByEmailAsync(Email);
             var rolesForUser = await manager.GetRolesAsync(user.Id);
 
@@ -189,14 +185,20 @@ namespace projectMoo.Services
             }
 
             await manager.DeleteAsync(user);
-
         }
 
+
+        /// <summary>
+        /// Returns a boolean that tells if a specific user has finished a specific milestone
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <param name="milestoneID">MilestoneID</param>
+        /// <returns>Bool</returns>
         public bool HasFinishedMilestone(string userID, int milestoneID)
         {
             var milestone = (from b in _db.MilestoneFinisheds
                              where b.UserID == userID && b.MilestoneID == milestoneID
-                             select b).SingleOrDefault();
+                             select b).FirstOrDefault();
 
             if (milestone != null)
                 return true;
@@ -204,6 +206,13 @@ namespace projectMoo.Services
             return false;
         }
 
+
+        /// <summary>
+        /// Returns a boolean that tells if a specific user has finished a specific assignment 
+        /// </summary>
+        /// <param name="userID">UserID</param>
+        /// <param name="assignmentID">AssignmentID</param>
+        /// <returns>Bool</returns>
         public bool HasFinishedAssignment(string userID, int assignmentID)
         {
             var milestones = (from m in _db.AssignmentMilestones
