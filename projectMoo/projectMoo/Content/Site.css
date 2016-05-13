@@ -215,14 +215,6 @@ img#profile-picture {
    color:white;
 }
 
-.table-click:active {
-   background-color: cornflowerblue;  
-   color:white;
-}
-
-
-
-
 #dropdown {
     color: pink;
 }
@@ -267,6 +259,10 @@ textarea#Description {
     padding-top: 10px;
     font-size: 16px;
     
+}
+
+.cornflower-blue{
+    color:cornflowerblue;
 }
 
 .btn-file {
