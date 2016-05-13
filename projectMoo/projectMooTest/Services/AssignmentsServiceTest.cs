@@ -9,7 +9,7 @@ using projectMoo.Models.ViewModels;
 namespace projectMooTest.Services
 {
     [TestClass]
-    public class AssignmentsServiceTest
+    public class CourseService
     {
 
         private AssignmentsService _service;
@@ -108,8 +108,7 @@ namespace projectMooTest.Services
 
             // Assert:
             Assert.AreEqual(1, assignments.Count);
-
-
+            
         }
     }
 }

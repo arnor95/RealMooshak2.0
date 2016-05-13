@@ -21,13 +21,13 @@ namespace projectMoo.Models
 
     public interface IAppDataContext
     {
-        IDbSet<Assignment> Assignments { get; set; }
-        IDbSet<AssignmentMilestone> AssignmentMilestones { get; set; }
-        IDbSet<Course> Courses { get; set; }
-        IDbSet<UserCourse> UserCourses { get; set; }
-        IDbSet<UserInfo> UserInfoes { get; set; }
-        IDbSet<UserGroup> UserGroups { get; set; }
-        IDbSet<Submission> Submissions { get; set; }
+        IDbSet<Assignment>              Assignments             { get; set; }
+        IDbSet<AssignmentMilestone>     AssignmentMilestones    { get; set; }
+        IDbSet<Course>                  Courses                 { get; set; }
+        IDbSet<UserCourse>              UserCourses             { get; set; }
+        IDbSet<UserInfo>                UserInfoes              { get; set; }
+        IDbSet<UserGroup>               UserGroups              { get; set; }
+        IDbSet<Submission>              Submissions             { get; set; }
 
         int SaveChanges();
     }
