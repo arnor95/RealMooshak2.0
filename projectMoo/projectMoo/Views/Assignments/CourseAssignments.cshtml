@@ -34,14 +34,10 @@
                         @assignment.DueDate.ToShortDateString()
                     </span>
                 </li>
-
- 
             }
         </ul>
     </div>
-
     <div class="col-sm-7">
-
         @if (Model.Active == -1)
         {
             <div class="Empty">
@@ -49,8 +45,6 @@
                 <p class="SmallText">Select an assignment from the list on the left.</p>
             </div>
         }
-
-
         @foreach (var assignment in Model.Assignments)
             {
                 string className = "hidden";
@@ -65,8 +59,6 @@
                         <p class="badge">@assignment.DueDate.ToShortDateString()</p>
                         <p class="pull-element-right"><strong>Grade:</strong> 8</p>
                     </div>
-
-
                     @foreach (var milestone in assignment.Milestones)
                     {
                         <div class="Milestone">
@@ -74,7 +66,6 @@
                                 <div class="assignment-header">
                                     <div class="col-sm-10 assignment-header">
                                         <h2>@milestone.Title</h2>
-
                                     </div>
                                     <div class="col-sm-2  assignment-button">
                                         @if (User.IsInRole("Teacher") || User.IsInRole("Teachers Assistant") || User.IsInRole("Admin"))
@@ -85,9 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-
                             <hr class="assignment-pull-right" />
-
                             <p>@milestone.Description</p>
                             <p><strong>Percentage: </strong>@milestone.Percentage%</p>
                             @if (milestone.Status)
@@ -99,7 +88,6 @@
                                 <span><strong>Status: </strong><p id="text-color-red">Incomplete</p></span>
                             }
                             <p class="pull-right assignment-pull-right"><strong>Grade:</strong> @milestone.Grade</p>
-
                             @using (Html.BeginForm("UploadMilestone", "Assignments", new { ID = milestone.MilestoneID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
                             {
                                 <span class="btn btn-default btn-file">
@@ -108,14 +96,10 @@
                                 <input type="submit" value="Submit Solution" class="btn btn-primary" />
                             }
                         </div>
-
                     }
                 </div>
         }
     </div>
-
-
-
 </div>
 
 @Scripts.Render("~/Scripts/AssignmentsScript.js")
