@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -19,5 +20,9 @@ namespace projectMoo.Models.ViewModels
         public int Percentage { get; set; }
         public string Output { get; set; }
         public string Input { get; set; }
+
+        [DataType(DataType.Upload)]
+        public HttpPostedFileBase Code { get; set; }
+
     }
 }

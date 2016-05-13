@@ -77,7 +77,7 @@
 
                                     </div>
                                     <div class="col-sm-2  assignment-button">
-                                        @if (User.IsInRole("Teacher"))
+                                        @if (User.IsInRole("Teacher") || User.IsInRole("Teachers Assistant") || User.IsInRole("Admin"))
                                         {
                                             @Html.ActionLink("All Submissions", "AllAssignmentsForMilestone", "Teacher", new { ID = milestone.MilestoneID }, new { id = "nav-li" })
                                         }

@@ -65,6 +65,7 @@ namespace projectMoo.Controllers
         [HttpPost]
         public ActionResult CreateAssignment(AssignmentViewModel data)
         {
+
             if (ModelState.IsValid)
             {
 
@@ -108,16 +109,7 @@ namespace projectMoo.Controllers
 
 
         }
-        /*
-        public ActionResult AddMilestone()
-        {
-
-            var milestoneVM = new AssignmentMilestoneViewModel();
-
-            return PartialView("~/Views/Shared/EditorTemplates/AssignmentMilestoneViewModel.cshtml", milestoneVM);
-        }
-        */
-
+ 
         public ActionResult AssignmentCreated()
         {
             Success success = new Success();
@@ -189,6 +181,7 @@ namespace projectMoo.Controllers
 
             if (extension != ".cpp")
             {
+                
                 return View("Error");
             }
 
